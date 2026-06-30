@@ -1,0 +1,248 @@
+# AISC Design & Frontend Agent Guide
+> Read `AISC_BRIEF.md` first. Then `COPY_GUIDE.md` before writing any rendered text.
+> Do NOT pull design patterns or copy from v1. V1 is reference only for Pricing structure and FAQ content. Everything else is a fresh direction.
+
+---
+
+## v2 Visual Direction
+
+**Register:** Premium, editorial, C-suite.
+
+The aesthetic should feel like the intersection of a strategy firm's annual report and a high-conviction product launch — authority through restraint, not decoration.
+
+Reference points: McKinsey Quarterly, Stripe marketing, WSJ magazine, Monocle.
+
+**Not:** AI startup, coaching bootcamp, productivity influencer, SaaS landing page.
+
+**Three guiding words:** Restrained. Deliberate. Heavy.
+
+---
+
+## Color System
+
+The palette carries over from v1 but is applied with more intention in v2. Less saturation, more contrast. More white space.
+
+| Token | Value | v2 Usage |
+|-------|-------|----------|
+| `dark-blue` | `rgb(0, 3, 76)` | Full-bleed hero, high-gravity sections, closing CTA — use where maximum authority is needed |
+| `msblue` | `rgb(1, 5, 121)` | Primary brand color — CTAs, key highlights, navigation |
+| `warning` | `rgb(135, 5, 113)` | Scarcity signals (VIP seats), outcome callouts, a single accent word in hero — use sparingly, once per section max |
+| `msaccent` | `rgb(99, 104, 218)` | Supporting backgrounds, hover states, card fills |
+| `lilac` | `rgb(233, 234, 255)` | Soft section backgrounds, breathing room |
+| White | `#fff` | Use generously — more whitespace than v1. A white section beside a dark section creates the premium contrast. |
+
+**Key principle:** In v1, color is applied uniformly across every section. In v2, sections earn their color. A single amber word on a dark field lands harder than three amber elements competing for attention.
+
+**Section background freedom:** The frontend-design skill has explicit permission to use any palette token as a section background color. `msaccent` (`rgb(99, 104, 218)`) can serve as a full-bleed section background. `lilac` at varying opacities (12–40%) creates structured light sections with more warmth than white. `warning` at low opacity (4–10%) adds subtle energy to light sections. `msblue` is the right choice for dark sections where `dark-blue` is too heavy. The goal is that no two consecutive dark sections share the exact same background. A page where dark sections alternate between `dark-blue` and `msblue` reads more alive than one that uses `dark-blue` exclusively. Do not default to `dark-blue/white` as the only rhythm.
+
+---
+
+## Typography
+
+| Element | Direction |
+|---------|-----------|
+| Section headlines | All-caps, tight tracking, `font-heading` (PT Sans Narrow). Large — fill the space. |
+| Body copy | Light weight, relaxed leading. Do not increase weight. The contrast with headlines is structural. |
+| Pull quotes / callouts | Italic, mixed case, display scale. These are the voice moments — use them to break rhythm. |
+| Label text | Small-caps, wide tracking (e.g., `DAY 1 / LIVE SESSION`, `PRIMARY AUDIENCE`). Navigational chrome only. |
+| Numbers as proof | Set large, bold, inline with body text. They interrupt scanning in the right way. |
+
+**New in v2:**
+- **Oversized pull quotes** — single lines set at display scale as visual anchors between sections
+- **Typographic contrast sections** — a section where type IS the design, no imagery needed
+- **Tighter tracking on all-caps** than v1 — more editorial, less loud
+
+---
+
+## Layout Principles
+
+**Whitespace is not empty space.** A headline with room around it communicates more than a section packed with elements. v2 should breathe.
+
+**Structure over decoration.** Grids, typographic scale, and borders do the design work. Remove decorative blur effects and gradients that don't serve meaning.
+
+**Full-bleed commitment.** If a section is dark, it is dark edge to edge. No partial treatments.
+
+**Asymmetry reads premium.** Layouts where content is intentionally unbalanced (a headline consuming 70% width, a stat in the other 30%) feel more considered than symmetric grids.
+
+**No more than 4 elements competing for attention in a single viewport.** Editorial design removes, not adds.
+
+---
+
+## Page Architecture — 9 Sections
+
+The landing page has 9 sections in narrative order. Each entry below states the section's **job** and its **non-negotiable content requirements**. Layout, visual execution, and design choices are left to the frontend-design creative process — these notes are a brief, not a specification.
+
+---
+
+### Section 1 — Hero
+**Job:** Set the stakes, establish the reframe, drive one action.
+
+**Must include:**
+- A headline that names the tension or the recognition moment — not the program name (that's the logo's job)
+- A credibility signal: the key numbers (7 days, 4 live sessions, specific outputs)
+- One primary CTA: "Secure Your Spot"
+- One secondary link to pricing or curriculum
+
+**Must feel:** Heavy and authoritative. A leader landing here should feel recognized — like someone finally named what they've been carrying.
+
+**Brand constraint:** Dark-blue background. This is the only section with a mandated background color.
+
+---
+
+### Section 2 — Value
+**Job:** Name the four things a participant leaves with — clearly, directly — before the program structure is explained. This is the section currently missing from the page.
+
+**Must include:**
+- All four value points in priority order: AI Clarity → AI Fluency → Time Redemption → AI Value + Territory
+- Under Fluency: the authority shift — the leader becomes the AI-clear voice their people turn to
+- Under Time: a specific number of hours recovered (not "improved efficiency")
+- Under Territory: the connection to the 6-Month Roadmap — declared on Day 3, built over 6 months
+
+**Must feel:** Cumulative. Each value point lands on the previous. By the time the reader reaches Territory, they understand why it's the prize and not the pitch.
+
+**Note:** "The 4 Value Points" and "What You Leave With" are internal labels — the displayed section should open with the reader's reality, not an outline.
+
+---
+
+### Section 3 — Audience
+**Job:** Three profiles. The reader sees themselves clearly or self-selects out.
+
+**Must include:**
+- One block per audience tier: Chief, Leader of Leaders, Emerging Leader
+- Each block names the situation (not job titles) and what they specifically leave with
+- Chief block carries visual priority — primary audience
+- Emerging Leader block must name the career and positioning shift explicitly
+
+**Must feel:** Recognition, not classification. A reader shouldn't have to search for themselves.
+
+---
+
+### Section 4 — Curriculum
+**Job:** Show the full 7-day structure and build confidence that this is deliberate, not improvised.
+
+**Must include:**
+- All 7 days with clear distinction between live sessions and self-paced work
+- The 4 live sessions named with their outputs: AI Clarity → AI Labs → AI Value → AI Governance
+- Day 7 / The Mandate weighted as a capstone — not just another session
+- VIP differentiation on Days 5 and 6: visible but not dominant
+
+**Must feel:** Structured and earned. Every day should feel like it produces something real.
+
+---
+
+### Section 5 — Demo
+**Job:** Make the Toolbox's resources and tools tangible — show what participants actually access and what they leave with.
+
+**Structure:** Full-viewport-height section with a fixed header strip and four horizontally-sliding full-height panels. Arrow navigation (left/right) with a panel counter (01/04) in the header. Dot indicators at the bottom.
+
+**Header (persistent across all panels):**
+- Label: "THE TOOLBOX"
+- H2: "The challenge ends on Day 7. The Toolbox doesn't."
+- Counter + prev/next arrows top right
+
+**Panel 01 — Guides, Frameworks & Templates (Resource)**
+- Headline: "The sessions give you direction. These make sure your team gets it too."
+- Visual: Three cascading screenshots (Day 1, 2, 3 from the learning center) in a Stripe-style layered stack
+- Screenshots in `public/demo/`: `day-1.png`, `day-2.png`, `day-3.png`
+
+**Panel 02 — Mini Apps (Tools)**
+- Headline: "Rate every task. Recover every hour. Declare your territory."
+- Visual: Three cascading tool screenshots (Delegation Tool, Margin Calculator, Territory Builder)
+- Screenshots in `public/demo/`: `delegation-matrix.png`, `margin-calculator.png`, `territory.png`
+
+**Panel 03 — Roadmap (Resource)**
+- Headline: "Day 6 unlocks it. The next six months run on it."
+- Visual: Single roadmap screenshot filling the full right-column height (object-cover, object-top)
+- Screenshot in `public/demo/`: `roadmap.png`
+
+**Panel 04 — AI Labs (Resource)**
+- Headline: "Built for leaders who direct AI. Not engineers who build it."
+- Visual: Editorial card filling the full right-column height — large "6 MONTHS" typographic anchor, module list, "Included with all tiers" footer
+- No screenshot available; use the card treatment
+
+**Screenshot arrangement (cascade panels):**
+- Three screenshots stacked diagonally: width 82%, offsets top: 2/15/28%, left: 0/9/18%
+- Each has `border border-white/[0.09] rounded-xl shadow-2xl`
+
+**Must feel:** A controlled product demonstration. The header persists as a frame; each panel is its own moment of proof.
+
+---
+
+### Section 6 — Proof
+**Job:** One or two transformations, not a wall of five-star reviews.
+
+**Must include:**
+- Testimonials that name a shift — what the person didn't have before and has now
+- At least one testimonial speaking to the authority shift: how their people see them differently after AISC
+- Attribution: name, role, and the world they operate in (faith, business, creator economy, etc.)
+
+**Must feel:** Quiet and credible. Confirms rather than oversells.
+
+---
+
+### Section 7 — Pricing
+**Job:** Convert. Three tiers, clearly differentiated, with confidence — not apology.
+
+**Must include:**
+- Three public tiers: GA / VIP / VVIP
+- VIP scarcity (10 seats) presented as an editorial fact, not a pressure tactic
+- Private / Enterprise block — same foundational content, private delivery
+- Currency toggle (USD / NGN)
+- CTA: "Secure Your Spot" per public tier, "Contact Sales" for enterprise
+- No "Sign Up" or "Register" language anywhere
+
+**Must feel:** Calm and certain. The price is what it is.
+
+---
+
+### Section 8 — FAQ
+**Job:** Remove the final objections a serious leader carries before committing.
+
+**Must include:**
+- "What do I actually leave with?" — answered clearly, answered first
+- "Do I need to know anything about AI already?" — answered clearly
+- A question about Coaching and whether it's included — sets up section 9 naturally
+- A contact link for unanswered questions
+
+**Must feel:** Certain, not defensive. These are questions from someone who is almost decided.
+
+---
+
+### Section 9 — Coaching
+**Job:** Premium close. The final section — for leaders who already know they want more than the challenge alone.
+
+**Must include:**
+- The continuation framing: the Roadmap tells you where to go; Coaching walks with you as you get there
+- What coaching delivers: twice a week, participant's chosen days, facilitated Roadmap execution as fluency grows
+- The key fact: Coaching includes AISC at no additional fee
+- All three pricing plans (monthly, 6-month, annual) in USD and NGN
+- CTA: "Start with Coaching"
+
+**Must feel:** Unhurried and confident. No pressure. The leader who belongs here will recognize themselves without being sold to.
+
+---
+
+## Navigation
+
+- Sticky, minimal
+- Logo left, single CTA right: "Secure Your Spot"
+- On scroll: subtle backdrop blur or border — does not expand into a full nav
+- Links in nav (optional): Curriculum, Pricing, FAQ only
+- No hamburger on desktop
+
+---
+
+## Footer
+
+- Minimal: logo, copyright, contact link
+- Dark background to close the page with weight
+
+---
+
+## Tech Notes
+
+- Framework: Next.js (see `AGENTS.md` for version-specific guidance — read `node_modules/next/dist/docs/` before writing code)
+- Styling: Tailwind CSS v4
+- Color tokens live in `src/app/globals.css` as CSS custom properties — use the tokens, never inline hex
+- Check `src/components/` for existing components before creating new ones
+- Fonts: Inter (`--font-inter`) for body; PT Sans Narrow (`--font-ptsans`) for headings
