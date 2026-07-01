@@ -50,14 +50,16 @@ export default function Coaching() {
               than the map.
             </h2>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-white/55">
-              The 6-Month Roadmap is a living document, not a static plan.
-              Your AI fluency keeps developing as you execute it. Most leaders
-              do not want to navigate that development alone.
+              The 6-Month Roadmap runs in three phases over 180 days, naming
+              your capability gaps, the relationships you need, and the
+              standards you'll hold yourself to along the way. Most leaders
+              do not want to navigate that alone.
             </p>
             <p className="mt-4 max-w-lg text-base leading-relaxed text-white/55">
               The AI Stakeholder Coaching Program walks with you once a week,
-              on your schedule, through the roadmap you built in the challenge.
-              Your fluency compounds. Your territory gets built.
+              on your schedule, as you follow the Roadmap you leave the
+              challenge with. Your fluency compounds. The territory you
+              discovered in the challenge gets built.
             </p>
 
             <div className="mt-10 grid grid-cols-3 gap-px bg-white/8">

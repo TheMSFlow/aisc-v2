@@ -56,7 +56,7 @@ const DAYS = [
     type: "self-paced",
     duration: null,
     description:
-      "You check your thinking against peers working through the same challenge. VIP and VVIP receive direct strategic facilitator feedback on their milestone outputs. So you move into the second half knowing your foundations are solid.",
+      "You check your thinking against peers working through the same challenge. VIP and VVIP receive direct strategic facilitator feedback on their milestone task. So you move into the second half knowing your foundations are solid.",
     output: null,
     vipNote: "Day 5: 1-hour live Q&A with facilitator",
     capstone: false,
@@ -68,7 +68,7 @@ const DAYS = [
     type: "self-paced",
     duration: null,
     description:
-      "Your 6-Month AI Stakeholder Roadmap is unlocked with an instructional video guide. The territory you declared on Day 3 now has a structured 180-day path: what to focus on, what to delegate, and where to apply AI deliberately.",
+      "Your 6-Month AI Stakeholder Roadmap is unlocked with an instructional video guide. It turns the territory you declared on Day 3 into a 180-day plan across three phases, built around your specific capability gaps, the people you need in your corner, and the standards you set for how you'll use AI.",
     output: null,
     vipNote: "2-hour Roadmap deep dive + follow-up Q&A",
     capstone: false,
@@ -83,7 +83,7 @@ const DAYS = [
       "You close with the question most people avoid: what does it mean to lead responsibly in an AI environment? AI Governance, ethics, and the mandate of your position. You leave not just informed, but positioned.",
     output: null,
     vipNote: null,
-    capstone: true,
+    capstone: false,
   },
 ];
 

@@ -37,7 +37,7 @@ const PANELS = [
     label: "RESOURCE",
     name: "Roadmap",
     headline: "Day 6 unlocks it. The next six months run on it.",
-    body: "The 6-Month AI Stakeholder Roadmap defines what you focus on, what you delegate, what you stop, and where AI belongs in your domain. It is not a static plan. It is a living filter for every decision you make as you build your territory. Reusable every six months as your direction compounds.",
+    body: "The 6-Month AI Stakeholder Roadmap carries your territory through three phases over 180 days: proving you can execute, applying your leverage and building the relationships that matter, then extending your authority. Along the way it names your capability gaps, maps who you need in your corner, and sets the personal standards you'll hold yourself to. Reusable every six months as your direction compounds.",
     type: "single",
     image: { src: "/demo/roadmap.png", alt: "The 6-Month AI Stakeholder Roadmap" },
   },

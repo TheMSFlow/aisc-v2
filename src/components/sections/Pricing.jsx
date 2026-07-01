@@ -23,11 +23,11 @@ const TIERS = [
       },
       {
         label: "Session resources",
-        info: "Every guide, framework, and session insight from Days 1, 2, and 3. Organized by day, downloadable anytime, and updated as the program evolves.",
+        info: "Every guide, framework, and insight from the live sessions. Organized by day, downloadable anytime, and updated as the program evolves.",
       },
       {
         label: "Mini apps",
-        info: "Three tools in the Toolbox: the Delegation Tool for rating tasks on AI fit and human judgment, the Margin Calculator for tracking real time saved, and the Territory Builder for mapping and declaring your AI territory. All three are reusable after the challenge ends.",
+        info: "Tools in the Toolbox: the Delegation Tool for rating tasks on AI fit and human judgment, the Margin Calculator for tracking real time saved, and the Territory Builder for mapping and declaring your AI territory. All three are reusable after the challenge ends.",
       },
       {
         label: "All Assignments and Milestone Task",
@@ -35,7 +35,7 @@ const TIERS = [
       },
       {
         label: "6-Month AI Stakeholder Roadmap",
-        info: "Your structured plan for executing the territory declared on Day 3. Defines what to focus on, what to delegate, what to stop, and where AI belongs in your domain. Unlocked on Day 6.",
+        info: "Turns the territory you declared on Day 3 into a 180-day plan across three phases, built around your capability gaps, the relationships you need, and your own standards for using AI. Unlocked on Day 6.",
       },
       {
         label: "AI Labs (6 months free access)",
@@ -47,7 +47,7 @@ const TIERS = [
       },
       {
         label: "Community access",
-        info: "Private group access for reflection and awareness.",
+        info: "Private group access for reflection, awareness and networking.",
       },
       {
         label: "Certificate of Declaration",

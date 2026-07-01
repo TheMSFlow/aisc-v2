@@ -4,7 +4,7 @@ import FAQAccordion from "@/components/ui/FAQAccordion";
 const QUESTIONS = [
   {
     q: "What do I actually leave with after 7 days?",
-    a: "Three things change permanently, and you leave with paper to prove each one. AI Clarity: a clean, honest picture of what AI means for your domain, built by you on Day 1. Real margin: a number from the Margin Calculator showing how many hours a week you are reclaiming from work AI can handle. A declared territory: a specific AI value position in your world, shaped by the Territory Builder and declared on Day 3. The 6-Month AI Stakeholder Roadmap, unlocked on Day 6, is the plan that takes you from declaration to execution. Your Toolbox access remains in your challenger profile. AI Labs, a dedicated platform where your AI fluency keeps growing, is included free for six months. You receive a Certificate of Declaration on Day 7.",
+    a: "Three things change permanently, and you leave with paper to prove each one. AI Clarity: a clean, honest picture of what AI means for your domain, built by you on Day 1. Real margin: a number from the Margin Calculator showing how many hours a week you are reclaiming from work AI can handle. A declared territory: a specific AI value position in your world, shaped by the Territory Builder and declared on Day 3. The 6-Month AI Stakeholder Roadmap, unlocked on Day 6, takes that declaration into 180 days of execution, naming your capability gaps, the relationships you need to build, and the standards you'll hold yourself to along the way. Your Toolbox access remains in your challenger profile. AI Labs, a dedicated platform where your AI fluency keeps growing, is included free for six months. You receive a Certificate of Declaration on Day 7.",
   },
   {
     q: "Do I need to know anything about AI before I join?",
@@ -20,7 +20,7 @@ const QUESTIONS = [
   },
   {
     q: "What happens after the 7 days?",
-    a: "You leave with the 6-Month AI Stakeholder Roadmap, a structured plan for executing the territory you declared on Day 3. It defines what to focus on, what to delegate, what to stop, and where to apply AI deliberately. It is designed to be reused every 6 months. Your Toolbox access remains in your challenger profile. AI Labs, a dedicated platform where your AI fluency keeps developing as you execute the roadmap, is included free for six months. For leaders who want guided execution through that roadmap, the AI Stakeholder Coaching Program walks with them twice a week.",
+    a: "You leave with the 6-Month AI Stakeholder Roadmap, which turns the territory you declared on Day 3 into a 180-day plan across three phases: proving you can execute, applying your leverage and building key relationships, then extending your authority. It names your capability gaps and sets the personal standards you'll hold yourself to as you go. It is designed to be reused every 6 months. Your Toolbox access remains in your challenger profile. AI Labs, a dedicated platform where your AI fluency keeps developing as you execute the roadmap, is included free for six months. For leaders who want guided execution through that roadmap, the AI Stakeholder Coaching Program walks with them twice a week.",
   },
   {
     q: "Is Coaching separate from the challenge?",
@@ -49,10 +49,10 @@ export default function FAQ() {
     <div className="bg-[#f7f7f5]">
       <Section id="faq" spacing="compact">
         <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40">
-          Questions
+          Still curious?
         </p>
         <h2 className="font-ptsans text-3xl font-bold uppercase leading-tight tracking-tight text-dark-blue sm:text-4xl lg:text-5xl">
-          Ask before you decide.
+          Frequently Asked Questions.
         </h2>
 
         <FAQAccordion items={QUESTIONS} />

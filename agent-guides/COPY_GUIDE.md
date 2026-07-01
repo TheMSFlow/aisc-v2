@@ -96,7 +96,11 @@ Every section of the landing page should advance this story without interrupting
 
 **Act 4 — The shift their people notice.** This is the underwritten act in most AI programs. But AISC participants don't just leave with personal clarity — they leave as the AI-fluent leader in their world. Their congregation comes to them. Their team defers to them. Their audience trusts them. Their board relies on them. That shift in authority is not a side effect. It is one of the most valuable outcomes of the program, and it starts on Day 1.
 
-**Act 5 — The roadmap bridges it.** The 6-Month AI Stakeholder Roadmap, unlocked on Day 6, turns the declaration into an executable plan. It covers what to focus on, what to delegate, what to stop, and where to apply AI deliberately. It is the path from the decision to the destination.
+**Act 5 — The roadmap bridges it.** The 6-Month AI Stakeholder Roadmap, unlocked on Day 6, turns the Day 3 declaration into 180 days of execution across three phases: proving you can execute, applying your leverage and building the relationships that matter, then extending your authority. Along the way it names the leader's capability gaps, maps who needs to be in their corner, and sets the personal standards they'll hold themselves to. It is the path from the decision to the destination.
+
+**How to talk about the Roadmap's fuller substance (rule, not a one-off):** The full source material is five documents (see AISC_BRIEF.md § "The 6-Month Roadmap System") — the Roadmap itself, the Capability Gap Audit, the AI Stakeholder Identifier, the Personal AI Policy, and the Super Connections relationship guide — branched by the Competitive Position (Optimizer / Producer / Advisor / Educator / Curator) declared on Day 3. **Site copy never names these five documents or frames the Roadmap as "a system" / "not a single plan."** That framing is abstract and tells the reader nothing. Instead, translate each document into the plain value it produces and fold it into a sentence about what the Roadmap *does*: it names your capability gaps (from the Audit), maps who you need in your corner (from the Identifier), and sets your own standards for using AI (from the Personal Policy). The three phases can be named by function (proving execution → applying leverage and relationships → extending authority) without naming "Phase 1/2/3" or day ranges unless the section is already in detail mode (e.g., Demo/Toolbox). Never lead with meta-commentary about the Roadmap's structure ("it's a system, not a plan") — lead with what it does for the leader.
+
+**Verb discipline — Territory vs. Roadmap:** The territory is discovered and declared during the challenge (Day 3, via the Territory Builder). The Roadmap is unlocked on Day 6 and followed, executed, or worked through during the 180 days after the challenge — it is never "built." Building applies to the territory (the leader builds it out, occupies it, makes it real) or to relationships and capability, not to the Roadmap document itself. Do not write "the roadmap you built."
 
 **Act 6 — Coaching makes it inevitable.** For leaders who want to be guided through the roadmap rather than just handed it, the AI Stakeholder Coaching Program walks with them twice a week. The challenge includes it. There is no additional AISC fee when starting through Coaching.
 
@@ -338,7 +342,7 @@ Body: "Three tools built for the decisions the challenge produces. The Delegatio
 
 **Panel 03 — Roadmap (Resource)**
 Headline: "Day 6 unlocks it. The next six months run on it."
-Body: "The 6-Month AI Stakeholder Roadmap defines what you focus on, what you delegate, what you stop, and where AI belongs in your domain. It is not a static plan. It is a living filter for every decision you make as you build your territory. Reusable every six months as your direction compounds."
+Body: "The 6-Month AI Stakeholder Roadmap carries your territory through three phases over 180 days: proving you can execute, applying your leverage and building the relationships that matter, then extending your authority. Along the way it names your capability gaps, maps who you need in your corner, and sets the personal standards you'll hold yourself to. Reusable every six months as your direction compounds."
 
 **Panel 04 — AI Labs (Resource)**
 Headline: "Built for leaders who direct AI. Not engineers who build it."
@@ -352,6 +356,7 @@ Body: "A dedicated platform with leadership-focused instruction on AI setup, dir
 - The Territory Builder panel body must always reference the PDF output and the Certificate of Declaration connection. The three mini apps are grouped in Panel 02 — the Territory Builder copy must preserve this payoff within the grouped body.
 - Guides, Frameworks & Templates frames as thought leadership foundation and team-distribution infrastructure, not a course notes archive.
 - Panel headlines must each pass the three headline tests (visualizable, falsifiable, distinctive). Do not rewrite without running the filter.
+- Panel 03's body (updated) folds in what the Roadmap's companion documents actually produce for the leader — capability gaps named, key relationships mapped, personal AI standards set — without naming the documents themselves. See the rule under Act 5 in "The Central Story Arc" above before touching this copy again.
 
 ---
 
@@ -371,7 +376,6 @@ Body: "A dedicated platform with leadership-focused instruction on AI setup, dir
 - Frame VVIP as the private path for leaders who want the full experience without a cohort. CTA: "Secure 1:1 Access"
 - Private / Enterprise: "The same foundational experience, delivered privately to your leadership team. Not a scaled version of the public challenge. Alignment, clarity, and decision confidence built as a unit, without external noise. Minimum 5 seats. Custom pricing and scheduling."
 - CTA language: "Secure Your Spot" (GA), "Secure Your VIP Spot" (VIP), "Secure 1:1 Access" (VVIP). "Contact Sales" for private/enterprise. Never "Sign Up" or "Register"
-
 **Confirmed feature lists (with tooltip info):**
 
 General Admission:
@@ -381,7 +385,7 @@ General Admission:
 | Session resources | Every guide, framework, and session insight from Days 1, 2, and 3. Organized by day, downloadable anytime, and updated as the program evolves. |
 | Mini apps | Three tools in the Toolbox: the Delegation Tool for rating tasks on AI fit and human judgment, the Margin Calculator for tracking real time saved, and the Territory Builder for mapping and declaring your AI territory. All three are reusable after the challenge ends. |
 | All Assignments and Milestone Task | Post-session assignments for Days 1, 2, and 3, plus the Day 3 Milestone Task, the capstone exercise that produces your territory declaration and feeds into your 6-Month AI Stakeholder Roadmap. |
-| 6-Month AI Stakeholder Roadmap | Your structured plan for executing the territory declared on Day 3. Defines what to focus on, what to delegate, what to stop, and where AI belongs in your domain. Unlocked on Day 6. |
+| 6-Month AI Stakeholder Roadmap | Turns the territory you declared on Day 3 into a 180-day plan across three phases, built around your capability gaps, the relationships you need, and your own standards for using AI. Unlocked on Day 6. |
 | AI Labs (6 months free access) | A dedicated platform with leadership-focused instruction on setting up AI, directing it, and applying it across your domain. 6 months of free access. Starts when the challenge ends. |
 | Peer-to-peer reflection (optional) | Peer reflection helps participants sharpen their own thinking by observing clarity in others. It is not a review mechanism. Participation is optional and feedback is anonymized. |
 | Community access | Private WhatsApp group for reflection and awareness. |
@@ -409,11 +413,10 @@ VVIP:
 ### 8. FAQ
 - Lead with value (what do I get), then handle entry concerns (AI experience, time, eligibility), then post-challenge (what's next, coaching), then differentiation and logistics, then close with honest filters
 - The tone should be calm and certain — not defensive. These are questions a serious leader asks before making a serious decision. Honor that
-
 **Confirmed question set (10 questions):**
 
 **Q1 — What do I actually leave with after 7 days?**
-Three things change permanently, and you leave with paper to prove each one. AI Clarity: a clean, honest picture of what AI means for your domain, built by you on Day 1. Real margin: a number from the Margin Calculator showing how many hours a week you are reclaiming from work AI can handle. A declared territory: a specific AI value position in your world, shaped by the Territory Builder and declared on Day 3. The 6-Month AI Stakeholder Roadmap, unlocked on Day 6, is the plan that takes you from declaration to execution. Your Toolbox access remains in your challenger profile. AI Labs, a dedicated platform where your AI fluency keeps growing, is included free for six months. You receive a Certificate of Declaration on Day 7.
+Three things change permanently, and you leave with paper to prove each one. AI Clarity: a clean, honest picture of what AI means for your domain, built by you on Day 1. Real margin: a number from the Margin Calculator showing how many hours a week you are reclaiming from work AI can handle. A declared territory: a specific AI value position in your world, shaped by the Territory Builder and declared on Day 3. The 6-Month AI Stakeholder Roadmap, unlocked on Day 6, takes that declaration into 180 days of execution, naming your capability gaps, the relationships you need to build, and the standards you'll hold yourself to along the way. Your Toolbox access remains in your challenger profile. AI Labs, a dedicated platform where your AI fluency keeps growing, is included free for six months. You receive a Certificate of Declaration on Day 7.
 
 **Q2 — Do I need to know anything about AI before I join?**
 No. Day 1 is specifically designed to work regardless of your current level of AI familiarity. You do not need to have used any AI tools, formed an opinion about AI, or read anything about it in advance. AI Clarity is the first thing the challenge produces. You show up as you are. The challenge meets you there.
@@ -425,7 +428,7 @@ The four live sessions run 2 hours each. Day 7's session includes a live Q&A wit
 No. The three audiences are defined by what you hold: responsibility, influence, and access to resources. Not by your job title or industry. Previous participants include business founders, senior pastors, content creators, politicians, and organizational department heads. If you lead people and are accountable for direction, this challenge is built for you.
 
 **Q5 — What happens after the 7 days?**
-You leave with the 6-Month AI Stakeholder Roadmap, a structured plan for executing the territory you declared on Day 3. It defines what to focus on, what to delegate, what to stop, and where to apply AI deliberately. It is designed to be reused every 6 months. Your Toolbox access remains in your challenger profile. AI Labs, a dedicated platform where your AI fluency keeps developing as you execute the roadmap, is included free for six months. For leaders who want guided execution through that roadmap, the AI Stakeholder Coaching Program walks with them twice a week.
+You leave with the 6-Month AI Stakeholder Roadmap, which turns the territory you declared on Day 3 into a 180-day plan across three phases: proving you can execute, applying your leverage and building key relationships, then extending your authority. It names your capability gaps and sets the personal standards you'll hold yourself to as you go. It is designed to be reused every 6 months. Your Toolbox access remains in your challenger profile. AI Labs, a dedicated platform where your AI fluency keeps developing as you execute the roadmap, is included free for six months. For leaders who want guided execution through that roadmap, the AI Stakeholder Coaching Program walks with them twice a week.
 
 **Q6 — Is Coaching separate from the challenge?**
 Yes, and it includes the challenge at no additional fee. The AI Stakeholder Coaching Program is a separate engagement for leaders who want a facilitator alongside them through the 6-Month Roadmap. Coaching is not a cheaper entry point into the challenge. It is the full program plus six or twelve months of guided execution. If you already know you want ongoing support, starting with Coaching is the more complete path.
@@ -461,9 +464,9 @@ Label: AI Stakeholder Coaching
 
 H2: The Roadmap tells you where to go. For some leaders, the guide matters more than the map.
 
-Body: The 6-Month Roadmap is a living document, not a static plan. Your AI fluency keeps developing as you execute it. Most leaders do not want to navigate that development alone.
+Body: The 6-Month Roadmap runs in three phases over 180 days, naming your capability gaps, the relationships you need, and the standards you'll hold yourself to along the way. Most leaders do not want to navigate that alone.
 
-The AI Stakeholder Coaching Program walks with you once a week, on your schedule, through the roadmap you built in the challenge. Your fluency compounds. Your territory gets built.
+The AI Stakeholder Coaching Program walks with you once a week, on your schedule, as you follow the Roadmap you leave the challenge with. Your fluency compounds. The territory you discovered in the challenge gets built.
 
 Facts: 1× session per week / 180 days of guided execution / $0 additional AISC fee
 
@@ -527,3 +530,7 @@ The coaching copy should not compete with the challenge copy or restate it. It s
 - Coaching: twice a week, participant's chosen days, includes AISC at no additional fee
 - GA: $99 / ₦120,000 · VIP: $399 / ₦520,000 · VVIP: $1,099 / ₦1,350,000
 - The Margin Calculator produces a real weekly and annual number — use "hours" not "efficiency"
+- The Roadmap is 5 documents: the Roadmap itself, Capability Gap Audit, AI Stakeholder Identifier, Personal AI Policy, Super Connections guide
+- The Roadmap runs 3 phases: Days 1–60 (Clarity & Labs), 31–120 (Implementation & Relationships), 91–180 (Governance & Mandate)
+- The Roadmap and its supporting documents are reviewed at 30 / 90 / 180 days — this is the literal mechanism behind "living document"
+- 5 Competitive Positions declared on Day 3 via the Territory Builder: Optimizer, Producer, Advisor, Educator, Curator — each has a distinct track through every Roadmap document

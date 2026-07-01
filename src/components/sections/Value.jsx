@@ -35,9 +35,9 @@ export default function Value() {
           What you leave with
         </p>
         <h2 className="font-ptsans text-3xl font-bold uppercase leading-tight tracking-tight text-dark-blue sm:text-4xl lg:text-5xl">
-          In seven days,
+          Transformation,
           <br />
-          three things change permanently.
+          from AI consumer to AI leader.
         </h2>
       </div>
 
