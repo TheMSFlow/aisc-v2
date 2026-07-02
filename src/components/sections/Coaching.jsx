@@ -39,21 +39,16 @@ export default function Coaching() {
               AI Stakeholder Coaching
             </p>
             <h2 className="font-ptsans text-3xl font-bold uppercase leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
-              The Roadmap tells you
-              <br />
-              where to go.
-              <br className="hidden sm:block" />
-              For some leaders,
-              <br className="hidden sm:block" />
-              the guide matters more
-              <br className="hidden sm:block" />
-              than the map.
+              The Roadmap tells you <br className="hidden lg:block" />
+              where to go. <br />
+              For some leaders, <br className="hidden lg:block" />
+              the guide matters more <br className="hidden lg:block" /> than the
+              map.
             </h2>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-white/55">
-              The 6-Month Roadmap runs in three phases over 180 days: AI
-              Clarity and Labs, Implementation and Relationships, then
-              Governance and Mandate. Most leaders do not want to navigate that
-              alone.
+              The 6-Month Roadmap runs in three phases over 180 days: AI Clarity
+              and Labs, Implementation and Relationships, then Governance and
+              Mandate. Most leaders do not want to navigate that alone.
             </p>
             <p className="mt-4 max-w-lg text-base leading-relaxed text-white/55">
               The AI Stakeholder Coaching Program walks with you once a week, on

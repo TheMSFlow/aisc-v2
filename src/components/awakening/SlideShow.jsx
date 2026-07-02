@@ -6,10 +6,46 @@ import { SLIDES } from './TheAwakening';
 const DESIGN_W = 1280;
 const DESIGN_H = 720;
 
+// iPhone Safari does not support the Fullscreen API on arbitrary elements
+// (element.requestFullscreen() silently no-ops there — a long-standing
+// WebKit limitation; iPad and <video> are exempt). These helpers paper over
+// vendor prefixes and let us detect that case so we can fall back to a
+// fixed-position "pseudo-fullscreen" that reuses the same fullscreen UI.
+function isFullscreenSupported() {
+  if (typeof document === 'undefined') return false;
+  return !!(
+    document.fullscreenEnabled ||
+    document.webkitFullscreenEnabled ||
+    document.mozFullScreenEnabled ||
+    document.msFullscreenEnabled
+  );
+}
+
+function requestFs(el) {
+  const fn =
+    el.requestFullscreen ||
+    el.webkitRequestFullscreen ||
+    el.mozRequestFullScreen ||
+    el.msRequestFullscreen;
+  if (!fn) return Promise.reject(new Error('Fullscreen API not supported'));
+  return Promise.resolve(fn.call(el));
+}
+
+function exitFs() {
+  const fn =
+    document.exitFullscreen ||
+    document.webkitExitFullscreen ||
+    document.mozCancelFullScreen ||
+    document.msExitFullscreen;
+  if (!fn) return Promise.reject(new Error('Fullscreen API not supported'));
+  return Promise.resolve(fn.call(document));
+}
+
 export default function SlideShow({ className = '' }) {
   const [current,      setCurrent]      = useState(0);
   const [scale,        setScale]        = useState(1);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isNativeFs,   setIsNativeFs]   = useState(true);
   const [fadeKey,      setFadeKey]      = useState(0);
   const [started,      setStarted]      = useState(false);
 
@@ -36,18 +72,44 @@ export default function SlideShow({ className = '' }) {
         setCurrent((c) => { const n = Math.min(c + 1, total - 1); if (n !== c) setFadeKey((k) => k + 1); return n; });
       } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
         setCurrent((c) => { const n = Math.max(c - 1, 0); if (n !== c) setFadeKey((k) => k + 1); return n; });
+      } else if (e.key === 'Escape' && isFullscreen && !isNativeFs) {
+        // Native fullscreen exit is handled by the browser + fullscreenchange
+        // listener below; pseudo-fullscreen has no browser-level Escape, so
+        // handle it ourselves.
+        setIsFullscreen(false);
       }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [total, started]);
+  }, [total, started, isFullscreen, isNativeFs]);
 
-  // Sync fullscreen state
+  // Sync fullscreen state for the native (desktop / Android) path
   useEffect(() => {
-    const handler = () => setIsFullscreen(!!document.fullscreenElement);
+    const handler = () => {
+      const native = document.fullscreenElement || document.webkitFullscreenElement;
+      if (native) {
+        setIsNativeFs(true);
+        setIsFullscreen(true);
+      } else if (isNativeFs) {
+        setIsFullscreen(false);
+      }
+    };
     document.addEventListener('fullscreenchange', handler);
-    return () => document.removeEventListener('fullscreenchange', handler);
-  }, []);
+    document.addEventListener('webkitfullscreenchange', handler);
+    return () => {
+      document.removeEventListener('fullscreenchange', handler);
+      document.removeEventListener('webkitfullscreenchange', handler);
+    };
+  }, [isNativeFs]);
+
+  // Lock background scroll while in pseudo-fullscreen (fixed positioning
+  // doesn't block scroll the way the real Fullscreen API does)
+  useEffect(() => {
+    if (!isFullscreen || isNativeFs) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = prev; };
+  }, [isFullscreen, isNativeFs]);
 
   const goTo = useCallback((idx) => {
     if (idx === current) return;
@@ -58,18 +120,40 @@ export default function SlideShow({ className = '' }) {
   const prev = useCallback(() => goTo(Math.max(current - 1, 0)),        [current, goTo]);
   const next = useCallback(() => goTo(Math.min(current + 1, total - 1)), [current, total, goTo]);
 
-  const toggleFullscreen = useCallback(async () => {
-    if (!document.fullscreenElement) {
-      await wrapperRef.current?.requestFullscreen();
-    } else {
-      await document.exitFullscreen();
+  // Enter fullscreen via the native API when available; otherwise fall back
+  // to a fixed-position "pseudo-fullscreen" (needed on iPhone Safari, which
+  // doesn't support requestFullscreen() on arbitrary elements).
+  const enterFullscreen = useCallback(async () => {
+    if (isFullscreenSupported() && wrapperRef.current) {
+      try {
+        await requestFs(wrapperRef.current);
+        return;
+      } catch {
+        // fall through to pseudo-fullscreen
+      }
     }
+    setIsNativeFs(false);
+    setIsFullscreen(true);
   }, []);
+
+  const toggleFullscreen = useCallback(async () => {
+    if (!isFullscreen) {
+      await enterFullscreen();
+    } else if (isNativeFs) {
+      try {
+        await exitFs();
+      } catch {
+        setIsFullscreen(false);
+      }
+    } else {
+      setIsFullscreen(false);
+    }
+  }, [isFullscreen, isNativeFs, enterFullscreen]);
 
   const handleStart = useCallback(async () => {
     setStarted(true);
-    await wrapperRef.current?.requestFullscreen();
-  }, []);
+    await enterFullscreen();
+  }, [enterFullscreen]);
 
   const handleSlideClick = useCallback(() => {
     if (!started) { setStarted(true); return; }
@@ -84,7 +168,9 @@ export default function SlideShow({ className = '' }) {
       ref={wrapperRef}
       className={className}
       style={isFullscreen ? {
-        width: '100%', height: '100%',
+        ...(isNativeFs
+          ? { width: '100%', height: '100%' }
+          : { position: 'fixed', inset: 0, width: '100vw', height: '100dvh', zIndex: 9999 }),
         backgroundColor: '#000010',
         display: 'flex', flexDirection: 'column',
         alignItems: 'center', justifyContent: 'center',
