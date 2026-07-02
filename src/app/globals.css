@@ -56,14 +56,14 @@ body {
   line-height: 1.5;
 }
 
-h1,
+h1,h2,
 h3 {
-  font-family: var(--font-ptsans), serif;
+  font-family: var(--font-ptsans), sans-serif;
 }
 
-h2 {
+/* h2 {
   font-family: var(--font-inter), sans-serif;
-}
+} */
 
 /* Hide scrollbar but keep scroll */
 .scrollbar-hide {

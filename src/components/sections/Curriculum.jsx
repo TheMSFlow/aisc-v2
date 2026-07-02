@@ -95,7 +95,7 @@ export default function Curriculum() {
           <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.35em] text-white/40">
             The 7 Days
           </p>
-          <h2 className="font-ptsans text-3xl font-bold uppercase leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+          <h2 className="font-ptsans text-3xl font-bold uppercase leading-none tracking-tight text-white sm:text-4xl lg:text-5xl">
             Four live sessions.
             <br />
             Seven days of decisions.

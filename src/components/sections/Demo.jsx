@@ -76,7 +76,7 @@ export default function Demo() {
           <p className="mb-1.5 sm:mb-2.5 text-[10px] font-semibold uppercase tracking-[0.35em] text-white/35">
             The Toolbox
           </p>
-          <h2 className="font-ptsans text-sm sm:text-3xl lg:text-[2.5rem] font-bold uppercase leading-tight tracking-tight text-white">
+          <h2 className="font-ptsans text-sm sm:text-3xl lg:text-[2.5rem] font-bold uppercase leading-none tracking-tight text-white">
             The challenge ends on Day 7.{" "}
             <br className="hidden sm:block" />
             Your support doesn't.
@@ -134,7 +134,7 @@ export default function Demo() {
                   {panel.name}
                 </p>
 
-                <h3 className="font-ptsans text-[1.25rem] sm:text-2xl lg:text-[1.75rem] font-bold uppercase leading-tight tracking-tight text-white mb-3 sm:mb-5">
+                <h3 className="font-ptsans text-[1.25rem] sm:text-2xl lg:text-[1.75rem] font-bold uppercase leading-none tracking-tight text-white mb-3 sm:mb-5">
                   {panel.headline}
                 </h3>
 

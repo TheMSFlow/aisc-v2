@@ -42,7 +42,7 @@ export default function Hero() {
     <div className="bg-dark-blue text-white">
       <Section id="hero" spacing="hero">
         {/* Two-column: copy left, briefing right */}
-        <div className="grid gap-12 lg:grid-cols-[5fr_6fr] lg:gap-16 xl:gap-20">
+        <div className="grid gap-12 lg:grid-cols-[5fr_6fr] lg:gap-16 xl:gap-20 items-center">
           {/* Left — headline + body + CTA */}
           <div className="flex flex-col justify-between gap-10 lg:py-2">
             <div>

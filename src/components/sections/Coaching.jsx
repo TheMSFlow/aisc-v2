@@ -38,7 +38,7 @@ export default function Coaching() {
             <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.35em] text-white/35">
               AI Stakeholder Coaching
             </p>
-            <h2 className="font-ptsans text-3xl font-bold uppercase leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+            <h2 className="font-ptsans text-3xl font-bold uppercase leading-none tracking-tight text-white sm:text-4xl lg:text-5xl">
               The Roadmap tells you <br className="hidden lg:block" />
               where to go. <br />
               For some leaders, <br className="hidden lg:block" />

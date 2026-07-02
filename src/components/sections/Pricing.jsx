@@ -166,7 +166,7 @@ export default function Pricing() {
           <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40">
             Join the Challenge
           </p>
-          <h2 className="font-ptsans text-3xl font-bold uppercase leading-tight tracking-tight text-dark-blue sm:text-4xl lg:text-5xl">
+          <h2 className="font-ptsans text-3xl font-bold uppercase leading-none tracking-tight text-dark-blue sm:text-4xl lg:text-5xl">
             Choose your path.
           </h2>
           {targetDate && (
