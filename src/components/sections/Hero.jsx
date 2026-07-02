@@ -40,7 +40,7 @@ function RotatingWord({ words, interval = 2000 }) {
 export default function Hero() {
   return (
     <div className="bg-dark-blue text-white">
-      <Section id="hero" spacing="compact">
+      <Section id="hero" spacing="hero">
         {/* Two-column: copy left, briefing right */}
         <div className="grid gap-12 lg:grid-cols-[5fr_6fr] lg:gap-16 xl:gap-20">
           {/* Left — headline + body + CTA */}

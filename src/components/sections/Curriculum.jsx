@@ -75,8 +75,8 @@ const DAYS = [
   },
   {
     day: "Day 7",
-    name: "The Mandate",
-    subtitle: "AI Governance",
+    name: "AI Governance",
+    subtitle: "Ethics & Mandate",
     type: "live",
     duration: "2 hrs",
     description:

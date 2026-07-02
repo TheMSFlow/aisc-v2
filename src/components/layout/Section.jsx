@@ -12,6 +12,7 @@ const spacings = {
   compact: "py-12 md:py-16",
   default: "py-20 md:py-28",
   loose: "py-28 md:py-36",
+  hero: "py-12 md:py-22",
 };
 
 const Section = forwardRef(function Section(
