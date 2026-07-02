@@ -178,7 +178,7 @@ export default function Pricing() {
             </p>
           )}
         </div>
-        <CurrencyToggle dark={false} />
+        {/* <CurrencyToggle dark={false} /> */}
       </div>
 
       <div className="mt-10 grid gap-px bg-dark-blue/10 lg:grid-cols-3">
@@ -249,23 +249,68 @@ export default function Pricing() {
       </div>
 
       <div className="mt-8 bg-dark-blue/4 p-8 lg:p-10">
-        <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-8">
           <div>
+            <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40">
+              Request A Private Challenge
+            </p>
             <h3 className="font-ptsans text-xl font-bold uppercase tracking-tight text-dark-blue">
-              Private / Enterprise
+              Run the challenge with your own group.
             </h3>
-            <p className="mt-2 max-w-xl text-sm leading-relaxed text-dark-blue/55">
-              The same foundational experience, delivered privately to your
-              leadership team. Not a scaled version of the public challenge.
-              Alignment, clarity, and decision confidence built as a unit,
-              without external noise. Minimum 5 seats. Custom pricing and
-              scheduling.
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-dark-blue/55">
+              Designed for enterprises, organizations, leadership teams, and
+              high-trust groups who want alignment, clarity, and decision
+              confidence around AI, together. This is not a scaled version of
+              the public challenge. It is the same foundational experience,
+              delivered privately to support alignment as a unit and build
+              collective confidence without external noise.
             </p>
           </div>
+
+          <div className="grid gap-px bg-dark-blue/10 sm:grid-cols-2">
+            <div className="bg-white p-6">
+              <p className="text-[9px] font-semibold uppercase tracking-widest text-dark-blue/40">
+                Option A
+              </p>
+              <p className="mt-1 font-ptsans text-sm font-bold uppercase tracking-tight text-dark-blue">
+                Multi-Tier Hybrid
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-dark-blue/55">
+                <strong>
+                  A minimum of 3 VIP Seats combined with 5+ General Admission
+                  seats
+                </strong>
+                . Suited for teams where select members need deeper facilitator
+                access and the broader group participates at General Admission
+                level.
+              </p>
+            </div>
+            <div className="bg-white p-6">
+              <p className="text-[9px] font-semibold uppercase tracking-widest text-dark-blue/40">
+                Option B
+              </p>
+              <p className="mt-1 font-ptsans text-sm font-bold uppercase tracking-tight text-dark-blue">
+                VIP Intensive
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-dark-blue/55">
+                <strong>
+                  A baseline of 10 VIP Seats with no upper cap on enrollment
+                </strong>
+                . Every participant receives direct facilitator access and the
+                full VIP experience from start to finish.
+              </p>
+            </div>
+          </div>
+
+          <p className="text-xs leading-relaxed text-dark-blue/40">
+            If your organization or high-trust group meets either condition,
+            the challenge is delivered as a private, synchronized experience
+            focused on your unique strategic goals.
+          </p>
           <Button
-            href="https://intelligence.michaelsteve.com/form/inquiry?src=AISC"
-            variant="dark"
-            className="shrink-0"
+            href="https://intelligence.michaelsteve.com/form/inquiry?src=CC"
+            variant="premium"
+            className="w-full mx-auto justify-center py-3"
           >
             Contact Sales
           </Button>

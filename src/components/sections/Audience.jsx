@@ -6,18 +6,21 @@ const AUDIENCES = [
     qualifier: "Responsibility · Influence · Resources",
     who: "You set the direction. You do not need to run AI tasks yourself. You need to know what AI means for your domain, where the profit is, and what to tell the people who will build it for you. AISC gives you that clarity, that mandate, and the knowledge to monitor and govern what your team does with it.",
     dark: true,
+    accent: false,
   },
   {
     tier: "Leader of Leaders",
-    qualifier: "Responsibility · Influence",
+    qualifier: "Responsibility · Influence · Access to resources",
     who: "You are accountable in both directions. Above you, someone wants results. Below you, a team needs direction, and many of them are already using AI in ways you have not yet structured. AISC is where you get your hands on the tools, run the real tasks, and leave with a framework you can implement immediately and teach to the people who execute for you.",
     dark: false,
+    accent: true,
   },
   {
     tier: "Emerging Leader",
     qualifier: "Responsibility · Building toward influence",
     who: "You are doing the work. You often see what others above you are missing when it comes to AI. But no one has handed you the authority to lead it yet. AI Fluency is a career asset, the kind that earns trust, positions you for the roles you actually want, and gives you a foundation to build something worth noticing. AISC gives you the clarity, the fluency, and a declared AI position before anyone above you has thought to look for it.",
     dark: false,
+    accent: false,
   },
 ];
 
@@ -45,7 +48,7 @@ export default function Audience() {
             <div
               key={a.tier}
               className={`flex flex-col gap-7 p-8 lg:p-10 ${
-                a.dark ? "bg-dark-blue" : "bg-white"
+                a.dark ? "bg-dark-blue" : a.accent ? "bg-msaccent/10" : "bg-lilac"
               }`}
             >
               <div>

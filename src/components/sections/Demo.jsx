@@ -79,7 +79,7 @@ export default function Demo() {
           <h2 className="font-ptsans text-sm sm:text-3xl lg:text-[2.5rem] font-bold uppercase leading-tight tracking-tight text-white">
             The challenge ends on Day 7.{" "}
             <br className="hidden sm:block" />
-            The Toolbox doesn't.
+            Your support doesn't.
           </h2>
         </div>
 

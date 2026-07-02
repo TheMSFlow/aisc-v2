@@ -28,6 +28,7 @@ const variants = {
   "reveal-light":
     "text-dark-blue hover:text-msblue hover:bg-msblue/10 lg:text-sm",
   vvip: "gradient-100 text-white shadow-lg shadow-warning/20 gap-2",
+  premium: "gradient-200 text-white shadow-lg shadow-msaccent/20 gap-2 max-w-[18.75rem]",
 };
 
 export default function Button({

@@ -454,7 +454,7 @@ The final section. The premium close. Not a product pitch — a path for leaders
 - Name what coaching delivers: facilitated execution of the 6-Month Roadmap, once a week, on the participant's chosen days, with a guide who walks alongside them as their AI fluency keeps growing
 - State the key fact clearly: Coaching includes AISC at no additional fee. A leader who already knows they want ongoing support is better served starting here than joining the challenge and adding coaching later
 - Pricing should be visible and complete — but secondary to the recognition ask: "If you already know you want a guide, this is the path"
-- CTA: "Start with Coaching" with sub-note: "Your first step is a 15-minute call to confirm coaching is the right fit."
+- CTA: "Start with Coaching" with sub-note: "Your first step is a 15-minute discovery call."
 - Tone: calm, unhurried, confident. No pressure. The leader who belongs here will recognize themselves without being sold to
 - Do not summarize or repeat the challenge. Assume the reader has already decided AISC is right. The only remaining question is whether they want the challenge alone or the challenge with a guide alongside them
 
@@ -464,7 +464,7 @@ Label: AI Stakeholder Coaching
 
 H2: The Roadmap tells you where to go. For some leaders, the guide matters more than the map.
 
-Body: The 6-Month Roadmap runs in three phases over 180 days, naming your capability gaps, the relationships you need, and the standards you'll hold yourself to along the way. Most leaders do not want to navigate that alone.
+Body: The 6-Month Roadmap runs in three phases over 180 days: AI Clarity and Labs, Implementation and Relationships, then Governance and Mandate. Most leaders do not want to navigate that alone.
 
 The AI Stakeholder Coaching Program walks with you once a week, on your schedule, as you follow the Roadmap you leave the challenge with. Your fluency compounds. The territory you discovered in the challenge gets built.
 

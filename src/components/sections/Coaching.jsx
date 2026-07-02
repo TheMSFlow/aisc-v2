@@ -50,16 +50,16 @@ export default function Coaching() {
               than the map.
             </h2>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-white/55">
-              The 6-Month Roadmap runs in three phases over 180 days, naming
-              your capability gaps, the relationships you need, and the
-              standards you'll hold yourself to along the way. Most leaders
-              do not want to navigate that alone.
+              The 6-Month Roadmap runs in three phases over 180 days: AI
+              Clarity and Labs, Implementation and Relationships, then
+              Governance and Mandate. Most leaders do not want to navigate that
+              alone.
             </p>
             <p className="mt-4 max-w-lg text-base leading-relaxed text-white/55">
-              The AI Stakeholder Coaching Program walks with you once a week,
-              on your schedule, as you follow the Roadmap you leave the
-              challenge with. Your fluency compounds. The territory you
-              discovered in the challenge gets built.
+              The AI Stakeholder Coaching Program walks with you once a week, on
+              your schedule, as you follow the Roadmap you leave the challenge
+              with. Your fluency compounds. The territory you discovered in the
+              challenge gets built.
             </p>
 
             <div className="mt-10 grid grid-cols-3 gap-px bg-white/8">
@@ -88,7 +88,7 @@ export default function Coaching() {
               <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/35">
                 Pricing
               </p>
-              <CurrencyToggle dark={true} />
+              {/* <CurrencyToggle dark={true} /> */}
             </div>
 
             <div className="flex flex-col gap-px bg-white/8">
@@ -101,20 +101,22 @@ export default function Coaching() {
                       className="font-ptsans text-2xl font-bold leading-none text-white"
                     />
                   </div>
-                  {p.note && <p className="mt-1.5 text-xs text-white/25">{p.note}</p>}
+                  {p.note && (
+                    <p className="mt-1.5 text-xs text-white/25">{p.note}</p>
+                  )}
                 </div>
               ))}
             </div>
 
             <Button
-              href="https://intelligence.michaelsteve.com/form/inquiry?src=AISC-coaching"
+              href="https://calendly.com/michaelsteve/ai-stakeholder-coaching-discovery-call"
               variant="primary"
               className="mt-6 w-full justify-center py-3 font-semibold"
             >
               Start with Coaching
             </Button>
             <p className="mt-3 text-center text-xs text-white/25">
-              Your first step is a 15-minute call to confirm coaching is the right fit.
+              Your first step is a 15-minute discovery call.
             </p>
           </div>
         </div>

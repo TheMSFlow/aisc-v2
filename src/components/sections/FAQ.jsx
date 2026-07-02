@@ -20,7 +20,7 @@ const QUESTIONS = [
   },
   {
     q: "What happens after the 7 days?",
-    a: "You leave with the 6-Month AI Stakeholder Roadmap, which turns the territory you declared on Day 3 into a 180-day plan across three phases: proving you can execute, applying your leverage and building key relationships, then extending your authority. It names your capability gaps and sets the personal standards you'll hold yourself to as you go. It is designed to be reused every 6 months. Your Toolbox access remains in your challenger profile. AI Labs, a dedicated platform where your AI fluency keeps developing as you execute the roadmap, is included free for six months. For leaders who want guided execution through that roadmap, the AI Stakeholder Coaching Program walks with them twice a week.",
+    a: "You leave with the 6-Month AI Stakeholder Roadmap, which turns the territory you declared on Day 3 into a 180-day plan across three phases: proving you can execute, applying your leverage and building key relationships, then extending your authority. It names your capability gaps and sets the personal standards you'll hold yourself to as you go. It is designed to be reused every 6 months. Your Toolbox access remains in your challenger profile. AI Labs, a dedicated platform where your AI fluency keeps developing as you execute the roadmap, is included free for six months. For leaders who want guided execution through that roadmap, the AI Stakeholder Coaching Program walks with them weekly.",
   },
   {
     q: "Is Coaching separate from the challenge?",

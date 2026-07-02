@@ -275,8 +275,7 @@ function S02() {
         Years of experience. Hard-won credibility. A reputation that took a long
         time to build.
         <br />
-        But if you still ask any of these, even once, this briefing is
-        for you.
+        But if you still ask any of these, even once, this briefing is for you.
       </Body>
 
       <div
@@ -293,6 +292,7 @@ function S02() {
           '"Am I still relevant?"',
           '"Is this the moment I get left behind?"',
           '"Should I already know more than I do?"',
+          '"Did I just miss the wave again?"',
         ].map((q) => (
           <p
             key={q}
