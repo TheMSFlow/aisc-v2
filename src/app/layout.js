@@ -23,9 +23,7 @@ export const metadata = {
   description:
     "A system for leaders who want judgment, not tools. Become a positioned AI stakeholder, claim untapped territory, and lead your people well in an AI-shaped world.",
 
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL
-  ),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL),
 
   alternates: {
     canonical: "/",
@@ -87,7 +85,6 @@ export default function RootLayout({ children }) {
               url: process.env.NEXT_PUBLIC_SITE_URL,
               description:
                 "The AI Stakeholder Challenge. A system for leading with judgment and claiming value in an AI-shaped world.",
-              sameAs: ["https://linkedin.com/in/themichaelsteve"],
             }),
           }}
         />
