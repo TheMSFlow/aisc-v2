@@ -1,6 +1,9 @@
 /* Tailwind v4 entry */
 @import "tailwindcss";
 
+/* Short-viewport variant — phones in landscape, iPhone SE portrait, etc. */
+@custom-variant short (@media (max-height: 620px));
+
 /* Base rem normalization */
 html {
   font-size: 16px;
@@ -81,6 +84,71 @@ h3 {
 @keyframes awakeningFade {
   from { opacity: 0; }
   to   { opacity: 1; }
+}
+
+/* Mini-app simulations (Demo slide 2) */
+.sim-rise {
+  animation: roadmapRise 0.45s cubic-bezier(0.22, 0.7, 0.3, 1) both;
+  /* per-element stagger set via inline animation-delay */
+}
+
+/* Roadmap diagram (Demo slide 3) */
+@keyframes roadmapRise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes roadmapRail {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+
+@keyframes roadmapRailPulse {
+  0%   { top: 0%; opacity: 0; }
+  8%   { opacity: 1; }
+  92%  { opacity: 1; }
+  100% { top: calc(100% - 8px); opacity: 0; }
+}
+
+.rm-rail-pulse {
+  animation: roadmapRailPulse 5s linear 1.6s infinite;
+}
+
+@keyframes roadmapAxisPulse {
+  0%   { left: 0%; opacity: 0; }
+  6%   { opacity: 1; }
+  94%  { opacity: 1; }
+  100% { left: calc(100% - 8px); opacity: 0; }
+}
+
+.rm-axis-pulse {
+  animation: roadmapAxisPulse 6s linear 1.8s infinite;
+}
+
+.roadmap-anim .rm-rail {
+  transform-origin: top;
+  animation: roadmapRail 0.9s 0.1s ease-out both;
+}
+
+.roadmap-anim .rm-card {
+  animation: roadmapRise 0.55s cubic-bezier(0.22, 0.7, 0.3, 1) both;
+  /* per-card stagger set via inline animation-delay */
+}
+
+/* Generic tile entrance for the library grids (Demo slides 1 & 4) */
+.demo-anim .demo-tile {
+  animation: roadmapRise 0.5s cubic-bezier(0.22, 0.7, 0.3, 1) both;
+  /* per-tile stagger set via inline animation-delay */
+}
+
+/* Expand sheet (Demo, short viewports) */
+@keyframes sheetUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.demo-sheet {
+  animation: sheetUp 0.35s cubic-bezier(0.22, 0.7, 0.3, 1) both;
 }
 
 /* =========================

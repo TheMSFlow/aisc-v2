@@ -19,9 +19,9 @@ const ptsans = PT_Sans_Narrow({
 });
 
 export const metadata = {
-  title: "AISC | The AI Stakeholder Challenge",
+  title: "AI Stakeholder Challenge | From AI Consumer to AI Leader",
   description:
-    "A system for leaders who want judgment, not tools. Become a positioned AI stakeholder, claim untapped territory, and lead your people well in an AI-shaped world.",
+    "A 7-day community based engagement for leaders who want to move from passive AI awareness to active, deliberate AI leadership.",
 
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL),
 
@@ -40,9 +40,9 @@ export const metadata = {
   },
 
   openGraph: {
-    title: "AISC | The AI Stakeholder Challenge",
+    title: "AISC | From AI Consumer to AI Leader",
     description:
-      "Lead with judgment in an AI-shaped world. A guided system that turns experienced leaders into positioned AI stakeholders.",
+      "A 7-day community based engagement for leaders who want to move from passive AI awareness to active, deliberate AI leadership.",
     url: process.env.NEXT_PUBLIC_SITE_URL,
     siteName: "AI Stakeholder Challenge",
     images: [
@@ -58,9 +58,9 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "AISC | The AI Stakeholder Challenge",
+    title: "AISC | From AI Consumer to AI Leader",
     description:
-      "Lead with judgment in an AI-shaped world. Become a positioned AI stakeholder.",
+      "A 7-day community based engagement for leaders who want to move from passive AI awareness to active, deliberate AI leadership",
     images: ["/og-image.png"],
   },
 };
@@ -84,7 +84,7 @@ export default function RootLayout({ children }) {
               name: "Michael Steve Clarity Studio",
               url: process.env.NEXT_PUBLIC_SITE_URL,
               description:
-                "The AI Stakeholder Challenge. A system for leading with judgment and claiming value in an AI-shaped world.",
+                "A 7-day community based engagement for leaders who want to move from passive AI awareness to active, deliberate AI leadership.",
             }),
           }}
         />

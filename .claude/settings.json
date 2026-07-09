@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sL -A \"Mozilla/5.0 \\(compatible; logo-fetch\\)\" -o ai-studio-2026.svg \"https://commons.wikimedia.org/wiki/Special:FilePath/Google%20AI%20Studio%20icon%20\\(May%202026\\).svg\")",
+      "Bash(node rasterize-tmp.mjs)",
+      "Bash(node shot-demo-tmp.mjs screenshots/se-preview.png 320 568 0)",
+      "Bash(node shot-demo-tmp.mjs screenshots/se-sheet.png 320 568 0 --expand)",
+      "Bash(node shot-demo-tmp.mjs screenshots/land-preview.png 844 390 2)",
+      "Bash(node shot-demo-tmp.mjs screenshots/se-preview-2.png 320 568 0)",
+      "Bash(node shot-demo-tmp.mjs screenshots/land-preview-2.png 844 390 2)",
+      "Bash(node shot-demo-tmp.mjs screenshots/m390-check.png 390 844 0)",
+      "Bash(node shot-demo-tmp.mjs screenshots/d1440-check.png 1440 900 0)",
+      "Bash(node shot-demo-tmp.mjs screenshots/bar-se.png 320 568 0)",
+      "Bash(node shot-demo-tmp.mjs screenshots/bar-land.png 844 390 2)",
+      "Bash(node shot-demo-tmp.mjs screenshots/bar-se-sheet.png 320 568 0 --expand)",
+      "Bash(node shot-demo-tmp.mjs screenshots/bar-m390.png 390 844 0)",
+      "Bash(node shot-demo-tmp.mjs screenshots/bar-land-2.png 844 390 2)",
+      "Bash(node shot-demo-tmp.mjs screenshots/bar-land-s2.png 844 390 1)",
+      "Bash(node shot-demo-tmp.mjs screenshots/bar-se-2.png 320 568 0)",
+      "Bash(node shot-demo-tmp.mjs screenshots/bar-land-se.png 667 375 1)",
+      "Bash(node shot-demo-tmp.mjs screenshots/bar-land-se2.png 667 375 1)"
+    ]
+  }
+}

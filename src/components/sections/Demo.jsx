@@ -1,68 +1,90 @@
-"use client"
-import { useState } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+"use client";
+import { useEffect, useState } from "react";
+import {
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  ClipboardCheck,
+  Download,
+  Lock,
+  Map,
+  Maximize2,
+  Scale,
+  ScrollText,
+  ShieldCheck,
+  Compass,
+  X,
+} from "lucide-react";
 
 const PANELS = [
   {
     id: "guides",
-    index: "01",
-    label: "RESOURCE",
     name: "Guides, Frameworks & Templates",
-    headline: "The sessions give you direction. These make sure your team gets it too.",
-    body: "Not everything lands fully in a live session. These guides let you re-enter any concept from Days 1, 2, and 3 at your own depth and go further. As you execute your roadmap, you will reach for the AI Value Map, the Task Delegation Guide, the Mandate and Ethics framework. When your team needs direction, these are what you hand them.",
-    type: "triple",
-    images: [
-      { src: "/demo/day-1.png", alt: "Day 1 inside the AISC Learning Center" },
-      { src: "/demo/day-2.png", alt: "Day 2 inside the AISC Learning Center" },
-      { src: "/demo/day-3.png", alt: "Day 3 inside the AISC Learning Center" },
+    body: "Not everything lands fully in a live session. The guides let you revisit each session at your own pace and go deeper. As you execute your roadmap, you'll return to the frameworks and templates again and again. And when your team needs direction, you'll have something concrete to point them to.",
+    type: "docs",
+    docs: [
+      { name: "Task Delegation Guide", icon: ClipboardCheck },
+      { name: "AI Safety Guidelines", icon: ShieldCheck },
+      { name: "The Leadership Brief", icon: Compass },
+      { name: "AI Value Map", icon: Map },
+      { name: "The Mandate & Ethics Guide", icon: Scale },
+      { name: "AI Policy Template", icon: ScrollText },
     ],
   },
   {
     id: "mini-apps",
-    index: "02",
-    label: "TOOLS",
     name: "Mini Apps",
-    headline: "Rate every task. Recover every hour. Declare your territory.",
-    body: "Three tools built for the decisions the challenge produces. The Delegation Tool rates your tasks for AI fit and human judgment required. The Margin Calculator records the time you recover and compounds it across the week, quarter, and year. The Territory Builder maps your friction points and sharpens your declaration into a PDF. All three are reusable long after Day 7.",
-    type: "triple",
-    images: [
-      { src: "/demo/delegation-matrix.png", alt: "The Delegation Tool" },
-      { src: "/demo/margin-calculator.png", alt: "The Margin Calculator" },
-      { src: "/demo/territory.png", alt: "The Territory Builder" },
-    ],
+    body: "The Delegation tool helps you sort tasks into three buckets: what needs your judgement, what AI can handle, and where you should collaborate. The Margin Calculator shows you how much time AI is actually saving you, so you can decide where to reinvest it. The Territory Builder helps you find the problem in your ecosystem you're best positioned to solve, and gives you the clarity to start.",
+    type: "apps",
   },
   {
     id: "roadmap",
-    index: "03",
-    label: "RESOURCE",
     name: "Roadmap",
-    headline: "Day 6 unlocks it. The next six months run on it.",
-    body: "The 6-Month AI Stakeholder Roadmap carries your territory through three phases over 180 days: proving you can execute, applying your leverage and building the relationships that matter, then extending your authority. Along the way it names your capability gaps, maps who you need in your corner, and sets the personal standards you'll hold yourself to. Reusable every six months as your direction compounds.",
-    type: "single",
-    image: { src: "/demo/roadmap.png", alt: "The 6-Month AI Stakeholder Roadmap" },
+    body: "The 6-Month AI Stakeholder Roadmap moves you through three phases: proving you can execute, building leverage and allies, then extending your authority. Along the way it names your capability gaps, maps who you need in your corner, and sets the personal standards you'll hold yourself to.",
+    type: "roadmap",
+    phases: [
+      {
+        num: "01",
+        days: "Days 1–60",
+        name: "Clarity & Labs",
+        line: "Direction locked, assumptions tested, momentum built.",
+      },
+      {
+        num: "02",
+        days: "Days 31–120",
+        name: "Implementation & Relationships",
+        line: "Leverage applied, value exchanged, position emerging.",
+      },
+      {
+        num: "03",
+        days: "Days 91–180",
+        name: "Governance & Mandate",
+        line: "Authority proven, direction extended responsibly.",
+      },
+    ],
   },
   {
     id: "ai-labs",
-    index: "04",
-    label: "RESOURCE",
     name: "AI Labs",
-    headline: "Built for leaders who direct AI. Not engineers who build it.",
-    body: "A dedicated platform with leadership-focused instruction on AI setup, direction, and domain application. Where the fluency you built during the challenge keeps compounding as you execute your roadmap. Six months of free access, included.",
-    type: "editorial",
-    modules: [
-      "AI setup from a leader's perspective",
-      "The Description-Discernment Loop in practice",
-      "Domain application across industries and roles",
-      "Fluency that compounds as you execute your roadmap",
+    body: "A platform built for leaders: instruction on setting up AI, directing it, and applying it to your domain. The fluency you built during the challenge deepens here as you execute your roadmap. Six months of access, included.",
+    type: "tools",
+    tools: [
+      { name: "Claude", src: "/demo/tools/claude.svg" },
+      { name: "Copilot", src: "/demo/tools/copilot.svg" },
+      { name: "Gemini", src: "/demo/tools/gemini.svg" },
+      { name: "Antigravity", src: "/demo/tools/antigravity.png" },
+      { name: "Google AI Studio", src: "/demo/tools/ai-studio.png" },
+      { name: "NotebookLM", src: "/demo/tools/notebooklm.svg" },
     ],
   },
-]
+];
 
 export default function Demo() {
-  const [active, setActive] = useState(0)
+  const [active, setActive] = useState(0);
+  const [expanded, setExpanded] = useState(false);
 
-  const prev = () => setActive((i) => Math.max(0, i - 1))
-  const next = () => setActive((i) => Math.min(PANELS.length - 1, i + 1))
+  const prev = () => setActive((i) => Math.max(0, i - 1));
+  const next = () => setActive((i) => Math.min(PANELS.length - 1, i + 1));
 
   return (
     <section
@@ -71,42 +93,44 @@ export default function Demo() {
       style={{ height: "100dvh" }}
     >
       {/* ── Header ── */}
-      <div className="shrink-0 px-6 sm:px-10 lg:px-14 pt-5 sm:pt-10 lg:pt-14 pb-3 sm:pb-5 lg:pb-7 flex items-center justify-between gap-4 border-b border-white/6">
-        <div>
-          <p className="mb-1.5 sm:mb-2.5 text-[10px] font-semibold uppercase tracking-[0.35em] text-white/35">
+      <div className="shrink-0 px-6 sm:px-10 lg:px-14 pt-5 sm:pt-10 lg:pt-14 pb-3 sm:pb-5 lg:pb-7 short:sm:!pt-3 short:sm:!pb-2 border-b border-white/6">
+        <div className="flex items-center justify-between gap-4 mb-1.5 sm:mb-2.5 short:sm:!mb-1">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/35">
             The Toolbox
           </p>
-          <h2 className="font-ptsans text-sm sm:text-3xl lg:text-[2.5rem] font-bold uppercase leading-none tracking-tight text-white">
-            The challenge ends on Day 7.{" "}
-            <br className="hidden sm:block" />
-            Your support doesn't.
-          </h2>
-        </div>
 
-        {/* Counter + arrows */}
-        <div className="shrink-0 flex flex-col items-end gap-2 sm:gap-3">
-          <span className="hidden sm:block text-[11px] font-semibold tabular-nums tracking-widest text-white/30">
-            {String(active + 1).padStart(2, "0")} / {String(PANELS.length).padStart(2, "0")}
-          </span>
-          <div className="flex gap-2">
-            <button
-              onClick={prev}
-              disabled={active === 0}
-              aria-label="Previous panel"
-              className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-white hover:border-white/40 disabled:opacity-20 disabled:cursor-not-allowed transition-colors duration-150"
-            >
-              <ChevronLeft className="w-4 h-4" />
-            </button>
-            <button
-              onClick={next}
-              disabled={active === PANELS.length - 1}
-              aria-label="Next panel"
-              className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-white hover:border-white/40 disabled:opacity-20 disabled:cursor-not-allowed transition-colors duration-150"
-            >
-              <ChevronRight className="w-4 h-4" />
-            </button>
+          {/* Counter + arrows */}
+          <div className="shrink-0 flex items-center gap-3 sm:gap-4">
+            <span className="text-[10px] sm:text-[11px] font-semibold tabular-nums tracking-widest text-white/30">
+              {String(active + 1).padStart(2, "0")} /{" "}
+              {String(PANELS.length).padStart(2, "0")}
+            </span>
+            <div className="flex gap-2">
+              <button
+                onClick={prev}
+                disabled={active === 0}
+                aria-label="Previous panel"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-white hover:border-white/40 disabled:opacity-20 disabled:cursor-not-allowed transition-colors duration-150"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+              <button
+                onClick={next}
+                disabled={active === PANELS.length - 1}
+                aria-label="Next panel"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-white hover:border-white/40 disabled:opacity-20 disabled:cursor-not-allowed transition-colors duration-150"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
           </div>
         </div>
+
+        <h2 className="font-ptsans text-3xl sm:text-4xl lg:text-5xl font-bold uppercase leading-none tracking-tight text-white">
+          <span className=" pr-1 md:pl-0 ">The challenge ends on Day 7.</span>{" "}
+          <br className="hidden sm:block" />
+          Your support doesn't.
+        </h2>
       </div>
 
       {/* ── Panel track ── */}
@@ -115,56 +139,53 @@ export default function Demo() {
           className="flex h-full transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${active * 100}%)` }}
         >
-          {PANELS.map((panel) => (
-            <div key={panel.id} className="w-full shrink-0 h-full flex flex-col lg:flex-row">
-
+          {PANELS.map((panel, idx) => (
+            <div
+              key={panel.id}
+              className="w-full shrink-0 h-full flex flex-col lg:flex-row "
+            >
               {/* Left — copy */}
-              <div className="lg:w-[40%] shrink-0 flex flex-col justify-center px-6 sm:px-10 lg:px-14 pt-4 sm:pt-6 lg:pt-0 pb-3 sm:pb-6 lg:pb-14">
-                <div className="flex items-center gap-3 mb-3 sm:mb-5">
-                  <span className="text-[9px] font-semibold uppercase tracking-[0.3em] text-white/35">
-                    {panel.label}
-                  </span>
-                  <span className="w-px h-3 bg-white/15" aria-hidden />
-                  <span className="text-[9px] font-semibold tabular-nums text-white/20">
-                    {panel.index}
-                  </span>
-                </div>
-
-                <p className="hidden sm:block font-ptsans text-[11px] font-bold uppercase tracking-widest text-white/35 mb-3">
+              <div className="lg:w-[40%] shrink-0 flex flex-col justify-center px-6 sm:px-10 lg:px-14 pt-4 sm:pt-6 lg:pt-0 pb-3 sm:pb-6 lg:pb-14 short:sm:!pt-1 short:sm:!pb-1">
+                <h3 className="font-ptsans text-[1.25rem] sm:text-2xl font-bold uppercase tracking-widest text-white/35 mb-2 sm:mb-3 short:sm:!mb-1">
                   {panel.name}
-                </p>
-
-                <h3 className="font-ptsans text-[1.25rem] sm:text-2xl lg:text-[1.75rem] font-bold uppercase leading-none tracking-tight text-white mb-3 sm:mb-5">
-                  {panel.headline}
                 </h3>
 
-                <p className="text-sm lg:text-[0.9rem] leading-relaxed text-white/55 max-w-md line-clamp-3 sm:line-clamp-none">
+                <p className="text-[13px] leading-snug sm:text-sm sm:leading-relaxed short:sm:!leading-normal lg:text-[0.9rem] text-white/55 max-w-md short:sm:!max-w-2xl mb-4 lg:mb-0 short:sm:!mb-1">
                   {panel.body}
                 </p>
               </div>
 
               {/* Right — visual */}
-              <div
-                className={`flex-1 min-w-0 min-h-0 overflow-hidden flex pl-6 sm:pl-10 lg:pl-0 pr-6 sm:pr-10 lg:pr-14 ${
-                  panel.type === "single"
-                    ? "lg:pl-0"
-                    : panel.type === "editorial"
-                    ? "items-start sm:items-stretch pt-3 pb-5 sm:pt-8 sm:pb-10 lg:pt-10 lg:pb-12"
-                    : "items-center pb-5 sm:pb-10 lg:pb-14"
-                }`}
-              >
-                {panel.type === "triple" && <TripleShots images={panel.images} />}
-                {panel.type === "single" && <SingleShot image={panel.image} />}
-                {panel.type === "editorial" && <AILabsCard modules={panel.modules} />}
-              </div>
+              <div className="relative flex-1 min-w-0 min-h-0 overflow-hidden flex items-center pl-6 sm:pl-10 lg:pl-0 pr-6 sm:pr-10 lg:pr-14 pb-0 md:pb-10 lg:pb-14 short:!pb-4 short:!pl-6 short:!pr-6 short:sm:!pl-10 short:sm:!pr-10">
+                {/* Full visual — hidden on short viewports */}
+                <div className="w-full h-full min-h-0 flex items-center short:!hidden">
+                  <PanelVisual panel={panel} isActive={active === idx} />
+                </div>
 
+                {/* Short viewports: collapsed bar — hint + expand icon */}
+                <button
+                  onClick={() => setExpanded(true)}
+                  aria-label="Expand visual"
+                  className="hidden short:!flex w-full max-w-2xl items-center justify-between gap-3 rounded-xl border border-white/[0.12] bg-white/[0.06] backdrop-blur-xl shadow-2xl px-4 py-2 text-left"
+                >
+                  <span className="whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.3em] text-white/40">
+                    Tap to see more
+                  </span>
+                  <span className="shrink-0 w-7 h-7 rounded-lg border border-white/20 flex items-center justify-center text-white/60">
+                    <Maximize2 className="w-4 h-4" />
+                  </span>
+                </button>
+              </div>
             </div>
           ))}
         </div>
       </div>
 
       {/* ── Dot indicator ── */}
-      <div className="shrink-0 flex justify-center gap-2 pb-3 sm:pb-5 lg:pb-6" aria-hidden>
+      <div
+        className="hidden sm:flex short:!hidden shrink-0 items-center justify-center gap-2 pb-5 lg:pb-6 pt-3"
+        aria-hidden
+      >
         {PANELS.map((p, i) => (
           <button
             key={p.id}
@@ -175,103 +196,790 @@ export default function Demo() {
           />
         ))}
       </div>
+
+      {/* ── Expanded sheet (short viewports) ── */}
+      {expanded && (
+        <div
+          className="fixed inset-0 z-50 flex flex-col justify-end bg-dark-blue/80 backdrop-blur-sm"
+          onClick={() => setExpanded(false)}
+        >
+          <div
+            className="demo-sheet relative h-[92dvh] rounded-t-2xl border-t border-x border-white/15 bg-dark-blue shadow-2xl flex flex-col overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="shrink-0 flex items-center justify-between gap-4 px-5 py-3 border-b border-white/10">
+              <p className="font-ptsans text-base font-bold uppercase tracking-widest text-white/70">
+                {PANELS[active].name}
+              </p>
+              <button
+                onClick={() => setExpanded(false)}
+                aria-label="Close"
+                className="shrink-0 w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 transition-colors duration-150"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+            <div className="flex-1 min-h-0 overflow-y-auto">
+              <div className="h-full min-h-[440px] px-4 pt-3 flex">
+                <PanelVisual panel={PANELS[active]} isActive />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
-  )
+  );
+}
+
+function PanelVisual({ panel, isActive }) {
+  if (panel.type === "docs")
+    return <DocLibrary docs={panel.docs} isActive={isActive} />;
+  if (panel.type === "apps") return <MiniAppsDemo isActive={isActive} />;
+  if (panel.type === "roadmap")
+    return <RoadmapDiagram phases={panel.phases} isActive={isActive} />;
+  if (panel.type === "tools")
+    return <ToolsLibrary tools={panel.tools} isActive={isActive} />;
+  return null;
 }
 
 /* ── Visual sub-components ── */
 
-function TripleShots({ images }) {
+function DocLibrary({ docs, isActive }) {
   return (
-    <div className="relative w-full h-full">
-      {/* Mobile: front image as full-fill cover */}
-      <div className="lg:hidden w-full h-full rounded-xl overflow-hidden border border-white/[0.09] shadow-2xl">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={images[0].src}
-          alt={images[0].alt}
-          loading="eager"
-          className="w-full h-full object-cover object-top"
+    <div
+      className={`relative w-full max-w-2xl mx-auto h-full lg:h-auto lg:my-auto ${
+        isActive ? "demo-anim" : ""
+      }`}
+    >
+      {/* Ambient glows — give the glass something to refract */}
+      <div
+        aria-hidden
+        className="absolute top-0 left-4 w-48 h-48 sm:w-64 sm:h-64 rounded-full bg-msaccent/30 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="absolute bottom-0 right-4 w-56 h-56 sm:w-72 sm:h-72 rounded-full bg-msblue/50 blur-3xl"
+      />
+
+      {/* Glass card */}
+      <div className="relative h-full rounded-t-2xl md:rounded-2xl border border-white/[0.12] bg-white/[0.06] backdrop-blur-xl shadow-2xl p-4 sm:p-6 lg:p-8 flex flex-col">
+        <div className="shrink-0 flex items-center justify-between mb-3 sm:mb-5">
+          <p className="whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.3em] text-white/40">
+            Reference Library
+          </p>
+          <p className="whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.2em] text-white/30">
+            <span className="hidden sm:inline">The Essentials · </span>More
+            Inside
+          </p>
+        </div>
+
+        <div className="flex-1 grid grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-2 sm:gap-3">
+          {docs.map((doc, i) => (
+            <div
+              key={doc.name}
+              className="demo-tile rounded-xl border border-white/[0.08] bg-white/[0.04] p-2.5 sm:p-4 flex items-center sm:flex-col sm:items-start gap-2.5 sm:gap-4"
+              style={{ animationDelay: `${0.1 + i * 0.07}s` }}
+            >
+              <span className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg gradient-200 ring-1 ring-inset ring-white/25 shadow-lg flex items-center justify-center">
+                <doc.icon
+                  className="w-4 h-4 sm:w-[18px] sm:h-[18px] text-white"
+                  strokeWidth={1.75}
+                />
+              </span>
+              <span className="text-[11px] sm:text-xs font-medium leading-snug text-white/75">
+                {doc.name}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ── Mini Apps demo (slide 2) — scripted simulations ── */
+
+const SIM_TASKS = [
+  {
+    name: "Send a summary of meeting notes as a powerpoint document to the internal comms",
+    ai: 4,
+    hi: 2,
+    quad: "AUTOMATE",
+  },
+  {
+    name: "Create content for a campaign from the last social media briefing",
+    ai: 4,
+    hi: 4,
+    quad: "AUGMENT",
+  },
+  {
+    name: "Perform a competitor analysis to understand the market landscape",
+    ai: 4,
+    hi: 3,
+    quad: "AUGMENT",
+  },
+];
+
+const QUAD_STYLES = {
+  AUTOMATE: "bg-green-100 text-green-700",
+  AUGMENT: "bg-indigo-100 text-indigo-700",
+  STREAMLINE: "bg-gray-100 text-gray-500",
+  OWN: "bg-amber-100 text-amber-700",
+};
+
+function MiniAppsDemo({ isActive }) {
+  const [tab, setTab] = useState("delegation");
+  const TABS = [
+    { id: "delegation", label: "Delegation" },
+    { id: "margin", label: "Margin" },
+    { id: "territory", label: "Territory", locked: true },
+  ];
+
+  return (
+    <div className="relative w-full max-w-2xl mx-auto h-full lg:h-auto lg:my-auto">
+      {/* Ambient glows */}
+      <div
+        aria-hidden
+        className="absolute top-0 left-4 w-48 h-48 sm:w-64 sm:h-64 rounded-full bg-msaccent/30 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="absolute bottom-0 right-4 w-56 h-56 sm:w-72 sm:h-72 rounded-full bg-msblue/50 blur-3xl"
+      />
+
+      {/* Glass card */}
+      <div className="relative h-full lg:h-auto rounded-t-2xl md:rounded-2xl border border-white/[0.12] bg-white/[0.06] backdrop-blur-xl shadow-2xl p-4 sm:p-6 flex flex-col">
+        <div className="shrink-0 flex items-center justify-between gap-3 mb-3 sm:mb-4">
+          <div className="flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] p-0.5">
+            {TABS.map((t) => (
+              <button
+                key={t.id}
+                onClick={() => setTab(t.id)}
+                className={`flex items-center gap-1 rounded-full px-2.5 sm:px-3.5 py-1 text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.15em] transition-colors duration-150 ${
+                  tab === t.id
+                    ? "bg-white/15 text-white/90"
+                    : "text-white/40 hover:text-white/70"
+                }`}
+              >
+                {t.locked && <Lock className="w-2.5 h-2.5" strokeWidth={2} />}
+                {t.label}
+              </button>
+            ))}
+          </div>
+          <p className="hidden sm:block whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.2em] text-white/30">
+            Live Demo
+          </p>
+        </div>
+
+        <div className="flex-1 min-h-0 lg:h-[300px] flex items-stretch *:w-full">
+          {tab === "delegation" && (
+            <DelegationSim running={isActive && tab === "delegation"} />
+          )}
+          {tab === "margin" && (
+            <MarginSim running={isActive && tab === "margin"} />
+          )}
+          {tab === "territory" && <TerritoryTeaser />}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const SIM_PHASES = ["t1", "t2", "t3", "rate", "rated", "results"];
+const SIM_DUR = {
+  t1: 1000,
+  t2: 1000,
+  t3: 1300,
+  rate: 1500,
+  rated: 1800,
+  results: 4500,
+};
+
+function DelegationSim({ running }) {
+  const [i, setI] = useState(0);
+
+  useEffect(() => {
+    if (!running) {
+      setI(0);
+      return;
+    }
+    const t = setTimeout(
+      () => setI((p) => (p + 1) % SIM_PHASES.length),
+      SIM_DUR[SIM_PHASES[i]]
+    );
+    return () => clearTimeout(t);
+  }, [i, running]);
+
+  const step = SIM_PHASES[i];
+  const stage = step === "results" ? 2 : step.startsWith("rate") ? 1 : 0;
+  const visibleTasks = step === "t1" ? 1 : step === "t2" ? 2 : 3;
+
+  return (
+    <div className="min-h-0 rounded-lg sm:rounded-xl bg-white text-slate-700 shadow-2xl overflow-hidden flex flex-col">
+      {/* Stepper */}
+      <div className="shrink-0 flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 bg-slate-50 border-b border-slate-200">
+        {["Add Tasks", "Rate Tasks", "Results"].map((label, s) => (
+          <div key={label} className="flex items-center gap-1.5 sm:gap-2">
+            {s > 0 && <ChevronRight className="w-2.5 h-2.5 text-slate-300" />}
+            <span
+              className={`flex items-center justify-center w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full text-[7px] sm:text-[8px] font-bold transition-colors duration-300 ${
+                stage >= s
+                  ? "bg-indigo-600 text-white"
+                  : "bg-slate-200 text-slate-400"
+              }`}
+            >
+              {s + 1}
+            </span>
+            <span
+              className={`text-[8px] sm:text-[9px] font-semibold transition-colors duration-300 ${
+                stage === s ? "text-slate-800" : "text-slate-400"
+              }`}
+            >
+              {label}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      {/* Body */}
+      <div className="flex-1 min-h-0 p-3 sm:p-4 overflow-hidden">
+        {stage === 0 && (
+          <div className="h-full flex flex-col">
+            <div className="flex gap-1.5 mb-2.5">
+              <div className="flex-1 rounded-md border border-indigo-200 px-2.5 py-1.5 text-[9px] sm:text-[10px] text-slate-400">
+                Describe the task...
+              </div>
+              <div className="rounded-md bg-indigo-50 text-indigo-600 px-2.5 py-1.5 text-[9px] sm:text-[10px] font-semibold">
+                + Add
+              </div>
+            </div>
+            <div className="space-y-1.5">
+              {SIM_TASKS.map((task, idx) => (
+                <div
+                  key={idx}
+                  className={`rounded-md border border-slate-200 px-2.5 py-1.5 sm:py-2 flex items-baseline gap-2 transition-all duration-500 ${
+                    idx < visibleTasks
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-2"
+                  }`}
+                >
+                  <span className="shrink-0 text-[8px] text-slate-300 tabular-nums">
+                    {idx + 1}
+                  </span>
+                  <span className="text-[9px] sm:text-[10px] text-slate-700 line-clamp-1">
+                    {task.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-auto flex items-center justify-between gap-2 pt-2">
+              <div className="flex-1 flex gap-0.5 max-w-[45%]">
+                {Array.from({ length: 10 }).map((_, s) => (
+                  <span
+                    key={s}
+                    className={`h-1 flex-1 rounded-full transition-colors duration-500 ${
+                      s < visibleTasks ? "bg-indigo-500" : "bg-slate-200"
+                    }`}
+                  />
+                ))}
+              </div>
+              <div
+                className={`flex items-center gap-1 rounded-md px-2.5 py-1.5 text-[9px] sm:text-[10px] font-semibold transition-colors duration-500 ${
+                  visibleTasks === 3
+                    ? "bg-indigo-600 text-white"
+                    : "bg-indigo-50 text-indigo-400"
+                }`}
+              >
+                Rate my tasks <ArrowRight className="w-2.5 h-2.5" />
+              </div>
+            </div>
+          </div>
+        )}
+
+        {stage === 1 && (
+          <div className="h-full flex flex-col">
+            <p className="text-[7px] sm:text-[8px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-0.5">
+              Task 2 of 3
+            </p>
+            <p className="text-[10px] sm:text-xs font-bold text-slate-800 mb-2.5 line-clamp-1">
+              {SIM_TASKS[1].name}
+            </p>
+            <SimSlider
+              label="AI Capability Fit"
+              hint="How structured and repeatable is this task?"
+            />
+            <SimSlider
+              label="Human Intelligence Demand"
+              hint="How much empathy, judgment, or trust is required?"
+            />
+            <div className="mt-auto grid grid-cols-2 gap-px rounded-md overflow-hidden border border-slate-200 text-[7px] sm:text-[8px] font-semibold">
+              {["AUTOMATE", "AUGMENT", "STREAMLINE", "OWN"].map((q) => (
+                <div
+                  key={q}
+                  className={`px-2 py-1.5 sm:py-2 transition-colors duration-500 ${
+                    q === "AUGMENT" && step === "rated"
+                      ? "bg-indigo-700 text-white"
+                      : "bg-slate-50 text-slate-400"
+                  }`}
+                >
+                  {q}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {stage === 2 && (
+          <div className="h-full flex flex-col">
+            <div className="space-y-1.5 mb-2.5">
+              {SIM_TASKS.map((task, idx) => (
+                <div
+                  key={idx}
+                  className="sim-rise rounded-md border border-slate-200 px-2.5 py-1.5 flex items-center gap-2"
+                  style={{ animationDelay: `${idx * 0.15}s` }}
+                >
+                  <span className="flex-1 text-[9px] sm:text-[10px] text-slate-700 line-clamp-1">
+                    {task.name}
+                  </span>
+                  <span className="shrink-0 hidden sm:block text-[8px] tabular-nums text-slate-400">
+                    AI {task.ai} · HI {task.hi}
+                  </span>
+                  <span
+                    className={`shrink-0 rounded-full px-1.5 py-0.5 text-[7px] sm:text-[8px] font-bold ${QUAD_STYLES[task.quad]}`}
+                  >
+                    {task.quad}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div className="grid grid-cols-4 gap-1.5">
+              {[
+                ["AUTOMATE", 1],
+                ["AUGMENT", 2],
+                ["STREAMLINE", 0],
+                ["OWN", 0],
+              ].map(([q, n], idx) => (
+                <div
+                  key={q}
+                  className={`sim-rise rounded-md px-1.5 py-1.5 sm:py-2 ${QUAD_STYLES[q]}`}
+                  style={{ animationDelay: `${0.5 + idx * 0.12}s` }}
+                >
+                  <p className="text-[6px] sm:text-[7px] font-bold tracking-wide">
+                    {q}
+                  </p>
+                  <p className="text-sm sm:text-base font-bold leading-none mt-0.5">
+                    {n}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div
+              className="sim-rise mt-auto flex items-center gap-1.5 self-start rounded-md bg-indigo-950 text-white px-2.5 py-1.5 text-[9px] sm:text-[10px] font-semibold"
+              style={{ animationDelay: "1s" }}
+            >
+              <Download className="w-2.5 h-2.5" /> Download Summary
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function SimSlider({ label, hint }) {
+  const [slid, setSlid] = useState(false);
+  useEffect(() => {
+    const raf = requestAnimationFrame(() =>
+      requestAnimationFrame(() => setSlid(true))
+    );
+    return () => cancelAnimationFrame(raf);
+  }, []);
+  return (
+    <div className="mb-2.5">
+      <div className="flex items-baseline justify-between gap-2">
+        <p className="text-[9px] sm:text-[10px] font-bold text-slate-800">
+          {label}
+        </p>
+        <span className="text-xs sm:text-sm font-bold text-indigo-600 tabular-nums">
+          {slid ? 4 : 2}
+        </span>
+      </div>
+      <p className="text-[7px] sm:text-[8px] text-slate-400 mb-1.5">{hint}</p>
+      <div className="relative h-1 rounded-full bg-indigo-100">
+        <div
+          className="absolute inset-y-0 left-0 rounded-full bg-indigo-500 transition-all duration-700 ease-out"
+          style={{ width: slid ? "75%" : "25%" }}
+        />
+        <span
+          className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-indigo-500 shadow transition-all duration-700 ease-out"
+          style={{ left: slid ? "75%" : "25%" }}
         />
       </div>
-      {/* Desktop: cascading stack */}
-      {images.map((img, i) => (
-        <div
-          key={i}
-          className="hidden lg:block absolute rounded-xl overflow-hidden border border-white/[0.09] shadow-2xl"
-          style={{
-            width: "82%",
-            top: `${2 + i * 15}%`,
-            left: `${i * 9}%`,
-            zIndex: i + 1,
-          }}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={img.src}
-            alt={img.alt}
-            loading="eager"
-            className="w-full h-auto block"
-          />
+    </div>
+  );
+}
+
+function MarginField({ label, children, delay }) {
+  return (
+    <div>
+      <p className="text-[7px] sm:text-[8px] font-semibold uppercase tracking-[0.15em] text-slate-400 mb-0.5">
+        {label}
+      </p>
+      <div
+        className="sim-rise rounded-md border border-slate-200 px-2 py-1.5 text-[9px] sm:text-[10px] text-slate-700"
+        style={{ animationDelay: delay }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function MarginSim({ running }) {
+  // Two-beat loop: fill the entry form, then reveal the computed summary
+  const [phase, setPhase] = useState(0);
+  useEffect(() => {
+    if (!running) {
+      setPhase(0);
+      return;
+    }
+    const t = setTimeout(
+      () => setPhase((p) => (p + 1) % 2),
+      phase === 0 ? 4200 : 5200
+    );
+    return () => clearTimeout(t);
+  }, [phase, running]);
+
+  const [weeks, setWeeks] = useState(0);
+  useEffect(() => {
+    if (!running || phase !== 1) {
+      setWeeks(0);
+      return;
+    }
+    let raf;
+    const t0 = performance.now();
+    const dur = 1400;
+    const tick = (t) => {
+      const k = Math.min(1, (t - t0) / dur);
+      const e = 1 - Math.pow(1 - k, 3);
+      setWeeks(10.9 * e);
+      if (k < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [running, phase]);
+
+  const rows = [
+    ["Margin / Session", "3 hrs 40 mins"],
+    ["Weekly Margin", "7 hrs 20 mins"],
+    ["Annual Margin", "381 hrs 20 mins"],
+    ["Working Days Saved / Year", "47.7 days"],
+  ];
+
+  return (
+    <div className="min-h-0 rounded-lg sm:rounded-xl bg-white text-slate-700 shadow-2xl overflow-hidden flex flex-col">
+      <div className="shrink-0 px-3 sm:px-4 py-2 bg-slate-50 border-b border-slate-200">
+        <p className="text-[9px] sm:text-[10px] font-bold text-slate-800">
+          Margin Calculator
+        </p>
+        <p className="text-[7px] sm:text-[8px] italic text-slate-400">
+          Based on 8-hr working days and 40-hr working weeks.
+        </p>
+      </div>
+
+      {phase === 0 && (
+        <div className="flex-1 min-h-0 p-3 sm:p-4 flex flex-col gap-1.5 sm:gap-2 overflow-hidden">
+          <MarginField label="Task / Activity" delay="0s">
+            <span className="line-clamp-1">{SIM_TASKS[0].name}</span>
+          </MarginField>
+          <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
+            <MarginField label="Mode" delay="0.4s">
+              Automation
+            </MarginField>
+            <MarginField label="Frequency" delay="0.4s">
+              2× per Week
+            </MarginField>
+          </div>
+          <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
+            <MarginField label="Time Without AI" delay="1s">
+              <span className="font-bold tabular-nums">4</span>
+              <span className="text-slate-400"> hrs </span>
+              <span className="font-bold tabular-nums">0</span>
+              <span className="text-slate-400"> mins</span>
+            </MarginField>
+            <MarginField label="Time With AI" delay="1.8s">
+              <span className="font-bold tabular-nums">0</span>
+              <span className="text-slate-400"> hrs </span>
+              <span className="font-bold tabular-nums">20</span>
+              <span className="text-slate-400"> mins</span>
+            </MarginField>
+          </div>
+          <div
+            className="sim-rise mt-auto self-start rounded-md bg-indigo-600 text-white px-2.5 py-1.5 text-[9px] sm:text-[10px] font-semibold"
+            style={{ animationDelay: "2.8s" }}
+          >
+            + Add to Summary
+          </div>
         </div>
-      ))}
+      )}
+
+      {phase === 1 && (
+        <div className="flex-1 min-h-0 p-3 sm:p-4 flex flex-col overflow-hidden">
+          <div className="sim-rise rounded-md border border-slate-200 px-2.5 py-1.5 sm:py-2 flex items-center gap-2 mb-2.5">
+            <span className="flex-1 text-[9px] sm:text-[10px] text-slate-700 line-clamp-1">
+              {SIM_TASKS[0].name}
+            </span>
+            <span className="shrink-0 rounded-full bg-green-100 text-green-700 px-1.5 py-0.5 text-[7px] sm:text-[8px] font-bold">
+              Automation
+            </span>
+            <span className="shrink-0 hidden sm:block text-[8px] tabular-nums text-slate-400">
+              4 hrs → 20 mins
+            </span>
+          </div>
+          <div className="space-y-1">
+            {rows.map(([label, value], idx) => (
+              <div
+                key={label}
+                className="sim-rise flex items-center justify-between gap-2 rounded-md bg-slate-50 px-2.5 py-1.5"
+                style={{ animationDelay: `${0.2 + idx * 0.12}s` }}
+              >
+                <span className="text-[8px] sm:text-[9px] text-slate-400">
+                  {label}
+                </span>
+                <span className="text-[9px] sm:text-[10px] font-bold text-slate-700 tabular-nums">
+                  {value}
+                </span>
+              </div>
+            ))}
+          </div>
+          <div
+            className="sim-rise mt-auto rounded-md bg-indigo-50 px-2.5 sm:px-3 py-2 sm:py-2.5 flex items-end justify-between gap-2"
+            style={{ animationDelay: "0.75s" }}
+          >
+            <div>
+              <p className="text-[7px] sm:text-[8px] font-semibold uppercase tracking-[0.15em] text-slate-400">
+                Working Weeks Reclaimed Annually
+              </p>
+              <p className="text-lg sm:text-2xl font-bold text-indigo-600 tabular-nums leading-tight">
+                {weeks.toFixed(1)} wks
+              </p>
+            </div>
+            <p className="text-[7px] sm:text-[8px] text-slate-400 text-right">
+              435 hrs 22 mins
+              <br />
+              54.4 days
+            </p>
+          </div>
+        </div>
+      )}
     </div>
-  )
+  );
 }
 
-function SingleShot({ image }) {
+function TerritoryTeaser() {
   return (
-    <div className="w-full h-full rounded-xl lg:rounded-tl-xl lg:rounded-bl-xl lg:rounded-tr-none lg:rounded-br-none overflow-hidden border border-white/[0.09] shadow-2xl">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={image.src}
-        alt={image.alt}
-        loading="eager"
-        className="w-full h-full object-cover object-top"
+    <div className="min-h-0 rounded-lg sm:rounded-xl border border-white/[0.08] bg-white/[0.03] flex flex-col items-center justify-center text-center px-6 py-8 gap-3">
+      <span className="w-10 h-10 rounded-lg gradient-200 ring-1 ring-inset ring-white/25 shadow-lg flex items-center justify-center">
+        <Lock className="w-4 h-4 text-white" strokeWidth={1.75} />
+      </span>
+      <p className="font-ptsans text-base sm:text-lg font-bold uppercase tracking-widest text-white/85">
+        Territory Builder
+      </p>
+      <p className="max-w-xs text-[11px] sm:text-xs leading-snug text-white/50">
+        Maps your industry's friction points, scores them, and sharpens your
+        declaration into a final statement.
+      </p>
+      <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-white/35">
+        Declared Live on Day 3
+      </p>
+    </div>
+  );
+}
+
+function PhaseCard({ phase, delay }) {
+  return (
+    <div
+      className="rm-card h-full rounded-xl border border-white/[0.08] bg-white/[0.05] backdrop-blur-md p-2.5 sm:p-4"
+      style={{ animationDelay: delay }}
+    >
+      <p className="flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/40 mb-1 sm:mb-2">
+        <span className="whitespace-nowrap">Phase {phase.num}</span>
+        <span className="w-px h-2.5 bg-white/15 shrink-0" aria-hidden />
+        <span className="whitespace-nowrap tabular-nums text-white/30">
+          {phase.days}
+        </span>
+      </p>
+      <h4 className="font-ptsans text-sm sm:text-base font-bold uppercase tracking-wide leading-tight text-white/90 mb-0.5 sm:mb-1.5">
+        {phase.name}
+      </h4>
+      <p className="text-[11px] sm:text-xs leading-snug text-white/55">
+        {phase.line}
+      </p>
+    </div>
+  );
+}
+
+function RoadmapDiagram({ phases, isActive }) {
+  const TICKS = [
+    { at: 0, label: "Day 1" },
+    { at: 33.3, label: "Day 60" },
+    { at: 66.7, label: "Day 120" },
+    { at: 100, label: "Day 180" },
+  ];
+  return (
+    <div className="relative w-full max-w-2xl lg:max-w-3xl mx-auto h-full">
+      {/* Ambient glows */}
+      <div
+        aria-hidden
+        className="absolute top-0 right-8 w-48 h-48 sm:w-64 sm:h-64 rounded-full bg-msaccent/30 blur-3xl"
       />
-    </div>
-  )
-}
+      <div
+        aria-hidden
+        className="absolute bottom-0 left-8 w-56 h-56 sm:w-72 sm:h-72 rounded-full bg-msblue/50 blur-3xl"
+      />
 
-function AILabsCard({ modules }) {
-  return (
-    <div className="w-full max-w-xl h-full flex flex-col">
-      <div className="flex-1 rounded-2xl border border-white/[0.12] bg-white/[0.05] overflow-hidden flex flex-col">
-        {/* Top — access badge */}
-        <div className="px-6 sm:px-10 pt-5 sm:pt-10 pb-4 sm:pb-8 border-b border-white/[0.08] shrink-0">
-          <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-white/35 mb-3 sm:mb-5">
-            Free Access · Starts After Day 7
+      {/* Glass card */}
+      <div
+        className={`relative h-full rounded-t-2xl md:rounded-2xl border border-white/[0.12] bg-white/[0.06] backdrop-blur-xl shadow-2xl p-3 sm:p-6 lg:p-8 flex flex-col ${
+          isActive ? "roadmap-anim" : ""
+        }`}
+      >
+        <div className="shrink-0 flex items-center justify-between mb-2 sm:mb-5">
+          <p className="whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.3em] text-white/40">
+            The 6-Month Roadmap
           </p>
-          <div className="flex items-baseline gap-3">
-            <span className="font-ptsans text-[5rem] sm:text-[8rem] font-bold leading-none text-white/[0.14] select-none">
-              6
-            </span>
-            <span className="font-ptsans text-2xl sm:text-3xl font-bold uppercase tracking-tight text-white/30">
-              months
-            </span>
+          <p className="whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.2em] text-white/30">
+            180 Days
+          </p>
+        </div>
+
+        {/* Desktop — phase cards in a row over a 180-day axis */}
+        <div className="hidden lg:flex flex-1 min-h-0 flex-col justify-center gap-10">
+          <div className="grid grid-cols-3 gap-4 items-stretch">
+            {phases.map((phase, i) => (
+              <PhaseCard
+                key={phase.num}
+                phase={phase}
+                delay={`${0.15 + i * 0.3}s`}
+              />
+            ))}
+          </div>
+
+          <div className="shrink-0">
+            {/* Day axis */}
+            <div className="relative h-px bg-white/15">
+              {TICKS.map((tick) => (
+                <span
+                  key={tick.at}
+                  aria-hidden
+                  className="absolute top-0 w-px h-1.5 bg-white/25"
+                  style={{ left: `${tick.at}%` }}
+                />
+              ))}
+              <span
+                aria-hidden
+                className="rm-axis-pulse absolute -top-[3.5px] w-2 h-2 rounded-full bg-[#b7bbff] shadow-[0_0_8px_2px_rgba(153,158,255,0.5)]"
+              />
+            </div>
+            <div className="relative mt-2.5 h-3">
+              {TICKS.map((tick, i) => (
+                <span
+                  key={tick.at}
+                  className={`absolute top-0 whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.15em] tabular-nums text-white/30 ${
+                    i === 0
+                      ? ""
+                      : i === TICKS.length - 1
+                        ? "-translate-x-full"
+                        : "-translate-x-1/2"
+                  }`}
+                  style={{ left: `${tick.at}%` }}
+                >
+                  {tick.label}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Bottom — module list */}
-        <div className="flex-1 px-6 sm:px-10 py-5 sm:py-8 flex flex-col">
-          <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-white/30 mb-4 sm:mb-6">
-            What it covers
-          </p>
-          <ul className="space-y-3 sm:space-y-5">
-            {modules.map((m, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <span className="text-[10px] font-semibold tabular-nums text-white/25 mt-0.5 shrink-0">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="text-sm leading-snug text-white/65">{m}</span>
-              </li>
+        {/* Mobile — vertical rail */}
+        <div className="lg:hidden flex-1 relative min-h-0 pl-7">
+          <div
+            aria-hidden
+            className="rm-rail absolute left-3 top-1 bottom-1 w-px bg-gradient-to-b from-msaccent/70 via-white/25 to-white/50"
+          />
+          <div
+            aria-hidden
+            className="rm-rail-pulse absolute left-[8.5px] w-2 h-2 rounded-full bg-[#b7bbff] shadow-[0_0_8px_2px_rgba(153,158,255,0.5)]"
+          />
+          <div className="h-full flex flex-col justify-between gap-1.5 py-1">
+            {phases.map((phase, i) => (
+              <div key={phase.num} className="relative">
+                <span
+                  aria-hidden
+                  className="absolute -left-[19.5px] top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-msaccent ring-4 ring-msaccent/20"
+                />
+                <PhaseCard phase={phase} delay={`${0.15 + i * 0.3}s`} />
+              </div>
             ))}
-          </ul>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/20 mt-auto pt-5 sm:pt-8">
-            Included with all tiers
-          </p>
+          </div>
         </div>
       </div>
     </div>
-  )
+  );
+}
+
+function ToolsLibrary({ tools, isActive }) {
+  return (
+    <div
+      className={`relative w-full max-w-2xl mx-auto h-full lg:h-auto lg:my-auto ${
+        isActive ? "demo-anim" : ""
+      }`}
+    >
+      {/* Ambient glows — give the glass something to refract */}
+      <div
+        aria-hidden
+        className="absolute top-0 right-4 w-48 h-48 sm:w-64 sm:h-64 rounded-full bg-msaccent/30 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="absolute bottom-0 left-4 w-56 h-56 sm:w-72 sm:h-72 rounded-full bg-msblue/50 blur-3xl"
+      />
+
+      {/* Glass card */}
+      <div className="relative h-full rounded-t-2xl md:rounded-2xl border border-white/[0.12] bg-white/[0.06] backdrop-blur-xl shadow-2xl p-4 sm:p-6 lg:p-8 flex flex-col">
+        <div className="shrink-0 flex items-center justify-between mb-3 sm:mb-5">
+          <p className="whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.3em] text-white/40">
+            Tool Library
+          </p>
+          <p className="whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.2em] text-white/30">
+            <span className="hidden sm:inline">The Essentials · </span>More
+            Inside
+          </p>
+        </div>
+
+        <div className="flex-1 grid grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-2 sm:gap-3">
+          {tools.map((tool, i) => (
+            <div
+              key={tool.name}
+              className="demo-tile rounded-xl border border-white/[0.08] bg-white/[0.04] p-2.5 sm:p-4 flex items-center sm:flex-col sm:items-start gap-2.5 sm:gap-4"
+              style={{ animationDelay: `${0.1 + i * 0.07}s` }}
+            >
+              <span className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-white ring-1 ring-inset ring-white/25 shadow-lg flex items-center justify-center p-1.5 sm:p-2">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={tool.src}
+                  alt={tool.name}
+                  loading="lazy"
+                  className="w-full h-full object-contain"
+                />
+              </span>
+              <span className="text-[11px] sm:text-xs font-medium leading-snug text-white/75">
+                {tool.name}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
