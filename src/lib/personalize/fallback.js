@@ -29,10 +29,10 @@ const FALLBACKS = {
         "You answer upward for results and downward for direction. VIP keeps the facilitator close to your specific situation at the moments that matter most, with written feedback on your milestone work. It is capped at 10 seats for exactly that reason.",
     },
     alternate: {
-      offerId: "ga",
+      offerId: "vvip",
       subPath: null,
       reasoning:
-        "If you would rather drive the work yourself, General Admission is the complete 7-day experience, every session, every tool, and the full 6-month plan included.",
+        "If you would rather have the full 7-day experience delivered privately, one on one and scheduled around your calendar, VVIP removes the cohort schedule entirely and keeps the facilitator with you across all 7 days.",
     },
     awakeningNote: null,
     confidence: "low",
@@ -76,3 +76,34 @@ const FALLBACKS = {
 export function fallbackResult(seat) {
   return FALLBACKS[seat] || FALLBACKS.individual;
 }
+
+// Canned compliant alternates, keyed by the primary offer. Used by the API
+// route when the model returns an alternate below the primary on the
+// commitment ladder (ga < vip < vvip < coaching): the personalized primary
+// is kept and the downsold alternate is replaced with the next step up.
+export const UPSELL_ALTERNATES = {
+  ga: {
+    offerId: "vip",
+    subPath: null,
+    reasoning:
+      "If you want the facilitator's eyes on your specific work during the week, VIP adds direct written feedback on your milestone task and two extra live sessions. Ten seats, no more.",
+  },
+  vip: {
+    offerId: "vvip",
+    subPath: null,
+    reasoning:
+      "If you would rather have the full 7-day experience delivered privately, one on one and scheduled around your calendar, VVIP keeps the facilitator with you across all 7 days.",
+  },
+  vvip: {
+    offerId: "coaching",
+    subPath: null,
+    reasoning:
+      "If you want a guide alongside you for the months that follow, coaching walks with you through the full 6-month plan and includes the complete challenge at no additional fee. It starts with a 15-minute discovery call.",
+  },
+  coaching: {
+    offerId: "awakening",
+    subPath: "briefing",
+    reasoning:
+      "If you would rather begin with a single focused conversation, The Awakening is a private briefing that introduces the leadership shift AI has started, for you or the people who look to you.",
+  },
+};

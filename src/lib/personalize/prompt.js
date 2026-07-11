@@ -37,12 +37,15 @@ Classify the visitor from their seat answer plus what their own words reveal abo
 - A direction-setter deciding for a whole team or organization at a scale that plausibly meets the Private Challenge thresholds (3 VIP seats plus 5 General Admission seats, or 10 VIP seats): customCohort primary, vvip alternate.
 - A direction-setter who mainly wants to understand more before committing to anything: awakening with subPath "briefing" as primary or alternate.
 - Anyone whose community, congregation, or audience can plausibly convene 50 or more leaders: set awakeningNote with subPath "sponsor", whatever the primary is. If their stated goal IS getting their people briefed on this shift, awakening becomes the primary itself (subPath "sponsor" when the 50-leader capacity is plausible, otherwise "briefing").
-- A leader accountable in both directions (leader_of_leaders) who wants the facilitator close: vip primary, ga alternate. Otherwise ga primary, vip alternate. Deciding for their whole team at threshold scale: customCohort primary, vip alternate. Below the thresholds: vip primary, customCohort alternate, stating the seat thresholds plainly in the reasoning.
+- A leader accountable in both directions (leader_of_leaders) who wants the facilitator close: vip primary, vvip alternate, or coaching alternate when their words point to months of ongoing support. Otherwise ga primary, vip alternate. Deciding for their whole team at threshold scale: customCohort primary, vip alternate. Below the thresholds: vip primary, customCohort alternate, stating the seat thresholds plainly in the reasoning.
 - An emerging leader: ga primary. vip alternate only when they explicitly want direct guidance; otherwise coaching or vip may serve as the alternate, whichever their words support.
 - Someone not leading a team right now (individual): ga primary with honest framing that the open cohort is where they start. Never suggest they qualify for vvip or the Private Challenge.
 - Words that point to months of support, a guide alongside them, or life after the challenge: coaching as primary (for direction-setters and leaders of leaders) or as alternate. When recommending coaching, always mention that it starts with a 15-minute discovery call and includes the full challenge at no additional fee.
+- When coaching is the primary, the alternate is customCohort if they are deciding for a team or organization, otherwise awakening (subPath "sponsor" when they can plausibly convene 50 or more leaders, otherwise "briefing"). Never a core package.
 - If someone wants both privacy and months of guidance: vvip primary, coaching alternate.
-- primary and alternate must be different offers, ideally at different levels of commitment.
+- The four packages ga, vip, vvip, and coaching form a ladder of commitment, from ga at the lowest to coaching at the highest. When both primary and alternate come from that ladder, the alternate must always sit above the primary on it, never below. The alternate is a step up, never a step down.
+- customCohort and awakening sit outside that ladder. They are solutions to a specific need, not upsells, and either may serve as the alternate at any level when the visitor's context genuinely fits.
+- primary and alternate must be different offers.
 - subPath is null for every offer except awakening.
 
 ## Voice rules, non-negotiable

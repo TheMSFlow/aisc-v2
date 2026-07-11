@@ -3,7 +3,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
 import { requestSchema, resultSchema } from "@/lib/personalize/validate";
 import { buildSystemPrompt, buildUserMessage } from "@/lib/personalize/prompt";
-import { fallbackResult } from "@/lib/personalize/fallback";
+import { fallbackResult, UPSELL_ALTERNATES } from "@/lib/personalize/fallback";
 import { allowRequest, clientIp } from "@/lib/personalize/rateLimit";
 import { presentOffer } from "@/lib/personalize/catalog";
 
@@ -40,6 +40,24 @@ function cleanText(text) {
     t = t.replace(/([.!?]) ?[a-z0-9]*_[a-z0-9_.]*$/i, "$1");
   } while (t !== prev);
   return t;
+}
+
+// The four core packages form a commitment ladder. The alternate must sit
+// above the primary on it; customCohort and awakening are context solutions
+// outside the ladder and exempt.
+const CORE_RANK = { ga: 1, vip: 2, vvip: 3, coaching: 4 };
+
+function enforceUpsell(result) {
+  const primaryRank = CORE_RANK[result.primary.offerId];
+  const alternateRank = CORE_RANK[result.alternate.offerId];
+  if (primaryRank && alternateRank && alternateRank <= primaryRank) {
+    console.warn(
+      "[personalize] downsold alternate corrected:",
+      `${result.primary.offerId} -> ${result.alternate.offerId}`
+    );
+    return { ...result, alternate: UPSELL_ALTERNATES[result.primary.offerId] };
+  }
+  return result;
 }
 
 function scanVoice(raw) {
@@ -152,8 +170,10 @@ export async function POST(request) {
       throw new Error("primary equals alternate");
     }
 
-    scanVoice(checked.data);
-    return NextResponse.json(toPayload(checked.data, false));
+    const enforced = enforceUpsell(checked.data);
+
+    scanVoice(enforced);
+    return NextResponse.json(toPayload(enforced, false));
   } catch (err) {
     console.error("[personalize] recommendation failed:", err?.message || err);
     return NextResponse.json(toPayload(fallbackResult(input.seat), true));
