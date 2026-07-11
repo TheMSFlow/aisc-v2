@@ -8,6 +8,12 @@ export default function sitemap() {
       changeFrequency: "weekly",
       priority: 1,
     },
+    {
+      url: `${baseUrl}/personalize`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
     // Add entries as these surfaces ship:
     // `${baseUrl}/awakening`, `${baseUrl}/coaching`
   ];

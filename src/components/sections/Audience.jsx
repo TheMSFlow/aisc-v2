@@ -1,4 +1,5 @@
 import Section from "@/components/layout/Section";
+import GuideMeButton from "@/components/personalize/GuideMeButton";
 
 const AUDIENCES = [
   {
@@ -48,7 +49,11 @@ export default function Audience() {
             <div
               key={a.tier}
               className={`flex flex-col gap-7 p-8 lg:p-10 ${
-                a.dark ? "bg-dark-blue" : a.accent ? "bg-msaccent/10" : "bg-lilac"
+                a.dark
+                  ? "bg-dark-blue"
+                  : a.accent
+                    ? "bg-msaccent/10"
+                    : "bg-lilac"
               }`}
             >
               <div>
@@ -77,6 +82,14 @@ export default function Audience() {
               </p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 flex flex-col items-center justify-center gap-5 text-center">
+          <GuideMeButton variant="premium" className="px-8 py-3 w-full" />
+          <p className="max-w-md text-xs leading-relaxed text-dark-blue/55">
+            Not sure which seat is yours? Answer a few questions and we will
+            point you to the right path.
+          </p>
         </div>
       </Section>
     </div>

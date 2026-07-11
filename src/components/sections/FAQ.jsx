@@ -4,7 +4,7 @@ import FAQAccordion from "@/components/ui/FAQAccordion";
 const QUESTIONS = [
   {
     q: "What do I actually leave with after 7 days?",
-    a: "Three things change permanently, and you leave with paper to prove each one. AI Clarity: a clean, honest picture of what AI means for your domain, built by you on Day 1. Real margin: a number from the Margin Calculator showing how many hours a week you are reclaiming from work AI can handle. A declared territory: a specific AI value position in your world, shaped by the Territory Builder and declared on Day 3. The 6-Month AI Stakeholder Roadmap, unlocked on Day 6, takes that declaration into 180 days of execution, naming your capability gaps, the relationships you need to build, and the standards you'll hold yourself to along the way. Your Toolbox access remains in your challenger profile. AI Labs, a dedicated platform where your AI fluency keeps growing, is included free for six months. You receive a Certificate of Declaration on Day 7.",
+    a: "Three things change permanently, and you leave with paper to prove each one. AI Clarity: a clean, honest picture of what AI means for your domain, built by you on Day 1. Real margin: a number from the Margin Calculator showing how many hours a week you are reclaiming from work AI can handle. A declared territory: a specific AI value position in your world, shaped by the Territory Builder and declared on Day 3. The 6-Month AI Stakeholder Roadmap, unlocked on Day 6, takes that declaration into 180 days of execution, naming your capability gaps, the relationships you need to build, and the standards you'll hold yourself to along the way. Your Toolbox access remains in your challenger profile. AI Labs, a dedicated platform where your AI fluency keeps growing, is included free after the challenge ends: one month with General Admission, three months with VIP, and six months with VVIP. You receive a Certificate of Declaration on Day 7.",
   },
   {
     q: "Do I need to know anything about AI before I join?",
@@ -20,11 +20,11 @@ const QUESTIONS = [
   },
   {
     q: "What happens after the 7 days?",
-    a: "You leave with the 6-Month AI Stakeholder Roadmap, which turns the territory you declared on Day 3 into a 180-day plan across three phases: proving you can execute, applying your leverage and building key relationships, then extending your authority. It names your capability gaps and sets the personal standards you'll hold yourself to as you go. It is designed to be reused every 6 months. Your Toolbox access remains in your challenger profile. AI Labs, a dedicated platform where your AI fluency keeps developing as you execute the roadmap, is included free for six months. For leaders who want guided execution through that roadmap, the AI Stakeholder Coaching Program walks with them weekly.",
+    a: "You leave with the 6-Month AI Stakeholder Roadmap, which turns the territory you declared on Day 3 into a 180-day plan across three phases: proving you can execute, applying your leverage and building key relationships, then extending your authority. It names your capability gaps and sets the personal standards you'll hold yourself to as you go. It is designed to be reused every 6 months. Your Toolbox access remains in your challenger profile. AI Labs, a dedicated platform where your AI fluency keeps developing as you execute the roadmap, is included free after the challenge ends: one month with General Admission, three months with VIP, and six months with VVIP. For leaders who want guided execution through that roadmap, the AI Stakeholder Coaching Program provides weekly group coaching sessions.",
   },
   {
     q: "Is Coaching separate from the challenge?",
-    a: "Yes, and it includes the challenge at no additional fee. The AI Stakeholder Coaching Program is a separate engagement for leaders who want a facilitator alongside them through the 6-Month Roadmap. Coaching is not a cheaper entry point into the challenge. It is the full program plus six or twelve months of guided execution. If you already know you want ongoing support, starting with Coaching is the more complete path.",
+    a: "Yes, and it includes the challenge at no additional fee. The AI Stakeholder Coaching Program is a separate group coaching engagement for leaders who want a facilitator alongside them through the 6-Month Roadmap. Sessions run live once a week in a group setting. Your questions and your situation get direct attention, alongside leaders working through the same phases. Coaching is not a cheaper entry point into the challenge. It is the full program plus six or twelve months of guided execution. If you already know you want ongoing support, starting with Coaching is the more complete path.",
   },
   {
     q: "What makes this different from an AI course or webinar?",
@@ -32,7 +32,7 @@ const QUESTIONS = [
   },
   {
     q: "How many people are in each cohort?",
-    a: "General Admission is open to the full cohort. VIP is capped at 10 seats. This is a real constraint, not manufactured scarcity. The limit exists because facilitator feedback at the milestone stage requires a manageable group. VVIP and Coaching are delivered privately, one-on-one.",
+    a: "General Admission is open to the full cohort. VIP is capped at 10 seats. This is a real constraint, not manufactured scarcity. The limit exists because facilitator feedback at the milestone stage requires a manageable group. VVIP is delivered privately, one-on-one. Coaching runs as weekly facilitated group sessions.",
   },
   {
     q: "Who should not join this challenge?",

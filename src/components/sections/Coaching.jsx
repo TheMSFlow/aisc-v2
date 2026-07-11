@@ -23,7 +23,7 @@ const PLANS = [
 ];
 
 const FACTS = [
-  { value: "1×", label: "Session per week" },
+  { value: "1×", label: "Group session per week" },
   { value: "180", label: "Days of guided execution" },
   { value: "$0", label: "Additional AISC fee" },
 ];
@@ -51,10 +51,12 @@ export default function Coaching() {
               Mandate. Most leaders do not want to navigate that alone.
             </p>
             <p className="mt-4 max-w-lg text-base leading-relaxed text-white/55">
-              The AI Stakeholder Coaching Program walks with you once a week, on
-              your schedule, as you follow the Roadmap you leave the challenge
-              with. Your fluency compounds. The territory you discovered in the
-              challenge gets built.
+              The AI Stakeholder Coaching Program is live group coaching: one
+              facilitated session each week, alongside leaders executing their
+              own Roadmaps. Your questions get answered directly, and your
+              thinking sharpens as you watch other leaders navigate the same
+              phases. Your fluency compounds. The territory you discovered in
+              the challenge gets built.
             </p>
 
             <div className="mt-10 grid grid-cols-3 gap-px bg-white/8">

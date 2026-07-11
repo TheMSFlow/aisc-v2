@@ -157,7 +157,7 @@ The landing page has 9 sections in narrative order. Each entry below states the 
 
 **Panel 04 — AI Labs (Resource)**
 - Headline: "Built for leaders who direct AI. Not engineers who build it."
-- Visual: Editorial card filling the full right-column height — large "6 MONTHS" typographic anchor, module list, "Included with all tiers" footer
+- Visual: Editorial card filling the full right-column height — large typographic anchor, module list, tiered-access footer (AI Labs free access: 1 month GA / 3 months VIP / 6 months VVIP — never a single blanket duration)
 - No screenshot available; use the card treatment
 
 **Screenshot arrangement (cascade panels):**
@@ -213,7 +213,7 @@ The landing page has 9 sections in narrative order. Each entry below states the 
 
 **Must include:**
 - The continuation framing: the Roadmap tells you where to go; Coaching walks with you as you get there
-- What coaching delivers: twice a week, participant's chosen days, facilitated Roadmap execution as fluency grows
+- What coaching delivers: live group coaching, one facilitated session per week, facilitated Roadmap execution as fluency grows. Coaching is a group setting, not 1:1 — questions still get answered directly, alongside leaders executing their own Roadmaps
 - The key fact: Coaching includes AISC at no additional fee
 - All three pricing plans (monthly, 6-month, annual) in USD and NGN
 - CTA: "Start with Coaching"

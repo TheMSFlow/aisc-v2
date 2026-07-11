@@ -1,0 +1,161 @@
+import { NextResponse } from "next/server";
+import Anthropic from "@anthropic-ai/sdk";
+import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
+import { requestSchema, resultSchema } from "@/lib/personalize/validate";
+import { buildSystemPrompt, buildUserMessage } from "@/lib/personalize/prompt";
+import { fallbackResult } from "@/lib/personalize/fallback";
+import { allowRequest, clientIp } from "@/lib/personalize/rateLimit";
+import { presentOffer } from "@/lib/personalize/catalog";
+
+const MAX_BODY_BYTES = 8192;
+const MODEL = "claude-sonnet-5";
+
+// Built once per instance; contains no per-visitor content.
+const SYSTEM_PROMPT = buildSystemPrompt();
+
+const FORBIDDEN_PHRASES = [
+  "master ai",
+  "stay relevant",
+  "stay ahead of the curve",
+  "learn ai",
+  "sign up",
+  "register",
+  "leverage ai",
+  "game-changing",
+  "revolutionary",
+  "transform your business",
+  "unlock the power of ai",
+  "gain access to",
+  "step-by-step",
+  "ai-powered",
+];
+
+function cleanText(text) {
+  let t = text.replaceAll("—", ", ").replaceAll("–", "-").trim();
+  // The model occasionally appends a stray underscore token after the final
+  // sentence (e.g. ".reasoning_end_placeholder_removed"). Strip until stable.
+  let prev;
+  do {
+    prev = t;
+    t = t.replace(/([.!?]) ?[a-z0-9]*_[a-z0-9_.]*$/i, "$1");
+  } while (t !== prev);
+  return t;
+}
+
+function scanVoice(raw) {
+  const all = JSON.stringify(raw).toLowerCase();
+  const found = FORBIDDEN_PHRASES.filter((p) => all.includes(p));
+  if (found.length) {
+    console.warn("[personalize] forbidden phrases in output:", found);
+  }
+}
+
+function toPayload(raw, fallbackUsed) {
+  const strip = (pick) => ({
+    reasoning: cleanText(pick.reasoning),
+    offer: presentOffer(pick.offerId, pick.subPath),
+  });
+
+  return {
+    ok: true,
+    fallbackUsed,
+    result: {
+      headline: cleanText(raw.headline),
+      confidence: raw.confidence,
+      primary: strip(raw.primary),
+      alternate: strip(raw.alternate),
+      awakeningNote: raw.awakeningNote
+        ? {
+            reasoning: cleanText(raw.awakeningNote.reasoning),
+            offer: presentOffer("awakening", raw.awakeningNote.subPath),
+          }
+        : null,
+    },
+  };
+}
+
+function sameOriginOk(request) {
+  if (process.env.NODE_ENV !== "production") return true;
+  const site = process.env.NEXT_PUBLIC_SITE_URL;
+  if (!site) return true;
+  const source = request.headers.get("origin") || request.headers.get("referer");
+  if (!source) return true;
+  try {
+    return new URL(source).host === new URL(site).host;
+  } catch {
+    return false;
+  }
+}
+
+export async function POST(request) {
+  let body;
+  try {
+    const text = await request.text();
+    if (text.length > MAX_BODY_BYTES) {
+      return NextResponse.json({ ok: false }, { status: 413 });
+    }
+    body = JSON.parse(text);
+  } catch {
+    return NextResponse.json({ ok: false }, { status: 400 });
+  }
+
+  if (!sameOriginOk(request)) {
+    return NextResponse.json({ ok: false }, { status: 403 });
+  }
+
+  const parsed = requestSchema.safeParse(body);
+  if (!parsed.success) {
+    return NextResponse.json({ ok: false, error: "invalid" }, { status: 400 });
+  }
+  const input = parsed.data;
+
+  // Honeypot: plausible-looking success without spending anything.
+  if (input.company) {
+    return NextResponse.json(toPayload(fallbackResult(input.seat), false));
+  }
+
+  if (!allowRequest(clientIp(request))) {
+    return NextResponse.json({ ok: false, error: "rate" }, { status: 429 });
+  }
+
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    console.warn("[personalize] ANTHROPIC_API_KEY not set; serving fallback");
+    return NextResponse.json(toPayload(fallbackResult(input.seat), true));
+  }
+
+  try {
+    const client = new Anthropic({ apiKey, timeout: 30_000, maxRetries: 1 });
+
+    const response = await client.messages.parse({
+      model: MODEL,
+      max_tokens: 1500,
+      thinking: { type: "disabled" },
+      system: [
+        {
+          type: "text",
+          text: SYSTEM_PROMPT,
+          cache_control: { type: "ephemeral" },
+        },
+      ],
+      messages: [{ role: "user", content: buildUserMessage(input) }],
+      output_config: { format: zodOutputFormat(resultSchema) },
+    });
+
+    const raw = response.parsed_output;
+    if (!raw) throw new Error("unparsed output");
+
+    const checked = resultSchema.safeParse(raw);
+    if (!checked.success) throw new Error("schema mismatch");
+
+    if (checked.data.primary.offerId === checked.data.alternate.offerId) {
+      throw new Error("primary equals alternate");
+    }
+
+    scanVoice(checked.data);
+    return NextResponse.json(toPayload(checked.data, false));
+  } catch (err) {
+    console.error("[personalize] recommendation failed:", err?.message || err);
+    return NextResponse.json(toPayload(fallbackResult(input.seat), true));
+  }
+}

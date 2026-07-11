@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, Sparkles, X } from "lucide-react";
 import Button from "../global/Button";
 import CohortBar from "@/components/cohort/CohortBar";
 
 const NAV = [
-  { label: "Pricing", href: "#pricing" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Coaching", href: "#coaching" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Coaching", href: "/#coaching" },
 ];
 
 export default function Header() {
@@ -31,6 +31,7 @@ export default function Header() {
             AI STAKEHOLDER <span className="font-bold">CHALLENGE</span>
           </Link>
 
+<div className="flex flex-row gap-6">
           <ul className="hidden items-center gap-7 lg:flex">
             {NAV.map((item) => (
               <li key={item.href}>
@@ -44,12 +45,12 @@ export default function Header() {
             ))}
           </ul>
 
-          {/* <div className="hidden lg:block">
-            <Button href="#pricing" variant="primary">
-              Secure Your Spot
+          <div className="hidden lg:block">
+            <Button href="/personalize" variant="primary" iconLeft={Sparkles}>
+              Guide me
             </Button>
-          </div> */}
-
+          </div>
+</div>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -82,12 +83,13 @@ export default function Header() {
             </ul>
             <div className="mt-4">
               <Button
-                href="#pricing"
+                href="/personalize"
                 variant="primary"
+                iconLeft={Sparkles}
                 className="w-full"
                 onClick={() => setOpen(false)}
               >
-                Secure Your Spot
+                Guide me
               </Button>
             </div>
           </div>

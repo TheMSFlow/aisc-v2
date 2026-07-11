@@ -161,11 +161,11 @@ The Toolbox is the operating environment participants access throughout the chal
 | **Margin Calculator** *(Tool)* | A mini app that records real time saved per AI-assisted task. Entries accumulate a weekly, quarterly, and annual total of leadership capacity reclaimed. Downloadable as a spreadsheet. |
 | **Territory Builder** *(Tool)* | A mini app that maps industry friction points, scores them by pain, credibility, and clarity of value, surfaces the best one to claim, and uses AI to polish the leader's declaration into a final statement. Also assigns one of five Competitive Positions (Optimizer, Producer, Advisor, Educator, Curator) that determines the leader's track through the entire Roadmap system. Outputs a full PDF including friction scorecard, declaration elements, and statement. This declaration feeds directly into the Certificate of Declaration issued on Day 7. |
 | **Roadmap** | Five documents, not one: the 6-Month AI Stakeholder Roadmap itself, the Capability Gap Audit, the AI Stakeholder Identifier, My Personal AI Policy, and the Post-Challenge Guide on Super Connections. Together they define what to focus on, what to delegate, what to stop, and where AI belongs — branched by the Competitive Position declared on Day 3. See "The 6-Month Roadmap System" above for full detail. Reusable every 6 months as the territory expands. |
-| **AI Labs** *(Resource)* | A dedicated video platform for leadership-focused AI fluency instruction. Covers AI setup, effective direction, and domain application from a leader's perspective, not an engineer's. Participants receive 6 months of free access. This is where fluency compounds after the challenge ends. |
+| **AI Labs** *(Resource)* | A dedicated video platform for leadership-focused AI fluency instruction. Covers AI setup, effective direction, and domain application from a leader's perspective, not an engineer's. Free access is tiered and starts when the challenge ends: 1 month with General Admission, 3 months with VIP, 6 months with VVIP. This is where fluency compounds after the challenge ends. |
 
 **Key notes for all copy and content work:**
 - The Toolbox is always referred to by name. Do not describe it as "materials" or "course access." It holds resources and tools.
-- AI Labs must always name the 6-month free access when mentioned. This is a significant value extension that distinguishes AISC from a 7-day program with nothing after it. AI Labs is a resource.
+- AI Labs must always name the free access period when mentioned, and the access is tiered: 1 month (General Admission), 3 months (VIP), 6 months (VVIP). Never state a single blanket duration; the tier distinction must appear wherever AI Labs access is described. This is a significant value extension that distinguishes AISC from a 7-day program with nothing after it. AI Labs is a resource.
 - The Territory Builder's PDF output feeds the Certificate of Declaration on Day 7. This connection must be preserved in any copy about the Territory Builder.
 - The Delegation Tool and Margin Calculator are reusable after the challenge ends, not just during it. This distinguishes them from in-session exercises and must be reflected in copy. These two, along with the Territory Builder, are the three tools (mini apps) in the Toolbox.
 - Guides, Frameworks & Templates frames as thought leadership infrastructure, not a document archive. The leader who completes the challenge is now positioned to answer AI questions their world brings to them. This is the reference they reach for.
@@ -262,7 +262,7 @@ Young and Emerging Leaders use AISC to get hired, promoted, or given more respon
 | VIP (10 seats only) | $399 | ₦520,000 | GA + Milestone Review, Day 5 live Q&A (1 hr), Day 6 Deep Dive with Q&A (2 hrs) |
 | VVIP | $1,099 | ₦1,350,000 | Private, one-on-one delivery with direct facilitator access throughout |
 | Private / Enterprise | Custom | Custom | Same foundation, delivered privately to leadership teams/organizations |
-| Coaching (includes AISC) | $1,200/mo · $6,000/6mo · $10,000/yr | ₦1.5M/mo · ₦7.5M/6mo · ₦12.5M/yr | Guided through the 6-Month Roadmap with a facilitator, twice weekly |
+| Coaching (includes AISC) | $1,200/mo · $6,000/6mo · $10,000/yr | ₦1.5M/mo · ₦7.5M/6mo · ₦12.5M/yr | Guided through the 6-Month Roadmap in weekly live group coaching sessions (group setting, not 1:1) |
 
 **Payment links (general):**  
 GA: `intelligence.michaelsteve.com/pay/challenge/aisc?package=general-admission`  

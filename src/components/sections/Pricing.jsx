@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { Info } from "lucide-react";
 import { useCohort } from "@/context/CohortContext";
 import { formatPricingDate } from "@/utils/cohortFormat";
@@ -38,8 +39,8 @@ const TIERS = [
         info: "Turns the territory you declared on Day 3 into a 180-day plan across three phases, built around your capability gaps, the relationships you need, and your own standards for using AI. Unlocked on Day 6.",
       },
       {
-        label: "AI Labs (6 months free access)",
-        info: "A dedicated platform with leadership-focused instruction on setting up AI, directing it, and applying it across your domain. 6 months of free access that starts when the challenge ends.",
+        label: "AI Labs (1 month free access)",
+        info: "A dedicated platform with leadership-focused instruction on setting up AI, directing it, and applying it across your domain. 1 month of free access that starts when the challenge ends. VIP extends this to 3 months and VVIP to 6.",
       },
       {
         label: "Peer-to-peer reflection (optional)",
@@ -69,6 +70,10 @@ const TIERS = [
       {
         label: "Everything in General Admission",
         info: "Includes the full General Admission experience.",
+      },
+      {
+        label: "AI Labs (3 months free access)",
+        info: "Extends AI Labs free access to 3 months from the end of the challenge, up from 1 month with General Admission.",
       },
       {
         label: "Strategic facilitator feedback on milestone task",
@@ -115,6 +120,10 @@ const TIERS = [
         label: "All GA + VIP inclusions",
         info: "Every instrument, resource, output, and access point from General Admission and VIP, delivered in a fully private setting.",
       },
+      {
+        label: "AI Labs (6 months free access)",
+        info: "The longest AI Labs access of any tier: 6 months free from the end of the challenge.",
+      },
     ],
     cta: "Secure 1:1 Access",
     href: "https://intelligence.michaelsteve.com/pay/challenge/aisc?package=vvip",
@@ -124,8 +133,32 @@ const TIERS = [
 ];
 
 function FeatureItem({ feature, highlight }) {
+  const [open, setOpen] = useState(false);
+  const itemRef = useRef(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onPointerDown = (e) => {
+      if (itemRef.current && !itemRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    };
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
+
   return (
-    <li className="flex items-start gap-2.5 text-sm leading-relaxed">
+    <li
+      ref={itemRef}
+      className="relative flex items-start gap-2.5 text-sm leading-relaxed"
+    >
       <span
         className={`mt-0.5 shrink-0 font-semibold ${
           highlight ? "text-warning" : "text-dark-blue/30"
@@ -137,16 +170,35 @@ function FeatureItem({ feature, highlight }) {
         {feature.label}
       </span>
       {feature.info && (
-        <div className="relative group/info shrink-0 mt-0.5">
-          <Info
-            className={`w-3 h-3 cursor-help ${
-              highlight ? "text-white/25" : "text-dark-blue/20"
+        <>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-label={`More about ${feature.label}`}
+            className="peer/info mt-0.5 shrink-0 cursor-help"
+          >
+            <Info
+              className={`h-3 w-3 ${
+                highlight ? "text-white/25" : "text-dark-blue/20"
+              }`}
+            />
+          </button>
+          <div
+            role="tooltip"
+            className={`absolute bottom-full left-0 right-0 z-30 mb-2 rounded-lg p-3 text-xs leading-relaxed transition-opacity duration-150 ${
+              highlight
+                ? "bg-white text-dark-blue/80 shadow-xl ring-1 ring-dark-blue/10"
+                : "bg-dark-blue text-white/80 shadow-lg"
+            } ${
+              open
+                ? "opacity-100"
+                : "pointer-events-none opacity-0 peer-hover/info:opacity-100"
             }`}
-          />
-          <div className="absolute bottom-full right-0 mb-2 w-60 p-3 text-xs leading-relaxed rounded-lg bg-dark-blue text-white/80 opacity-0 group-hover/info:opacity-100 pointer-events-none z-30 transition-opacity duration-150 shadow-lg">
+          >
             {feature.info}
           </div>
-        </div>
+        </>
       )}
     </li>
   );

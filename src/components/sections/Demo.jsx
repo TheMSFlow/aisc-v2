@@ -66,7 +66,7 @@ const PANELS = [
   {
     id: "ai-labs",
     name: "AI Labs",
-    body: "A platform built for leaders: instruction on setting up AI, directing it, and applying it to your domain. The fluency you built during the challenge deepens here as you execute your roadmap. Six months of access, included.",
+    body: "A platform built for leaders: instruction on setting up AI, directing it, and applying it to your domain. The fluency you built during the challenge deepens here as you execute your roadmap. Free access included with every tier: one month with General Admission, three with VIP, six with VVIP.",
     type: "tools",
     tools: [
       { name: "Claude", src: "/demo/tools/claude.svg" },
@@ -93,8 +93,8 @@ export default function Demo() {
       style={{ height: "100dvh" }}
     >
       {/* ── Header ── */}
-      <div className="shrink-0 px-6 sm:px-10 lg:px-14 pt-5 sm:pt-10 lg:pt-14 pb-3 sm:pb-5 lg:pb-7 short:sm:!pt-3 short:sm:!pb-2 border-b border-white/6">
-        <div className="flex items-center justify-between gap-4 mb-1.5 sm:mb-2.5 short:sm:!mb-1">
+      <div className="shrink-0 px-6 sm:px-10 lg:px-14 pt-5 sm:pt-10 lg:pt-14 pb-3 sm:pb-5 lg:pb-7 short:sm:pt-3! short:sm:pb-2! border-b border-white/6">
+        <div className="flex items-center justify-between gap-4 mb-1.5 sm:mb-2.5 short:sm:mb-1!">
           <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/35">
             The Toolbox
           </p>
@@ -145,20 +145,20 @@ export default function Demo() {
               className="w-full shrink-0 h-full flex flex-col lg:flex-row "
             >
               {/* Left — copy */}
-              <div className="lg:w-[40%] shrink-0 flex flex-col justify-center px-6 sm:px-10 lg:px-14 pt-4 sm:pt-6 lg:pt-0 pb-3 sm:pb-6 lg:pb-14 short:sm:!pt-1 short:sm:!pb-1">
-                <h3 className="font-ptsans text-[1.25rem] sm:text-2xl font-bold uppercase tracking-widest text-white/35 mb-2 sm:mb-3 short:sm:!mb-1">
+              <div className="lg:w-[40%] shrink-0 flex flex-col justify-center px-6 sm:px-10 lg:px-14 pt-4 sm:pt-6 lg:pt-0 pb-3 sm:pb-6 lg:pb-14 short:sm:pt-1! short:sm:pb-1!">
+                <h3 className="font-ptsans text-[1.25rem] sm:text-2xl font-bold uppercase tracking-widest text-white/35 mb-2 sm:mb-3 short:sm:mb-1!">
                   {panel.name}
                 </h3>
 
-                <p className="text-[13px] leading-snug sm:text-sm sm:leading-relaxed short:sm:!leading-normal lg:text-[0.9rem] text-white/55 max-w-md short:sm:!max-w-2xl mb-4 lg:mb-0 short:sm:!mb-1">
+                <p className="text-[13px] leading-snug sm:text-sm sm:leading-relaxed short:sm:leading-normal! lg:text-[0.9rem] text-white/55 max-w-md short:sm:max-w-2xl! mb-4 lg:mb-0 short:sm:mb-1!">
                   {panel.body}
                 </p>
               </div>
 
               {/* Right — visual */}
-              <div className="relative flex-1 min-w-0 min-h-0 overflow-hidden flex items-center pl-6 sm:pl-10 lg:pl-0 pr-6 sm:pr-10 lg:pr-14 pb-0 md:pb-10 lg:pb-14 short:!pb-4 short:!pl-6 short:!pr-6 short:sm:!pl-10 short:sm:!pr-10">
+              <div className="relative flex-1 min-w-0 min-h-0 overflow-hidden flex items-center pl-6 sm:pl-10 lg:pl-0 pr-6 sm:pr-10 lg:pr-14 pb-0 md:pb-10 lg:pb-14 short:pb-4! short:pl-6! short:pr-6! short:sm:pl-10! short:sm:pr-10!">
                 {/* Full visual — hidden on short viewports */}
-                <div className="w-full h-full min-h-0 flex items-center short:!hidden">
+                <div className="w-full h-full min-h-0 flex items-center short:hidden!">
                   <PanelVisual panel={panel} isActive={active === idx} />
                 </div>
 
@@ -166,7 +166,7 @@ export default function Demo() {
                 <button
                   onClick={() => setExpanded(true)}
                   aria-label="Expand visual"
-                  className="hidden short:!flex w-full max-w-2xl items-center justify-between gap-3 rounded-xl border border-white/[0.12] bg-white/[0.06] backdrop-blur-xl shadow-2xl px-4 py-2 text-left"
+                  className="hidden short:flex! w-full max-w-2xl items-center justify-between gap-3 rounded-xl border border-white/12 bg-white/6 backdrop-blur-xl shadow-2xl px-4 py-2 text-left"
                 >
                   <span className="whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.3em] text-white/40">
                     Tap to see more
@@ -183,7 +183,7 @@ export default function Demo() {
 
       {/* ── Dot indicator ── */}
       <div
-        className="hidden sm:flex short:!hidden shrink-0 items-center justify-center gap-2 pb-5 lg:pb-6 pt-3"
+        className="hidden sm:flex short:hidden! shrink-0 items-center justify-center gap-2 pb-5 lg:pb-6 pt-3"
         aria-hidden
       >
         {PANELS.map((p, i) => (
@@ -220,7 +220,7 @@ export default function Demo() {
               </button>
             </div>
             <div className="flex-1 min-h-0 overflow-y-auto">
-              <div className="h-full min-h-[440px] px-4 pt-3 flex">
+              <div className="h-full min-h-110 px-4 pt-3 flex">
                 <PanelVisual panel={PANELS[active]} isActive />
               </div>
             </div>
@@ -262,7 +262,7 @@ function DocLibrary({ docs, isActive }) {
       />
 
       {/* Glass card */}
-      <div className="relative h-full rounded-t-2xl md:rounded-2xl border border-white/[0.12] bg-white/[0.06] backdrop-blur-xl shadow-2xl p-4 sm:p-6 lg:p-8 flex flex-col">
+      <div className="relative h-full rounded-t-2xl md:rounded-2xl border border-white/12 bg-white/6 backdrop-blur-xl shadow-2xl p-4 sm:p-6 lg:p-8 flex flex-col">
         <div className="shrink-0 flex items-center justify-between mb-3 sm:mb-5">
           <p className="whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.3em] text-white/40">
             Reference Library
@@ -277,12 +277,12 @@ function DocLibrary({ docs, isActive }) {
           {docs.map((doc, i) => (
             <div
               key={doc.name}
-              className="demo-tile rounded-xl border border-white/[0.08] bg-white/[0.04] p-2.5 sm:p-4 flex items-center sm:flex-col sm:items-start gap-2.5 sm:gap-4"
+              className="demo-tile rounded-xl border border-white/8 bg-white/4 p-2.5 sm:p-4 flex items-center sm:flex-col sm:items-start gap-2.5 sm:gap-4"
               style={{ animationDelay: `${0.1 + i * 0.07}s` }}
             >
-              <span className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg gradient-200 ring-1 ring-inset ring-white/25 shadow-lg flex items-center justify-center">
+              <span className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg gradient-200 inset-ring-1 inset-ring-white/25 shadow-lg flex items-center justify-center">
                 <doc.icon
-                  className="w-4 h-4 sm:w-[18px] sm:h-[18px] text-white"
+                  className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white"
                   strokeWidth={1.75}
                 />
               </span>
@@ -348,9 +348,9 @@ function MiniAppsDemo({ isActive }) {
       />
 
       {/* Glass card */}
-      <div className="relative h-full lg:h-auto rounded-t-2xl md:rounded-2xl border border-white/[0.12] bg-white/[0.06] backdrop-blur-xl shadow-2xl p-4 sm:p-6 flex flex-col">
+      <div className="relative h-full lg:h-auto rounded-t-2xl md:rounded-2xl border border-white/12 bg-white/6 backdrop-blur-xl shadow-2xl p-4 sm:p-6 flex flex-col">
         <div className="shrink-0 flex items-center justify-between gap-3 mb-3 sm:mb-4">
-          <div className="flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] p-0.5">
+          <div className="flex items-center gap-1 rounded-full border border-white/10 bg-white/4 p-0.5">
             {TABS.map((t) => (
               <button
                 key={t.id}
@@ -371,7 +371,7 @@ function MiniAppsDemo({ isActive }) {
           </p>
         </div>
 
-        <div className="flex-1 min-h-0 lg:h-[300px] flex items-stretch *:w-full">
+        <div className="flex-1 min-h-0 lg:h-75 flex items-stretch *:w-full">
           {tab === "delegation" && (
             <DelegationSim running={isActive && tab === "delegation"} />
           )}
@@ -405,7 +405,7 @@ function DelegationSim({ running }) {
     }
     const t = setTimeout(
       () => setI((p) => (p + 1) % SIM_PHASES.length),
-      SIM_DUR[SIM_PHASES[i]]
+      SIM_DUR[SIM_PHASES[i]],
     );
     return () => clearTimeout(t);
   }, [i, running]);
@@ -590,7 +590,7 @@ function SimSlider({ label, hint }) {
   const [slid, setSlid] = useState(false);
   useEffect(() => {
     const raf = requestAnimationFrame(() =>
-      requestAnimationFrame(() => setSlid(true))
+      requestAnimationFrame(() => setSlid(true)),
     );
     return () => cancelAnimationFrame(raf);
   }, []);
@@ -645,7 +645,7 @@ function MarginSim({ running }) {
     }
     const t = setTimeout(
       () => setPhase((p) => (p + 1) % 2),
-      phase === 0 ? 4200 : 5200
+      phase === 0 ? 4200 : 5200,
     );
     return () => clearTimeout(t);
   }, [phase, running]);
@@ -778,19 +778,16 @@ function MarginSim({ running }) {
 
 function TerritoryTeaser() {
   return (
-    <div className="min-h-0 rounded-lg sm:rounded-xl border border-white/[0.08] bg-white/[0.03] flex flex-col items-center justify-center text-center px-6 py-8 gap-3">
-      <span className="w-10 h-10 rounded-lg gradient-200 ring-1 ring-inset ring-white/25 shadow-lg flex items-center justify-center">
+    <div className="min-h-0 rounded-lg sm:rounded-xl border border-white/8 bg-white/3 flex flex-col items-center justify-center text-center px-6 py-8 gap-3">
+      <span className="w-10 h-10 rounded-lg gradient-200 inset-ring-1 inset-ring-white/25 shadow-lg flex items-center justify-center">
         <Lock className="w-4 h-4 text-white" strokeWidth={1.75} />
       </span>
       <p className="font-ptsans text-base sm:text-lg font-bold uppercase tracking-widest text-white/85">
         Territory Builder
       </p>
-      <p className="max-w-xs text-[11px] sm:text-xs leading-snug text-white/50">
-        Maps your industry's friction points, scores them, and sharpens your
-        declaration into a final statement.
-      </p>
+
       <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-white/35">
-        Declared Live on Day 3
+        Full access on Day 3
       </p>
     </div>
   );
@@ -799,7 +796,7 @@ function TerritoryTeaser() {
 function PhaseCard({ phase, delay }) {
   return (
     <div
-      className="rm-card h-full rounded-xl border border-white/[0.08] bg-white/[0.05] backdrop-blur-md p-2.5 sm:p-4"
+      className="rm-card h-full rounded-xl border border-white/8 bg-white/5 backdrop-blur-md p-2.5 sm:p-4"
       style={{ animationDelay: delay }}
     >
       <p className="flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/40 mb-1 sm:mb-2">
@@ -840,7 +837,7 @@ function RoadmapDiagram({ phases, isActive }) {
 
       {/* Glass card */}
       <div
-        className={`relative h-full rounded-t-2xl md:rounded-2xl border border-white/[0.12] bg-white/[0.06] backdrop-blur-xl shadow-2xl p-3 sm:p-6 lg:p-8 flex flex-col ${
+        className={`relative h-full rounded-t-2xl md:rounded-2xl border border-white/12 bg-white/6 backdrop-blur-xl shadow-2xl p-3 sm:p-6 lg:p-8 flex flex-col ${
           isActive ? "roadmap-anim" : ""
         }`}
       >
@@ -878,7 +875,7 @@ function RoadmapDiagram({ phases, isActive }) {
               ))}
               <span
                 aria-hidden
-                className="rm-axis-pulse absolute -top-[3.5px] w-2 h-2 rounded-full bg-[#b7bbff] shadow-[0_0_8px_2px_rgba(153,158,255,0.5)]"
+                className="rm-axis-pulse absolute top-[-3.5px] w-2 h-2 rounded-full bg-[#b7bbff] shadow-[0_0_8px_2px_rgba(153,158,255,0.5)]"
               />
             </div>
             <div className="relative mt-2.5 h-3">
@@ -905,7 +902,7 @@ function RoadmapDiagram({ phases, isActive }) {
         <div className="lg:hidden flex-1 relative min-h-0 pl-7">
           <div
             aria-hidden
-            className="rm-rail absolute left-3 top-1 bottom-1 w-px bg-gradient-to-b from-msaccent/70 via-white/25 to-white/50"
+            className="rm-rail absolute left-3 top-1 bottom-1 w-px bg-linear-to-b from-msaccent/70 via-white/25 to-white/50"
           />
           <div
             aria-hidden
@@ -916,7 +913,7 @@ function RoadmapDiagram({ phases, isActive }) {
               <div key={phase.num} className="relative">
                 <span
                   aria-hidden
-                  className="absolute -left-[19.5px] top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-msaccent ring-4 ring-msaccent/20"
+                  className="absolute left-[-19.5px] top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-msaccent ring-4 ring-msaccent/20"
                 />
                 <PhaseCard phase={phase} delay={`${0.15 + i * 0.3}s`} />
               </div>
@@ -946,7 +943,7 @@ function ToolsLibrary({ tools, isActive }) {
       />
 
       {/* Glass card */}
-      <div className="relative h-full rounded-t-2xl md:rounded-2xl border border-white/[0.12] bg-white/[0.06] backdrop-blur-xl shadow-2xl p-4 sm:p-6 lg:p-8 flex flex-col">
+      <div className="relative h-full rounded-t-2xl md:rounded-2xl border border-white/12 bg-white/6 backdrop-blur-xl shadow-2xl p-4 sm:p-6 lg:p-8 flex flex-col">
         <div className="shrink-0 flex items-center justify-between mb-3 sm:mb-5">
           <p className="whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.3em] text-white/40">
             Tool Library
@@ -961,10 +958,10 @@ function ToolsLibrary({ tools, isActive }) {
           {tools.map((tool, i) => (
             <div
               key={tool.name}
-              className="demo-tile rounded-xl border border-white/[0.08] bg-white/[0.04] p-2.5 sm:p-4 flex items-center sm:flex-col sm:items-start gap-2.5 sm:gap-4"
+              className="demo-tile rounded-xl border border-white/8 bg-white/4 p-2.5 sm:p-4 flex items-center sm:flex-col sm:items-start gap-2.5 sm:gap-4"
               style={{ animationDelay: `${0.1 + i * 0.07}s` }}
             >
-              <span className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-white ring-1 ring-inset ring-white/25 shadow-lg flex items-center justify-center p-1.5 sm:p-2">
+              <span className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-white inset-ring-1 inset-ring-white/25 shadow-lg flex items-center justify-center p-1.5 sm:p-2">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={tool.src}

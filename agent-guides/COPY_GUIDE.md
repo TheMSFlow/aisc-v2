@@ -102,7 +102,7 @@ Every section of the landing page should advance this story without interrupting
 
 **Verb discipline — Territory vs. Roadmap:** The territory is discovered and declared during the challenge (Day 3, via the Territory Builder). The Roadmap is unlocked on Day 6 and followed, executed, or worked through during the 180 days after the challenge — it is never "built." Building applies to the territory (the leader builds it out, occupies it, makes it real) or to relationships and capability, not to the Roadmap document itself. Do not write "the roadmap you built."
 
-**Act 6 — Coaching makes it inevitable.** For leaders who want to be guided through the roadmap rather than just handed it, the AI Stakeholder Coaching Program walks with them twice a week. The challenge includes it. There is no additional AISC fee when starting through Coaching.
+**Act 6 — Coaching makes it inevitable.** For leaders who want to be guided through the roadmap rather than just handed it, the AI Stakeholder Coaching Program coaches them in a live group session once a week. The challenge includes it. There is no additional AISC fee when starting through Coaching.
 
 ---
 
@@ -328,7 +328,7 @@ Who: You are doing the work. You often see what others above you are missing whe
 
 Label: The Toolbox
 H2: The challenge ends on Day 7. The Toolbox doesn't.
-Body: The Toolbox holds resources and tools: a reference library your thought leadership is built from, mini apps that make delegation and coordination easier every time your situation changes, and six months of dedicated AI fluency instruction.
+Body: The Toolbox holds resources and tools: a reference library your thought leadership is built from, mini apps that make delegation and coordination easier every time your situation changes, and dedicated AI fluency instruction free for up to six months, depending on tier.
 
 The Demo section presents the Toolbox as four full-height horizontal panels. Each panel has a headline, body, and a visual (screenshots or editorial card). The "does + produces" structure no longer applies at the per-panel level — copy is integrated into the panel body.
 
@@ -346,13 +346,13 @@ Body: "The 6-Month AI Stakeholder Roadmap carries your territory through three p
 
 **Panel 04 — AI Labs (Resource)**
 Headline: "Built for leaders who direct AI. Not engineers who build it."
-Body: "A dedicated platform with leadership-focused instruction on AI setup, direction, and domain application. Where the fluency you built during the challenge keeps compounding as you execute your roadmap. Six months of free access, included."
+Body: "A dedicated platform with leadership-focused instruction on AI setup, direction, and domain application. Where the fluency you built during the challenge keeps compounding as you execute your roadmap. Free access included with every tier: one month with General Admission, three with VIP, six with VVIP."
 
 **Direction notes:**
 - The section label is "The Toolbox" — this is the name used inside the learning center. Do not rename it.
 - The H2 passes all three headline rules: visualizable (the challenge closing, the Toolbox still open and in use), falsifiable (named resources and tools with six-month access), distinctive (no other program speaks this way).
 - The body carries three value dimensions in one sentence, in order: thought leadership (Guides, Frameworks & Templates), team management (mini apps / tools), fluency growth (AI Labs). Do not expand to multiple sentences.
-- AI Labs must always name the 6-month free access. This is a significant value extension and must not be buried or omitted. AI Labs is a resource.
+- AI Labs must always name the free access period, and the access is tiered: 1 month (General Admission), 3 months (VIP), 6 months (VVIP). Never state a single blanket duration. This is a significant value extension and must not be buried or omitted. AI Labs is a resource.
 - The Territory Builder panel body must always reference the PDF output and the Certificate of Declaration connection. The three mini apps are grouped in Panel 02 — the Territory Builder copy must preserve this payoff within the grouped body.
 - Guides, Frameworks & Templates frames as thought leadership foundation and team-distribution infrastructure, not a course notes archive.
 - Panel headlines must each pass the three headline tests (visualizable, falsifiable, distinctive). Do not rewrite without running the filter.
@@ -386,7 +386,7 @@ General Admission:
 | Mini apps | Three tools in the Toolbox: the Delegation Tool for rating tasks on AI fit and human judgment, the Margin Calculator for tracking real time saved, and the Territory Builder for mapping and declaring your AI territory. All three are reusable after the challenge ends. |
 | All Assignments and Milestone Task | Post-session assignments for Days 1, 2, and 3, plus the Day 3 Milestone Task, the capstone exercise that produces your territory declaration and feeds into your 6-Month AI Stakeholder Roadmap. |
 | 6-Month AI Stakeholder Roadmap | Turns the territory you declared on Day 3 into a 180-day plan across three phases, built around your capability gaps, the relationships you need, and your own standards for using AI. Unlocked on Day 6. |
-| AI Labs (6 months free access) | A dedicated platform with leadership-focused instruction on setting up AI, directing it, and applying it across your domain. 6 months of free access. Starts when the challenge ends. |
+| AI Labs (1 month free access) | A dedicated platform with leadership-focused instruction on setting up AI, directing it, and applying it across your domain. 1 month of free access that starts when the challenge ends. VIP extends this to 3 months and VVIP to 6. |
 | Peer-to-peer reflection (optional) | Peer reflection helps participants sharpen their own thinking by observing clarity in others. It is not a review mechanism. Participation is optional and feedback is anonymized. |
 | Community access | Private WhatsApp group for reflection and awareness. |
 | Certificate of Declaration | Issued on Day 7. Recognizes your declared AI territory and marks your transition from participant to AI Stakeholder. |
@@ -416,7 +416,7 @@ VVIP:
 **Confirmed question set (10 questions):**
 
 **Q1 — What do I actually leave with after 7 days?**
-Three things change permanently, and you leave with paper to prove each one. AI Clarity: a clean, honest picture of what AI means for your domain, built by you on Day 1. Real margin: a number from the Margin Calculator showing how many hours a week you are reclaiming from work AI can handle. A declared territory: a specific AI value position in your world, shaped by the Territory Builder and declared on Day 3. The 6-Month AI Stakeholder Roadmap, unlocked on Day 6, takes that declaration into 180 days of execution, naming your capability gaps, the relationships you need to build, and the standards you'll hold yourself to along the way. Your Toolbox access remains in your challenger profile. AI Labs, a dedicated platform where your AI fluency keeps growing, is included free for six months. You receive a Certificate of Declaration on Day 7.
+Three things change permanently, and you leave with paper to prove each one. AI Clarity: a clean, honest picture of what AI means for your domain, built by you on Day 1. Real margin: a number from the Margin Calculator showing how many hours a week you are reclaiming from work AI can handle. A declared territory: a specific AI value position in your world, shaped by the Territory Builder and declared on Day 3. The 6-Month AI Stakeholder Roadmap, unlocked on Day 6, takes that declaration into 180 days of execution, naming your capability gaps, the relationships you need to build, and the standards you'll hold yourself to along the way. Your Toolbox access remains in your challenger profile. AI Labs, a dedicated platform where your AI fluency keeps growing, is included free after the challenge ends: one month with General Admission, three months with VIP, and six months with VVIP. You receive a Certificate of Declaration on Day 7.
 
 **Q2 — Do I need to know anything about AI before I join?**
 No. Day 1 is specifically designed to work regardless of your current level of AI familiarity. You do not need to have used any AI tools, formed an opinion about AI, or read anything about it in advance. AI Clarity is the first thing the challenge produces. You show up as you are. The challenge meets you there.
@@ -428,16 +428,16 @@ The four live sessions run 2 hours each. Day 7's session includes a live Q&A wit
 No. The three audiences are defined by what you hold: responsibility, influence, and access to resources. Not by your job title or industry. Previous participants include business founders, senior pastors, content creators, politicians, and organizational department heads. If you lead people and are accountable for direction, this challenge is built for you.
 
 **Q5 — What happens after the 7 days?**
-You leave with the 6-Month AI Stakeholder Roadmap, which turns the territory you declared on Day 3 into a 180-day plan across three phases: proving you can execute, applying your leverage and building key relationships, then extending your authority. It names your capability gaps and sets the personal standards you'll hold yourself to as you go. It is designed to be reused every 6 months. Your Toolbox access remains in your challenger profile. AI Labs, a dedicated platform where your AI fluency keeps developing as you execute the roadmap, is included free for six months. For leaders who want guided execution through that roadmap, the AI Stakeholder Coaching Program walks with them twice a week.
+You leave with the 6-Month AI Stakeholder Roadmap, which turns the territory you declared on Day 3 into a 180-day plan across three phases: proving you can execute, applying your leverage and building key relationships, then extending your authority. It names your capability gaps and sets the personal standards you'll hold yourself to as you go. It is designed to be reused every 6 months. Your Toolbox access remains in your challenger profile. AI Labs, a dedicated platform where your AI fluency keeps developing as you execute the roadmap, is included free after the challenge ends: one month with General Admission, three months with VIP, and six months with VVIP. For leaders who want guided execution through that roadmap, the AI Stakeholder Coaching Program provides weekly group coaching sessions.
 
 **Q6 — Is Coaching separate from the challenge?**
-Yes, and it includes the challenge at no additional fee. The AI Stakeholder Coaching Program is a separate engagement for leaders who want a facilitator alongside them through the 6-Month Roadmap. Coaching is not a cheaper entry point into the challenge. It is the full program plus six or twelve months of guided execution. If you already know you want ongoing support, starting with Coaching is the more complete path.
+Yes, and it includes the challenge at no additional fee. The AI Stakeholder Coaching Program is a separate group coaching engagement for leaders who want a facilitator alongside them through the 6-Month Roadmap. Sessions run live once a week in a group setting. Your questions and your situation get direct attention, alongside leaders working through the same phases. Coaching is not a cheaper entry point into the challenge. It is the full program plus six or twelve months of guided execution. If you already know you want ongoing support, starting with Coaching is the more complete path.
 
 **Q7 — What makes this different from an AI course or webinar?**
 AISC is not a course and not a webinar. There are no passive videos to watch at your own pace and quietly forget. Every live session builds on the last. Every assignment produces an output you keep. The Delegation Tool, the Margin Calculator, and the Territory Builder are tools you use on your own real situation, not case studies you observe. By Day 3, you have made three real decisions. A webinar gives you information. AISC gives you a decision.
 
 **Q8 — How many people are in each cohort?**
-General Admission is open to the full cohort. VIP is capped at 10 seats. This is a real constraint, not manufactured scarcity. The limit exists because facilitator feedback at the milestone stage requires a manageable group. VVIP and Coaching are delivered privately, one-on-one.
+General Admission is open to the full cohort. VIP is capped at 10 seats. This is a real constraint, not manufactured scarcity. The limit exists because facilitator feedback at the milestone stage requires a manageable group. VVIP is delivered privately, one-on-one. Coaching runs as weekly facilitated group sessions.
 
 **Q9 — Who should not join this challenge?**
 This challenge is not a fit if you are looking for tool tutorials, step-by-step AI instructions, or passive content to consume at your own pace. It is also not a shortcut. The territory you declare on Day 3 requires judgment, leadership, and real commitment over the six months that follow. The challenge rewards focus, honesty, and execution. It does not chase participation.
@@ -451,7 +451,7 @@ The value of the challenge depends on engagement. The structure is designed to s
 The final section. The premium close. Not a product pitch — a path for leaders who already know they want more than the challenge alone. Readers who reach this section have cleared their objections (FAQ), understood the offer (Pricing), and are deciding how deep to go.
 
 - Open with the continuation, not the product: "The Roadmap tells you exactly where to go. For some leaders, having a guide through those six months matters more than having the map alone."
-- Name what coaching delivers: facilitated execution of the 6-Month Roadmap, once a week, on the participant's chosen days, with a guide who walks alongside them as their AI fluency keeps growing
+- Name what coaching delivers: facilitated execution of the 6-Month Roadmap through live group coaching, one session per week, with a guide who walks alongside them as their AI fluency keeps growing. Coaching is a group setting, not 1:1. Frame the group as an asset: questions get answered directly, and thinking sharpens by watching other leaders navigate the same phases
 - State the key fact clearly: Coaching includes AISC at no additional fee. A leader who already knows they want ongoing support is better served starting here than joining the challenge and adding coaching later
 - Pricing should be visible and complete — but secondary to the recognition ask: "If you already know you want a guide, this is the path"
 - CTA: "Start with Coaching" with sub-note: "Your first step is a 15-minute discovery call."
@@ -466,9 +466,9 @@ H2: The Roadmap tells you where to go. For some leaders, the guide matters more 
 
 Body: The 6-Month Roadmap runs in three phases over 180 days: AI Clarity and Labs, Implementation and Relationships, then Governance and Mandate. Most leaders do not want to navigate that alone.
 
-The AI Stakeholder Coaching Program walks with you once a week, on your schedule, as you follow the Roadmap you leave the challenge with. Your fluency compounds. The territory you discovered in the challenge gets built.
+The AI Stakeholder Coaching Program is live group coaching: one facilitated session each week, alongside leaders executing their own Roadmaps. Your questions get answered directly, and your thinking sharpens as you watch other leaders navigate the same phases. Your fluency compounds. The territory you discovered in the challenge gets built.
 
-Facts: 1× session per week / 180 days of guided execution / $0 additional AISC fee
+Facts: 1× group session per week / 180 days of guided execution / $0 additional AISC fee
 
 Closing note: Coaching includes the AI Stakeholder Challenge at no additional fee. If you already know you want a guide through the roadmap, this is the more complete path.
 
@@ -487,7 +487,7 @@ Three things make Coaching feel inevitable rather than upsold:
 
 1. **The challenge produces four real wins.** That arc is established across the page. Coaching is not introducing new value — it is asking how the reader wants to continue what has already started.
 2. **The Roadmap is where fluency keeps growing.** It is a 180-day filter for decisions, delegation, and AI application. A leader's fluency compounds as they execute it. Most leaders do not want to navigate that development alone — and most won't say it out loud until they feel it's an option.
-3. **Coaching is the answer to: "Who walks with me?"** Not a tutor, not a consultant. A guide who works with the leader twice a week, in their world, on their roadmap.
+3. **Coaching is the answer to: "Who walks with me?"** Not a tutor, not a consultant. A guide who coaches the leader once a week, in a group of leaders each executing their own roadmap.
 
 The coaching copy should not compete with the challenge copy or restate it. It should extend it. The reader who recognizes themselves in the Coaching section copy will convert without being closed — because you have written the copy for the version of them who already said yes.
 
@@ -527,7 +527,7 @@ The coaching copy should not compete with the challenge copy or restate it. It s
 - 2 hrs per live session (all 4 sessions); Day 7 includes Q&A within that time
 - 10 VIP seats — a real constraint, not manufactured scarcity
 - 6-month roadmap, reusable every 6 months
-- Coaching: twice a week, participant's chosen days, includes AISC at no additional fee
+- Coaching: live group coaching (not 1:1), one group session per week, includes AISC at no additional fee
 - GA: $99 / ₦120,000 · VIP: $399 / ₦520,000 · VVIP: $1,099 / ₦1,350,000
 - The Margin Calculator produces a real weekly and annual number — use "hours" not "efficiency"
 - The Roadmap is 5 documents: the Roadmap itself, Capability Gap Audit, AI Stakeholder Identifier, Personal AI Policy, Super Connections guide
