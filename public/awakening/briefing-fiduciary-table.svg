@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="rgb(0,3,76)"/>
+  <!-- boardroom table -->
+  <ellipse cx="800" cy="460" rx="430" ry="200" fill="none" stroke="rgba(233,234,255,0.16)" stroke-width="2"/>
+  <!-- seats -->
+  <g fill="rgba(233,234,255,0.32)">
+    <circle cx="800" cy="215" r="13"/>
+    <circle cx="1090" cy="290" r="13"/>
+    <circle cx="1250" cy="460" r="13"/>
+    <circle cx="1090" cy="630" r="13"/>
+    <circle cx="800" cy="705" r="13"/>
+    <circle cx="510" cy="630" r="13"/>
+    <circle cx="350" cy="460" r="13"/>
+    <circle cx="510" cy="290" r="13"/>
+  </g>
+  <!-- the item on the table -->
+  <rect x="756" y="416" width="88" height="88" fill="rgb(99,104,218)"/>
+  <rect x="726" y="386" width="148" height="148" fill="none" stroke="rgb(233,234,255)" stroke-width="4"/>
+</svg>

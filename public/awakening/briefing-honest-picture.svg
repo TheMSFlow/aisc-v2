@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="rgb(0,3,76)"/>
+  <!-- the noise of explanations: blurred overlapping outlines -->
+  <g fill="none" stroke="rgba(233,234,255,0.14)" stroke-width="3">
+    <rect x="300" y="270" width="240" height="240" transform="rotate(-8 420 390)"/>
+    <rect x="340" y="310" width="240" height="240" transform="rotate(5 460 430)"/>
+    <rect x="380" y="250" width="240" height="240" transform="rotate(-3 500 370)"/>
+    <rect x="420" y="330" width="240" height="240" transform="rotate(9 540 450)"/>
+  </g>
+  <!-- resolving line -->
+  <line x1="720" y1="450" x2="880" y2="450" stroke="rgba(233,234,255,0.3)" stroke-width="4"/>
+  <path d="M 880 450 L 850 430 M 880 450 L 850 470" stroke="rgba(233,234,255,0.3)" stroke-width="4" fill="none"/>
+  <!-- the clean picture -->
+  <rect x="960" y="330" width="240" height="240" fill="none" stroke="rgb(99,104,218)" stroke-width="8"/>
+  <circle cx="1080" cy="450" r="16" fill="rgb(233,234,255)"/>
+</svg>

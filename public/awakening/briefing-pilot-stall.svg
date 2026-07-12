@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="rgb(0,3,76)"/>
+  <!-- baseline -->
+  <line x1="240" y1="700" x2="1360" y2="700" stroke="rgba(233,234,255,0.16)" stroke-width="2"/>
+  <!-- the pilot that stalled -->
+  <path d="M 280 700 C 420 660, 500 560, 580 540 C 680 520, 900 528, 1140 532"
+        fill="none" stroke="rgba(233,234,255,0.35)" stroke-width="5" stroke-dasharray="14 12"/>
+  <circle cx="1180" cy="532" r="10" fill="rgba(233,234,255,0.35)"/>
+  <!-- the one with an owner, a wound, a standard -->
+  <path d="M 280 700 C 480 640, 640 520, 800 420 C 960 320, 1080 260, 1230 200"
+        fill="none" stroke="rgb(99,104,218)" stroke-width="8"/>
+  <circle cx="1258" cy="189" r="16" fill="rgb(233,234,255)"/>
+</svg>

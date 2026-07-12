@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="rgb(0,3,76)"/>
+  <!-- the team -->
+  <g fill="rgba(233,234,255,0.4)">
+    <circle cx="380" cy="330" r="12"/><circle cx="470" cy="380" r="12"/><circle cx="380" cy="440" r="12"/>
+    <circle cx="470" cy="500" r="12"/><circle cx="380" cy="560" r="12"/><circle cx="300" cy="390" r="12"/>
+    <circle cx="300" cy="500" r="12"/>
+  </g>
+  <!-- the open gap: unanswered space -->
+  <g stroke="rgba(233,234,255,0.18)" stroke-width="3" stroke-dasharray="4 14">
+    <line x1="560" y1="360" x2="1010" y2="430"/>
+    <line x1="560" y1="450" x2="1010" y2="450"/>
+    <line x1="560" y1="540" x2="1010" y2="470"/>
+  </g>
+  <!-- the leader, present and held -->
+  <circle cx="1110" cy="450" r="28" fill="rgb(233,234,255)"/>
+  <circle cx="1110" cy="450" r="64" fill="none" stroke="rgb(99,104,218)" stroke-width="6"/>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="rgb(0,3,76)"/>
+  <!-- a week of hour blocks: 5 columns -->
+  <g fill="none" stroke="rgba(233,234,255,0.3)" stroke-width="3">
+    <rect x="360" y="180" width="120" height="60"/>
+    <rect x="360" y="260" width="120" height="60"/>
+    <rect x="530" y="180" width="120" height="60"/>
+    <rect x="530" y="260" width="120" height="60"/>
+    <rect x="530" y="340" width="120" height="60"/>
+    <rect x="700" y="180" width="120" height="60"/>
+    <rect x="870" y="180" width="120" height="60"/>
+    <rect x="870" y="260" width="120" height="60"/>
+    <rect x="1040" y="180" width="120" height="60"/>
+  </g>
+  <!-- the baseline everything sits on -->
+  <line x1="280" y1="470" x2="1320" y2="470" stroke="rgba(233,234,255,0.16)" stroke-width="2"/>
+  <!-- hours draining through it -->
+  <g fill="rgb(99,104,218)">
+    <rect x="480" y="520" width="80" height="40"/>
+    <rect x="700" y="580" width="80" height="40"/>
+    <rect x="920" y="540" width="80" height="40"/>
+    <rect x="620" y="660" width="80" height="40"/>
+    <rect x="840" y="690" width="80" height="40"/>
+  </g>
+  <g fill="rgba(99,104,218,0.45)">
+    <rect x="560" y="620" width="80" height="40"/>
+    <rect x="1020" y="640" width="80" height="40"/>
+  </g>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="rgb(0,3,76)"/>
+  <!-- org chart dots -->
+  <g fill="rgba(233,234,255,0.3)">
+    <circle cx="800" cy="180" r="12"/>
+    <circle cx="560" cy="330" r="12"/>
+    <circle cx="1040" cy="330" r="12"/>
+    <circle cx="420" cy="500" r="12"/>
+    <circle cx="940" cy="500" r="12"/>
+    <circle cx="1160" cy="500" r="12"/>
+    <circle cx="320" cy="670" r="12"/>
+    <circle cx="520" cy="670" r="12"/>
+    <circle cx="1060" cy="670" r="12"/>
+  </g>
+  <!-- faint hierarchy lines -->
+  <g stroke="rgba(233,234,255,0.14)" stroke-width="2">
+    <path d="M 800 180 L 560 330 M 800 180 L 1040 330"/>
+    <path d="M 560 330 L 420 500 M 560 330 L 700 500"/>
+    <path d="M 1040 330 L 940 500 M 1040 330 L 1160 500"/>
+    <path d="M 420 500 L 320 670 M 420 500 L 520 670"/>
+    <path d="M 940 500 L 1060 670"/>
+  </g>
+  <!-- the one the room asks: not at the top -->
+  <circle cx="700" cy="500" r="14" fill="rgb(233,234,255)"/>
+  <circle cx="700" cy="500" r="48" fill="none" stroke="rgb(99,104,218)" stroke-width="6"/>
+  <!-- attention converging on it -->
+  <g stroke="rgb(99,104,218)" stroke-width="4">
+    <line x1="560" y1="345" x2="668" y2="462"/>
+    <line x1="940" y1="500" x2="752" y2="500"/>
+    <line x1="520" y1="655" x2="662" y2="535"/>
+    <line x1="1050" y1="658" x2="748" y2="524"/>
+  </g>
+</svg>

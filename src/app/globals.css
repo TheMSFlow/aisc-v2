@@ -224,3 +224,157 @@ h3 {
 .ms-scrollbar::-webkit-scrollbar-corner {
   background: transparent;
 }
+/* =========================
+   THE AWAKENING — ARTICLE PROSE
+   Editorial typography for MDX article bodies.
+   ========================= */
+.awakening-prose {
+  color: color-mix(in srgb, var(--dark-blue) 78%, transparent);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.awakening-prose > * + * {
+  margin-top: 1.25em;
+}
+
+.awakening-prose h2 {
+  font-family: var(--font-ptsans);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--dark-blue);
+  font-size: 1.75rem;
+  line-height: 1.15;
+  margin-top: 2.75em;
+}
+
+.awakening-prose h3 {
+  font-family: var(--font-ptsans);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--dark-blue);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin-top: 2.25em;
+}
+
+.awakening-prose strong {
+  font-weight: 600;
+  color: var(--dark-blue);
+}
+
+.awakening-prose a {
+  color: var(--msaccent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--msaccent) 40%, transparent);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s ease;
+}
+
+.awakening-prose a:hover {
+  text-decoration-color: var(--msaccent);
+}
+
+.awakening-prose blockquote {
+  border-left: 2px solid var(--msaccent);
+  padding-left: 1.5rem;
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--dark-blue);
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.awakening-prose ul,
+.awakening-prose ol {
+  padding-left: 1.5rem;
+}
+
+.awakening-prose ul {
+  list-style-type: disc;
+}
+
+.awakening-prose ol {
+  list-style-type: decimal;
+}
+
+.awakening-prose li {
+  margin-top: 0.5em;
+  padding-left: 0.25rem;
+}
+
+.awakening-prose li::marker {
+  color: var(--msaccent);
+}
+
+.awakening-prose hr {
+  border: 0;
+  border-top: 1px solid color-mix(in srgb, var(--dark-blue) 10%, transparent);
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.awakening-prose code {
+  background: color-mix(in srgb, var(--lilac) 55%, transparent);
+  color: var(--dark-blue);
+  border-radius: 4px;
+  padding: 0.125rem 0.375rem;
+  font-size: 0.875em;
+}
+
+.awakening-prose pre {
+  background: var(--dark-blue);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.awakening-prose pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+.awakening-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.awakening-prose th {
+  font-family: var(--font-ptsans);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8125rem;
+  text-align: left;
+  color: var(--dark-blue);
+  border-bottom: 2px solid color-mix(in srgb, var(--dark-blue) 20%, transparent);
+  padding: 0.625rem 1rem 0.625rem 0;
+}
+
+.awakening-prose td {
+  border-bottom: 1px solid color-mix(in srgb, var(--dark-blue) 10%, transparent);
+  padding: 0.75rem 1rem 0.75rem 0;
+  vertical-align: top;
+}
+
+.awakening-prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+.awakening-prose figcaption {
+  font-size: 0.8125rem;
+  color: color-mix(in srgb, var(--dark-blue) 50%, transparent);
+  margin-top: 0.75rem;
+}

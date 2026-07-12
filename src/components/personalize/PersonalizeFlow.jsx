@@ -5,6 +5,7 @@ import { ArrowLeft, Loader2, Sparkles } from "lucide-react";
 import Button from "@/components/global/Button";
 import Section from "@/components/layout/Section";
 import { useLocation } from "@/context/LocationContext";
+import { trackEvent } from "@/lib/analytics";
 import { SEAT_QUESTION, getPrompts } from "@/lib/personalize/questions";
 import ProgressBar from "./ProgressBar";
 import QuestionStep from "./QuestionStep";
@@ -91,6 +92,7 @@ export default function PersonalizeFlow() {
         return;
       }
       setResult(data.result);
+      trackEvent("personalize_complete", { seat: finalAnswers.seat });
       setStep("results");
     } catch {
       setStep("error");
@@ -138,7 +140,10 @@ export default function PersonalizeFlow() {
             <Button
               variant="dark"
               className="px-10 py-3"
-              onClick={() => setStep("seat")}
+              onClick={() => {
+                trackEvent("personalize_start");
+                setStep("seat");
+              }}
             >
               Start
             </Button>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="rgb(0,3,76)"/>
+  <!-- baseline -->
+  <line x1="240" y1="720" x2="1360" y2="720" stroke="rgba(233,234,255,0.16)" stroke-width="2"/>
+  <!-- the fast staircase -->
+  <path d="M 320 720 L 420 720 L 420 620 L 520 620 L 520 520 L 620 520 L 620 420 L 720 420 L 720 320 L 820 320 L 820 220"
+        fill="none" stroke="rgba(233,234,255,0.55)" stroke-width="6"/>
+  <!-- the slow staircase -->
+  <path d="M 900 720 L 1020 720 L 1020 660 L 1140 660 L 1140 600 L 1260 600"
+        fill="none" stroke="rgba(233,234,255,0.3)" stroke-width="6"/>
+  <!-- the bridge being drawn between them -->
+  <line x1="830" y1="300" x2="1150" y2="560" stroke="rgb(99,104,218)" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="830" cy="300" r="14" fill="rgb(233,234,255)"/>
+  <circle cx="1150" cy="560" r="14" fill="rgb(99,104,218)"/>
+</svg>

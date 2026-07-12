@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="rgb(0,3,76)"/>
+  <!-- the large open frame: the real question -->
+  <rect x="330" y="150" width="940" height="600" fill="none" stroke="rgb(99,104,218)" stroke-width="6"/>
+  <!-- the small tight frame: the cheating debate -->
+  <rect x="430" y="480" width="200" height="170" fill="none" stroke="rgba(233,234,255,0.45)" stroke-width="4"/>
+  <g stroke="rgba(233,234,255,0.3)" stroke-width="3">
+    <line x1="460" y1="530" x2="600" y2="530"/>
+    <line x1="460" y1="570" x2="570" y2="570"/>
+    <line x1="460" y1="610" x2="590" y2="610"/>
+  </g>
+  <!-- the path out into the larger ground -->
+  <path d="M 630 540 C 760 480, 860 400, 1000 330"
+        fill="none" stroke="rgb(99,104,218)" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="1040" cy="310" r="16" fill="rgb(233,234,255)"/>
+  <!-- open ground marks in the larger frame -->
+  <g fill="rgba(233,234,255,0.3)">
+    <circle cx="800" cy="240" r="8"/>
+    <circle cx="1130" cy="450" r="8"/>
+    <circle cx="960" cy="600" r="8"/>
+  </g>
+</svg>

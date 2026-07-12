@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="rgb(1,5,121)"/>
+  <!-- the classroom: ordered rows -->
+  <g fill="none" stroke="rgba(233,234,255,0.22)" stroke-width="2">
+    <rect x="240" y="220" width="110" height="80"/><rect x="420" y="220" width="110" height="80"/><rect x="600" y="220" width="110" height="80"/><rect x="780" y="220" width="110" height="80"/><rect x="960" y="220" width="110" height="80"/><rect x="1140" y="220" width="110" height="80"/>
+    <rect x="240" y="380" width="110" height="80"/><rect x="420" y="380" width="110" height="80"/><rect x="780" y="380" width="110" height="80"/><rect x="1140" y="380" width="110" height="80"/>
+    <rect x="240" y="540" width="110" height="80"/><rect x="600" y="540" width="110" height="80"/><rect x="780" y="540" width="110" height="80"/><rect x="960" y="540" width="110" height="80"/>
+  </g>
+  <!-- the desks already ahead of the policy -->
+  <g fill="rgb(99,104,218)">
+    <rect x="600" y="380" width="110" height="80"/>
+    <rect x="960" y="380" width="110" height="80"/>
+    <rect x="420" y="540" width="110" height="80"/>
+    <rect x="1140" y="540" width="110" height="80"/>
+  </g>
+  <!-- the policy line still being drawn at the front -->
+  <line x1="240" y1="130" x2="880" y2="130" stroke="rgb(233,234,255)" stroke-width="6"/>
+  <line x1="880" y1="130" x2="1250" y2="130" stroke="rgba(233,234,255,0.25)" stroke-width="6" stroke-dasharray="16 14"/>
+</svg>

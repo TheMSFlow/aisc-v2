@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="rgb(0,3,76)"/>
+  <!-- the cross, pressed under paperwork -->
+  <g fill="rgb(233,234,255)">
+    <rect x="760" y="520" width="80" height="200"/>
+    <rect x="700" y="580" width="200" height="80"/>
+  </g>
+  <!-- the stack of document lines pressing down -->
+  <g stroke="rgba(233,234,255,0.3)" stroke-width="6" stroke-linecap="round">
+    <line x1="620" y1="420" x2="980" y2="420"/>
+    <line x1="650" y1="370" x2="950" y2="370"/>
+    <line x1="680" y1="320" x2="920" y2="320"/>
+  </g>
+  <!-- lines lifting away -->
+  <g stroke="rgb(99,104,218)" stroke-width="6" stroke-linecap="round">
+    <line x1="1000" y1="280" x2="1240" y2="230"/>
+    <line x1="980" y1="200" x2="1180" y2="140"/>
+    <line x1="360" y1="250" x2="600" y2="210"/>
+  </g>
+</svg>

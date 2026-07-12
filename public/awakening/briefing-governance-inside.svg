@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="rgb(1,5,121)"/>
+  <!-- the organization: a quiet grid -->
+  <g fill="rgba(233,234,255,0.18)">
+    <circle cx="300" cy="230" r="10"/><circle cx="470" cy="230" r="10"/><circle cx="640" cy="230" r="10"/><circle cx="810" cy="230" r="10"/><circle cx="980" cy="230" r="10"/><circle cx="1150" cy="230" r="10"/><circle cx="1320" cy="230" r="10"/>
+    <circle cx="300" cy="380" r="10"/><circle cx="470" cy="380" r="10"/><circle cx="640" cy="380" r="10"/><circle cx="1150" cy="380" r="10"/><circle cx="1320" cy="380" r="10"/>
+    <circle cx="300" cy="530" r="10"/><circle cx="470" cy="530" r="10"/><circle cx="980" cy="530" r="10"/><circle cx="1150" cy="530" r="10"/><circle cx="1320" cy="530" r="10"/>
+    <circle cx="300" cy="680" r="10"/><circle cx="470" cy="680" r="10"/><circle cx="640" cy="680" r="10"/><circle cx="810" cy="680" r="10"/><circle cx="980" cy="680" r="10"/><circle cx="1150" cy="680" r="10"/><circle cx="1320" cy="680" r="10"/>
+  </g>
+  <!-- ungoverned activity already inside -->
+  <circle cx="810" cy="380" r="16" fill="rgb(135,5,113)"/>
+  <circle cx="980" cy="380" r="16" fill="rgb(135,5,113)"/>
+  <circle cx="640" cy="530" r="16" fill="rgb(135,5,113)"/>
+  <circle cx="810" cy="530" r="16" fill="rgb(135,5,113)"/>
+  <!-- the boundary nobody drew yet -->
+  <rect x="545" y="290" width="530" height="330" fill="none" stroke="rgb(233,234,255)" stroke-width="4" stroke-dasharray="18 14"/>
+</svg>

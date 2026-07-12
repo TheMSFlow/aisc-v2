@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="rgb(0,3,76)"/>
+  <!-- open ground: contour lines -->
+  <g fill="none" stroke="rgba(233,234,255,0.16)" stroke-width="2">
+    <path d="M -50 720 C 300 640, 500 760, 850 660 S 1400 700, 1650 600"/>
+    <path d="M -50 600 C 280 520, 560 640, 900 540 S 1380 580, 1650 470"/>
+    <path d="M -50 480 C 260 410, 590 520, 940 430 S 1360 460, 1650 350"/>
+    <path d="M -50 360 C 240 300, 620 400, 980 320 S 1340 340, 1650 240"/>
+    <path d="M -50 240 C 220 190, 650 280, 1010 210 S 1320 220, 1650 140"/>
+  </g>
+  <!-- the routes everyone else is wandering -->
+  <g fill="rgba(233,234,255,0.28)">
+    <circle cx="360" cy="560" r="7"/>
+    <circle cx="520" cy="600" r="7"/>
+    <circle cx="680" cy="570" r="7"/>
+    <circle cx="450" cy="300" r="7"/>
+    <circle cx="600" cy="260" r="7"/>
+  </g>
+  <!-- the claim: one deliberate marker on open ground -->
+  <line x1="1120" y1="390" x2="1120" y2="210" stroke="rgb(99,104,218)" stroke-width="8"/>
+  <path d="M 1120 210 L 1240 250 L 1120 290 Z" fill="rgb(99,104,218)"/>
+  <circle cx="1120" cy="390" r="12" fill="rgb(233,234,255)"/>
+</svg>

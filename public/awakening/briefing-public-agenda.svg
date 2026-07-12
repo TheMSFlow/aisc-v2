@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="rgb(0,3,76)"/>
+  <!-- the agenda: faint lines waiting -->
+  <g stroke="rgba(233,234,255,0.28)" stroke-width="6" stroke-linecap="round">
+    <line x1="380" y1="360" x2="880" y2="360"/>
+    <line x1="380" y1="450" x2="1020" y2="450"/>
+    <line x1="380" y1="540" x2="820" y2="540"/>
+    <line x1="380" y1="630" x2="950" y2="630"/>
+  </g>
+  <!-- the line written first, ahead of the rest -->
+  <line x1="380" y1="255" x2="1220" y2="255" stroke="rgb(99,104,218)" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="1268" cy="255" r="16" fill="rgb(233,234,255)"/>
+</svg>

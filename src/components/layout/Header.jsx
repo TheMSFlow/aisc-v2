@@ -12,6 +12,15 @@ const NAV = [
   { label: "Coaching", href: "/#coaching" },
 ];
 
+// Hash links stay plain anchors (in-page scroll); routes get Link prefetch.
+function NavLink({ href, ...props }) {
+  return href.startsWith("/#") ? (
+    <a href={href} {...props} />
+  ) : (
+    <Link href={href} {...props} />
+  );
+}
+
 export default function Header() {
   const [open, setOpen] = useState(false);
 
@@ -35,12 +44,12 @@ export default function Header() {
           <ul className="hidden items-center gap-7 lg:flex">
             {NAV.map((item) => (
               <li key={item.href}>
-                <a
+                <NavLink
                   href={item.href}
                   className="text-sm text-lilac/80 transition-colors hover:text-white"
                 >
                   {item.label}
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>
@@ -71,13 +80,13 @@ export default function Header() {
             <ul className="flex flex-col gap-1">
               {NAV.map((item) => (
                 <li key={item.href}>
-                  <a
+                  <NavLink
                     href={item.href}
                     onClick={() => setOpen(false)}
                     className="block py-2 text-base text-lilac/90 hover:text-white"
                   >
                     {item.label}
-                  </a>
+                  </NavLink>
                 </li>
               ))}
             </ul>
@@ -86,7 +95,7 @@ export default function Header() {
                 href="/personalize"
                 variant="primary"
                 iconLeft={Sparkles}
-                className="w-full"
+                className=""
                 onClick={() => setOpen(false)}
               >
                 Guide me

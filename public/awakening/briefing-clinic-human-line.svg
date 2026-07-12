@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="rgb(0,3,76)"/>
+  <!-- machine-steady trace -->
+  <path d="M 180 480 L 620 480 L 660 430 L 700 480 L 1420 480"
+        fill="none" stroke="rgba(233,234,255,0.3)" stroke-width="4"/>
+  <!-- the human peak -->
+  <path d="M 820 480 L 900 480 L 950 250 L 1000 560 L 1050 480 L 1130 480"
+        fill="none" stroke="rgb(99,104,218)" stroke-width="8" stroke-linejoin="round"/>
+  <!-- the held point of care -->
+  <circle cx="950" cy="250" r="18" fill="rgb(233,234,255)"/>
+  <circle cx="950" cy="250" r="48" fill="none" stroke="rgba(99,104,218,0.5)" stroke-width="4"/>
+</svg>

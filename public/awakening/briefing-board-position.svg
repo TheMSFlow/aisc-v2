@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="rgb(0,3,76)"/>
+  <!-- horizontal hairlines: the briefing pages -->
+  <g stroke="rgba(233,234,255,0.14)" stroke-width="2">
+    <line x1="140" y1="220" x2="900" y2="220"/>
+    <line x1="140" y1="300" x2="1050" y2="300"/>
+    <line x1="140" y1="380" x2="820" y2="380"/>
+    <line x1="140" y1="460" x2="980" y2="460"/>
+    <line x1="140" y1="540" x2="760" y2="540"/>
+    <line x1="140" y1="620" x2="900" y2="620"/>
+    <line x1="140" y1="700" x2="680" y2="700"/>
+  </g>
+  <!-- the one line that is a position, not an opinion -->
+  <line x1="140" y1="460" x2="980" y2="460" stroke="rgb(99,104,218)" stroke-width="6"/>
+  <circle cx="1046" cy="460" r="14" fill="rgb(99,104,218)"/>
+  <!-- empty seats, one occupied -->
+  <g fill="none" stroke="rgba(233,234,255,0.25)" stroke-width="2">
+    <rect x="1180" y="180" width="120" height="120"/>
+    <rect x="1340" y="180" width="120" height="120"/>
+    <rect x="1180" y="340" width="120" height="120"/>
+    <rect x="1340" y="340" width="120" height="120"/>
+    <rect x="1340" y="500" width="120" height="120"/>
+  </g>
+  <rect x="1180" y="500" width="120" height="120" fill="rgb(233,234,255)"/>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="rgb(0,3,76)"/>
+  <!-- the polished pitch -->
+  <rect x="480" y="280" width="480" height="340" fill="none" stroke="rgba(233,234,255,0.4)" stroke-width="5"/>
+  <g stroke="rgba(233,234,255,0.25)" stroke-width="5" stroke-linecap="round">
+    <line x1="540" y1="360" x2="850" y2="360"/>
+    <line x1="540" y1="430" x2="900" y2="430"/>
+    <line x1="540" y1="500" x2="800" y2="500"/>
+  </g>
+  <!-- one section pulled open by the questions -->
+  <path d="M 960 500 L 1120 500 L 1120 620 L 960 620"
+        fill="none" stroke="rgb(99,104,218)" stroke-width="6"/>
+  <line x1="960" y1="560" x2="1120" y2="560" stroke="rgb(99,104,218)" stroke-width="4" stroke-dasharray="10 8"/>
+  <!-- probing hooks: abstract question marks -->
+  <g fill="none" stroke="rgb(99,104,218)" stroke-width="7" stroke-linecap="round">
+    <path d="M 300 330 q 40 -50 80 0 q 20 28 -18 48"/>
+    <path d="M 280 520 q 40 -50 80 0 q 20 28 -18 48"/>
+  </g>
+  <g fill="rgb(99,104,218)">
+    <circle cx="366" cy="416" r="7"/>
+    <circle cx="346" cy="606" r="7"/>
+  </g>
+</svg>

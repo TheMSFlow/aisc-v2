@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="rgb(0,3,76)"/>
+  <!-- the mesh of weak ties -->
+  <g stroke="rgba(233,234,255,0.12)" stroke-width="2">
+    <line x1="300" y1="250" x2="1300" y2="650"/>
+    <line x1="280" y1="600" x2="1250" y2="220"/>
+    <line x1="500" y1="150" x2="1100" y2="750"/>
+    <line x1="450" y1="750" x2="1150" y2="180"/>
+    <line x1="250" y1="430" x2="1350" y2="470"/>
+    <line x1="700" y1="130" x2="850" y2="770"/>
+  </g>
+  <g fill="rgba(233,234,255,0.25)">
+    <circle cx="500" cy="150" r="8"/><circle cx="1100" cy="750" r="8"/>
+    <circle cx="280" cy="600" r="8"/><circle cx="1250" cy="220" r="8"/>
+    <circle cx="700" cy="130" r="8"/><circle cx="850" cy="770" r="8"/>
+    <circle cx="250" cy="430" r="8"/><circle cx="1350" cy="470" r="8"/>
+  </g>
+  <!-- the one real exchange -->
+  <g stroke="rgb(99,104,218)" stroke-width="6">
+    <line x1="565" y1="425" x2="1035" y2="475"/>
+    <line x1="565" y1="465" x2="1035" y2="515"/>
+  </g>
+  <circle cx="520" cy="445" r="26" fill="rgb(233,234,255)"/>
+  <circle cx="1080" cy="495" r="26" fill="rgb(233,234,255)"/>
+</svg>

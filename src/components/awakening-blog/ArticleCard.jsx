@@ -1,0 +1,41 @@
+import Link from "next/link";
+import { formatDate } from "@/lib/blog/format";
+import { getIndustry, getType } from "@/lib/blog/taxonomy";
+
+export default function ArticleCard({ post }) {
+  const type = getType(post.type);
+  const industries = post.industries
+    .map((id) => getIndustry(id)?.shortLabel)
+    .filter(Boolean);
+
+  return (
+    <article className="group border border-dark-blue/10 transition-colors hover:border-dark-blue/25">
+      <Link href={`/awakening/${post.slug}`} className="flex h-full flex-col">
+        <div className="aspect-video w-full overflow-hidden border-b border-dark-blue/10">
+          <img
+            src={post.image}
+            alt={post.imageAlt}
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+            loading="lazy"
+          />
+        </div>
+        <div className="flex flex-1 flex-col p-6 sm:p-7">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40">
+          {type.shortLabel}
+          <span className="text-msaccent"> / </span>
+          {industries.join(", ")}
+        </p>
+        <h3 className="mt-4 font-ptsans text-xl font-bold uppercase leading-tight tracking-tight text-dark-blue sm:text-2xl">
+          {post.title}
+        </h3>
+        <p className="mb-6 mt-3 text-sm font-light leading-relaxed text-dark-blue/60">
+          {post.description}
+        </p>
+        <p className="mt-auto border-t border-dark-blue/10 pt-4 text-[11px] uppercase tracking-[0.2em] text-dark-blue/40">
+          {formatDate(post.date)} &middot; {post.readingTime} min read
+        </p>
+        </div>
+      </Link>
+    </article>
+  );
+}

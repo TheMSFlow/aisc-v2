@@ -22,8 +22,8 @@ export default function Home() {
         <Demo />
         {/* <Proof /> */}
         <Pricing />
-        <FAQ />
         <Coaching />
+        <FAQ />
       </main>
       <Footer />
     </>

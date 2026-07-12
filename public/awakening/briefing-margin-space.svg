@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="rgb(0,3,76)"/>
+  <!-- collapsed margins: cramped collisions -->
+  <g stroke="rgba(233,234,255,0.35)" stroke-width="5" stroke-linecap="round">
+    <path d="M 340 370 L 400 430 M 400 370 L 340 430"/>
+    <path d="M 430 420 L 490 480 M 490 420 L 430 480"/>
+    <path d="M 350 480 L 410 540 M 410 480 L 350 540"/>
+    <path d="M 450 320 L 510 380 M 510 320 L 450 380"/>
+    <path d="M 520 500 L 580 560 M 580 500 L 520 560"/>
+  </g>
+  <!-- dividing shift -->
+  <line x1="760" y1="200" x2="760" y2="700" stroke="rgba(233,234,255,0.14)" stroke-width="2"/>
+  <!-- margin restored: one point with room to breathe -->
+  <circle cx="1120" cy="450" r="22" fill="rgb(233,234,255)"/>
+  <g fill="none" stroke="rgb(99,104,218)">
+    <circle cx="1120" cy="450" r="90" stroke-width="6"/>
+    <circle cx="1120" cy="450" r="170" stroke-width="3" stroke-opacity="0.4"/>
+  </g>
+</svg>

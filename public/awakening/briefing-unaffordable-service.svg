@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="rgb(0,3,76)"/>
+  <!-- the offer shelf: what you sell today -->
+  <g fill="none" stroke="rgba(233,234,255,0.3)" stroke-width="3">
+    <rect x="200" y="480" width="240" height="200"/>
+    <rect x="520" y="480" width="240" height="200"/>
+    <rect x="1160" y="480" width="240" height="200"/>
+  </g>
+  <!-- the service that was priced out, now claimable -->
+  <rect x="840" y="480" width="240" height="200" fill="rgb(99,104,218)"/>
+  <!-- its old ghost: the version you kept declining -->
+  <rect x="840" y="200" width="240" height="200" fill="none" stroke="rgba(233,234,255,0.2)" stroke-width="3" stroke-dasharray="16 12"/>
+  <!-- the drop from unaffordable to offerable -->
+  <line x1="960" y1="400" x2="960" y2="480" stroke="rgb(233,234,255)" stroke-width="4"/>
+  <path d="M 960 480 L 940 448 L 980 448 Z" fill="rgb(233,234,255)"/>
+  <!-- value marks over the claimed block -->
+  <circle cx="912" cy="580" r="10" fill="rgb(233,234,255)"/>
+  <circle cx="960" cy="580" r="10" fill="rgb(233,234,255)"/>
+  <circle cx="1008" cy="580" r="10" fill="rgb(233,234,255)"/>
+  <!-- baseline -->
+  <line x1="160" y1="680" x2="1440" y2="680" stroke="rgba(233,234,255,0.25)" stroke-width="2"/>
+</svg>
