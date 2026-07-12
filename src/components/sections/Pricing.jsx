@@ -233,17 +233,25 @@ export default function Pricing() {
         {/* <CurrencyToggle dark={false} /> */}
       </div>
 
-      <div className="mt-10 grid gap-px bg-dark-blue/10 lg:grid-cols-3">
+      <div className="relative mt-10">
+        {/* ambient color for the glass to refract */}
+        <div className="pointer-events-none absolute -top-28 right-[10%] h-95 w-145 bg-[radial-gradient(ellipse_at_center,rgba(99,104,218,0.16),transparent_60%)]" />
+        <div className="pointer-events-none absolute -bottom-24 left-[2%] h-80 w-120 bg-[radial-gradient(ellipse_at_center,rgba(135,5,113,0.09),transparent_60%)]" />
+
+        <div className="relative grid gap-6 lg:grid-cols-3">
         {TIERS.map((t) => (
           <div
             key={t.id}
-            className={`flex flex-col gap-7 p-8 lg:p-10 ${
+            className={`relative flex flex-col gap-7 overflow-hidden rounded-3xl p-8 lg:p-10 ${
               t.highlight
-                ? "bg-dark-blue text-white"
-                : "bg-white text-dark-blue"
+                ? "bg-dark-blue text-white shadow-[0_2px_4px_rgba(0,3,76,0.15),0_16px_40px_rgba(0,3,76,0.25)]"
+                : "border border-white/60 bg-white/60 text-dark-blue shadow-[0_1px_2px_rgba(0,3,76,0.06),0_8px_24px_rgba(0,3,76,0.08)] backdrop-blur-xl"
             }`}
           >
-            <div>
+            {t.highlight && (
+              <div className="pointer-events-none absolute -top-24 -right-20 h-80 w-110 bg-[radial-gradient(ellipse_at_center,rgba(99,104,218,0.28),transparent_60%)]" />
+            )}
+            <div className="relative">
               <div className="flex items-center justify-between gap-3">
                 <h3
                   className={`font-ptsans text-xl font-bold uppercase tracking-tight ${
@@ -254,7 +262,7 @@ export default function Pricing() {
                 </h3>
                 {t.badge && (
                   <span
-                    className={`shrink-0 border px-2 py-0.5 text-[9px] font-semibold uppercase tracking-widest ${
+                    className={`shrink-0 rounded-full border px-2.5 py-0.5 text-[9px] font-semibold uppercase tracking-widest ${
                       t.highlight
                         ? "border-white/20 text-white/45"
                         : "border-dark-blue/15 text-dark-blue/45"
@@ -283,7 +291,7 @@ export default function Pricing() {
               </p>
             </div>
 
-            <ul className="flex flex-1 flex-col gap-3">
+            <ul className="relative flex flex-1 flex-col gap-3">
               {t.features.map((f, i) => (
                 <FeatureItem key={i} feature={f} highlight={t.highlight} />
               ))}
@@ -292,15 +300,16 @@ export default function Pricing() {
             <Button
               href={t.href}
               variant={t.buttonVariant || (t.highlight ? "primary" : "dark")}
-              className="w-full justify-center py-3"
+              className="relative w-full justify-center py-3"
             >
               {t.cta}
             </Button>
           </div>
         ))}
+        </div>
       </div>
 
-      <div className="mt-8 bg-dark-blue/4 p-8 lg:p-10">
+      <div className="mt-8 rounded-3xl bg-dark-blue/4 p-8 lg:p-10">
         <div className="flex flex-col gap-8">
           <div>
             <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40">
@@ -319,8 +328,8 @@ export default function Pricing() {
             </p>
           </div>
 
-          <div className="grid gap-px bg-dark-blue/10 sm:grid-cols-2">
-            <div className="bg-white p-6">
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-2xl border border-white/60 bg-white p-6 shadow-[0_1px_2px_rgba(0,3,76,0.05),0_6px_16px_rgba(0,3,76,0.06)]">
               <p className="text-[9px] font-semibold uppercase tracking-widest text-dark-blue/40">
                 Option A
               </p>
@@ -337,7 +346,7 @@ export default function Pricing() {
                 level.
               </p>
             </div>
-            <div className="bg-white p-6">
+            <div className="rounded-2xl border border-white/60 bg-white p-6 shadow-[0_1px_2px_rgba(0,3,76,0.05),0_6px_16px_rgba(0,3,76,0.06)]">
               <p className="text-[9px] font-semibold uppercase tracking-widest text-dark-blue/40">
                 Option B
               </p>

@@ -232,10 +232,34 @@ The landing page has 9 sections in narrative order. Each entry below states the 
 
 ---
 
-## Footer
+## Footer — "Dusk" close (v2.1, July 2026)
 
-- Minimal: logo, copyright, contact link
-- Dark background to close the page with weight
+The footer is a two-zone descent, not a dark slab:
+
+1. **Light zone (Briefings):** the three newest published briefings as floating white rounded-2xl cards (image, gradient numeral kicker `01 / TYPE`, title, date · read time), pulled live via `getAllPosts()`. Background is a **pure 180° vertical fade** from the FAQ's tone (`#f4f5ff`) down to lilac (`#e9eaff`) so the FAQ→footer seam is invisible.
+2. **Horizon ribbon:** a 2px full-bleed line, `linear-gradient(90deg, #6368da, #e9eaff, #860471)` — the literal boundary where day meets night. It must glow against both neighbors; never use a gradient whose end matches the dark zone.
+3. **Dark zone:** `dark-blue`, opened by aurora glows (see Surface Language below), then brand block, Program/Explore link columns (msaccent underline slides in on hover), legal bar.
+
+Blog pages use `BriefingsFooter` instead — do not apply this treatment there.
+
+---
+
+## Surface Language v2.1 (July 2026) — supersedes conflicting notes above
+
+Michael approved this vocabulary from the footer/Audience/Pricing work; extend it to other sections when asked.
+
+| Element | Rule |
+|---------|------|
+| **Buttons** | Always pills. `rounded-full` is baked into `global/Button.jsx` base styles — use the Button component, never hand-roll square buttons. Badges/chips are also `rounded-full`. |
+| **Cards** | `rounded-3xl` for section cards, `rounded-2xl` for nested/small cards. **No sharp edges anywhere.** No `gap-px` hairline mosaics — cards float independently with `gap-6`. |
+| **Glass** | On light sections: `border border-white/60 bg-white/55 backdrop-blur-xl` + layered shadow. Glass needs ambient color BEHIND it to refract — place 1–2 large radial glows (msaccent ~0.15–0.22, warning ~0.09–0.14) behind the card grid, `pointer-events-none`. |
+| **Dark anchor card** | One card per grid may stay solid `dark-blue` for hierarchy (Chief card, VIP tier). Give it an internal aurora: one absolute radial msaccent glow (~0.28–0.3) top-right, `overflow-hidden`, content wrapped in `relative`. |
+| **Aurora (dark zones)** | Dark sections open with 1–2 huge radial gradients bleeding from the top edge: msaccent at ~0.16–0.2 and warning at ~0.11–0.14, both fading to transparent by 60%. Makes navy luminous instead of flat. |
+| **Light backgrounds** | Ice family only: `#f4f5ff` base, `#e9eaff` (lilac) deep end. **Fades on light sections are vertical (180°) only — never lateral or radial tints on a light section background** (radial glows are for behind glass cards and on dark zones, not as light-zone washes). |
+| **Shadows** | Two-layer: rest `0_1px_2px_rgba(0,3,76,0.06), 0_8px_24px_rgba(0,3,76,0.08)`; hover deepens + `-translate-y-1`. Dark cards: `0_2px_4px_rgba(0,3,76,0.15), 0_16px_40px_rgba(0,3,76,0.25)`. |
+| **Gradient budget** | Gradient appears as jewelry, not paint: numeral kickers (`text-gradient-200`), the horizon ribbon, gradient text for ONE phrase max per section (`from-[#e9eaff] to-[#6368da]` on dark). |
+| **Motion** | 200–300ms ease-out, transform/opacity only. Card hover lift, image `scale-[1.03]`, arrow `translate-x-1`, underline width slide. No parallax, no scroll-jacking. |
+| **Tailwind note** | Use canonical v4 classes: `bg-linear-to-b` (not `bg-gradient-to-b`), spacing-scale sizes (`h-130` not `h-[520px]`). |
 
 ---
 

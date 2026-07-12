@@ -46,7 +46,7 @@ const QUESTIONS = [
 
 export default function FAQ() {
   return (
-    <div className="bg-[#f7f7f5]">
+    <div className="bg-[#f4f5ff]">
       <Section id="faq" spacing="compact">
         <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40">
           Still curious?

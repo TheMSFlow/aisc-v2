@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Loader2 } from "lucide-react";
 
 const baseStyles =
-  "flex flex-row py-2 px-4 justify-center items-center rounded-[8px] select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-blue text-xs lg:text-sm transition-transform active:scale-[0.95]";
+  "flex flex-row py-2 px-4 justify-center items-center rounded-full select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-blue text-xs lg:text-sm transition-transform active:scale-[0.95]";
 
 const variants = {
   primary:

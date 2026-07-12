@@ -44,19 +44,27 @@ export default function Audience() {
           on the highest level of value this challenge provides.
         </p>
 
-        <div className="mt-12 grid gap-px bg-dark-blue/10 lg:grid-cols-3">
+        <div className="relative mt-12">
+          {/* ambient color for the glass to refract */}
+          <div className="pointer-events-none absolute -top-24 left-1/4 h-95 w-145 bg-[radial-gradient(ellipse_at_center,rgba(99,104,218,0.22),transparent_60%)]" />
+          <div className="pointer-events-none absolute -bottom-20 right-[5%] h-80 w-120 bg-[radial-gradient(ellipse_at_center,rgba(135,5,113,0.12),transparent_60%)]" />
+
+          <div className="relative grid gap-6 lg:grid-cols-3">
           {AUDIENCES.map((a) => (
             <div
               key={a.tier}
-              className={`flex flex-col gap-7 p-8 lg:p-10 ${
+              className={`relative flex flex-col gap-7 overflow-hidden rounded-3xl p-8 transition-shadow duration-300 lg:p-10 ${
                 a.dark
-                  ? "bg-dark-blue"
+                  ? "bg-dark-blue shadow-[0_2px_4px_rgba(0,3,76,0.15),0_16px_40px_rgba(0,3,76,0.25)]"
                   : a.accent
-                    ? "bg-msaccent/10"
-                    : "bg-lilac"
+                    ? "border border-white/60 bg-lilac/20 shadow-[0_1px_2px_rgba(0,3,76,0.06),0_8px_24px_rgba(0,3,76,0.08)] backdrop-blur-xl"
+                    : "border border-white/60 bg-white/55 shadow-[0_1px_2px_rgba(0,3,76,0.06),0_8px_24px_rgba(0,3,76,0.08)] backdrop-blur-xl"
               }`}
             >
-              <div>
+              {a.dark && (
+                <div className="pointer-events-none absolute -top-20 -right-16 h-72 w-96 bg-[radial-gradient(ellipse_at_center,rgba(99,104,218,0.3),transparent_60%)]" />
+              )}
+              <div className="relative">
                 <p
                   className={`text-[10px] font-semibold uppercase tracking-[0.3em] ${
                     a.dark ? "text-white/35" : "text-dark-blue/35"
@@ -74,7 +82,7 @@ export default function Audience() {
               </div>
 
               <p
-                className={`text-sm leading-relaxed ${
+                className={`relative text-sm leading-relaxed ${
                   a.dark ? "text-white/55" : "text-dark-blue/55"
                 }`}
               >
@@ -82,6 +90,7 @@ export default function Audience() {
               </p>
             </div>
           ))}
+          </div>
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-center gap-5 text-center">
