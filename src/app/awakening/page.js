@@ -1,4 +1,3 @@
-import Section from "@/components/layout/Section";
 import FeaturedArticle from "@/components/awakening-blog/FeaturedArticle";
 import PostGrid from "@/components/awakening-blog/PostGrid";
 import TaxonomyNav from "@/components/awakening-blog/TaxonomyNav";
@@ -30,36 +29,47 @@ export default function AwakeningHub() {
     <>
       <JsonLd data={blogJsonLd(posts)} />
 
-      <Section className="bg-dark-blue" spacing="default" width="wide">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/40">
-          Briefings for the AI era
-        </p>
-        <h1 className="mt-4 font-ptsans text-5xl font-bold uppercase leading-none tracking-tight text-white sm:text-6xl lg:text-7xl">
-          The Awakening
-        </h1>
-        <p className="mt-5 max-w-xl text-lg font-light leading-relaxed text-white/60">
-          AI made intelligence abundant. It made judgment scarce. These
-          briefings exist so the leaders who carry the decision see clearly,
-          govern early, and claim territory first.
-        </p>
+      {/* Masthead — flat dark-blue, flows seamlessly out of the header */}
+      <section className="bg-dark-blue">
+        <div className="mx-auto w-full max-w-7xl px-5 py-16 sm:px-6 md:py-20 lg:px-8">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/40">
+            Briefings for the AI era
+          </p>
+          <h1 className="mt-4 font-ptsans text-5xl font-bold uppercase leading-none tracking-tight text-white sm:text-6xl lg:text-7xl">
+            The Awakening
+          </h1>
+          <p className="mt-5 max-w-xl text-lg font-light leading-relaxed text-white/60">
+            AI made intelligence abundant, but also made judgment{" "}
+            <span className="font-normal text-white">scarce</span>. These
+            briefings exist so the leaders who need to make informed decisions see clearly,
+            govern early, and claim territory first.
+          </p>
+        </div>
+      </section>
 
-        {featured && (
-          <div className="mt-14">
-            <FeaturedArticle post={featured} />
+      {/* Featured card + grid — resting on white */}
+      <section className="w-full px-5 py-14 sm:px-6 md:py-16 lg:px-8">
+        <div className="mx-auto w-full max-w-7xl">
+          {featured && <FeaturedArticle post={featured} />}
+
+          <div className="mt-16">
+            <TaxonomyNav />
           </div>
-        )}
-      </Section>
 
-      <Section width="wide" spacing="compact" className="border-b border-dark-blue/10">
-        <TaxonomyNav />
-      </Section>
+          <div className="mt-12 flex items-baseline justify-between gap-4 border-t border-dark-blue/10 pt-10">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40">
+              All briefings
+            </p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-dark-blue/30">
+              {posts.length} briefings
+            </p>
+          </div>
 
-      <Section width="wide" spacing="default">
-        <p className="mb-8 text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40">
-          All briefings
-        </p>
-        <PostGrid posts={rest.length ? rest : posts} />
-      </Section>
+          <div className="mt-8">
+            <PostGrid posts={rest.length ? rest : posts} />
+          </div>
+        </div>
+      </section>
     </>
   );
 }

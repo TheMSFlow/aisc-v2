@@ -34,8 +34,7 @@ export default function Footer() {
     <footer>
       {/* Zone 1 — Briefings, in daylight. Starts on the FAQ's tone, fades
           vertically to lilac: a single 180° descent, no lateral tints. */}
-      <div className="relative overflow-hidden bg-linear-to-b from-[#f4f5ff] to-[#e9eaff]">
-
+      <div className="relative overflow-hidden bg-linear-to-b from-offwhite to-[#e9eaff]">
         <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-end justify-between gap-5">
             <div>
@@ -72,9 +71,7 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-1 flex-col gap-3 p-6">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40">
-                    <span className="text-gradient-200 font-bold">
-                      0{i + 1}
-                    </span>
+                    <span className="font-bold text-msblue">0{i + 1}</span>
                     {"  /  "}
                     {getType(post.type)?.shortLabel}
                   </p>
@@ -104,12 +101,13 @@ export default function Footer() {
           <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             <div className="lg:col-span-2">
               <img src="/aisc.svg" alt="AISC" className="h-7 w-auto" />
-              <p className="mt-3 font-ptsans text-lg tracking-wider text-white/60">
+              {/* <p className="mt-3 font-ptsans text-lg tracking-wider text-white/60">
                 AI STAKEHOLDER CHALLENGE
-              </p>
+              </p> */}
               <p className="mt-3 max-w-xs text-sm font-light leading-relaxed text-lilac/60">
-                A 7-day leadership challenge for the seat where the decision
-                stops.
+                The AI Stakeholder Challenge is a 7-day community based
+                engagement for leaders who want to move from passive AI
+                awareness to active, deliberate AI leadership.
               </p>
             </div>
             <div>

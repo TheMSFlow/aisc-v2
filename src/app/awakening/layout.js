@@ -19,7 +19,7 @@ export default function AwakeningLayout({ children }) {
   return (
     <>
       <Header />
-      <main className="bg-white">{children}</main>
+      <main className="bg-offwhite">{children}</main>
       <BriefingsFooter />
     </>
   );

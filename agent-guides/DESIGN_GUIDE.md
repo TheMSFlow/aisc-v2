@@ -240,7 +240,19 @@ The footer is a two-zone descent, not a dark slab:
 2. **Horizon ribbon:** a 2px full-bleed line, `linear-gradient(90deg, #6368da, #e9eaff, #860471)` — the literal boundary where day meets night. It must glow against both neighbors; never use a gradient whose end matches the dark zone.
 3. **Dark zone:** `dark-blue`, opened by aurora glows (see Surface Language below), then brand block, Program/Explore link columns (msaccent underline slides in on hover), legal bar.
 
-Blog pages use `BriefingsFooter` instead — do not apply this treatment there.
+### Blog footer (`BriefingsFooter`) — mirrors the global footer's two zones
+
+`BriefingsFooter` follows the same Dusk structure as the landing footer: **Zone 1** is the white→lilac fade (`bg-linear-to-b from-[#f4f5ff] to-[#e9eaff]`) carrying the CTA, then the **horizon ribbon**, then **Zone 2** is `dark-blue` with aurora glows holding the link columns (white text, msaccent hover-underline) and legal. The CTA (`ArticleCta`) is a **white card** (dark text, `dark` + `secondary-light` buttons) resting on the fade — not a dark card.
+
+### Blog hub (`/awakening`) — masthead + card on light
+
+- **Masthead** is flat `dark-blue` (no aurora), so it flows seamlessly out of the `dark-blue` sticky header. It holds only the eyebrow, "The Awakening", and the intro (one word gets a gradient accent). The featured post is NOT in here.
+- **Featured post** is lifted out into `FeaturedArticle`: a self-contained **dark aurora card** (`rounded-3xl`, msaccent + warning glows, deep shadow) resting on the white hub background. This "dark feature card on white" is the reusable pattern — same as `ArticleCta`.
+- **Everything below the masthead is white** (the `main` bg). Featured card, then taxonomy, then grid, in ONE section with a single rhythm. Never split taxonomy and grid into two padded sections — that stacks padding into a dead gap. A `border-t` divider with a "All briefings / N briefings" row carries into the grid.
+- **Filter chips** (`TaxonomyNav`) are pills: inactive `bg-white/50` + border; active `gradient-200` fill.
+- **`ArticleCard`** (hub AND all category pages) is `rounded-2xl`, soft two-layer shadow, hover lift + image `scale-[1.03]`, gradient type label. No hairline borders.
+
+**Dev note:** the `[slug]` route uses `generateStaticParams`; rapid mid-edit HMR can wedge its worker ("Jest worker … retry limit"). It is a dev-only transient — confirm correctness with `npm run build` and restart `npm run dev` to clear.
 
 ---
 
@@ -253,11 +265,12 @@ Michael approved this vocabulary from the footer/Audience/Pricing work; extend i
 | **Buttons** | Always pills. `rounded-full` is baked into `global/Button.jsx` base styles — use the Button component, never hand-roll square buttons. Badges/chips are also `rounded-full`. |
 | **Cards** | `rounded-3xl` for section cards, `rounded-2xl` for nested/small cards. **No sharp edges anywhere.** No `gap-px` hairline mosaics — cards float independently with `gap-6`. |
 | **Glass** | On light sections: `border border-white/60 bg-white/55 backdrop-blur-xl` + layered shadow. Glass needs ambient color BEHIND it to refract — place 1–2 large radial glows (msaccent ~0.15–0.22, warning ~0.09–0.14) behind the card grid, `pointer-events-none`. |
-| **Dark anchor card** | One card per grid may stay solid `dark-blue` for hierarchy (Chief card, VIP tier). Give it an internal aurora: one absolute radial msaccent glow (~0.28–0.3) top-right, `overflow-hidden`, content wrapped in `relative`. |
+| **Dark feature/anchor card** | Dark cards are `bg-dark-blue` (flat) made dimensional by an internal **aurora**: absolute radial glows (msaccent ~0.24–0.28, warning ~0.13–0.16), `overflow-hidden`, content wrapped in `relative`. The aurora is what keeps flat navy from reading cheap — do NOT use a blue→plum gradient fill (tried, rejected as ugly). One card per grid is the dark anchor (Chief card, VIP tier, blog featured card). |
+| **Text is never gradient** | HARD RULE: never clip a gradient to text (`bg-clip-text text-transparent`, `.text-gradient-*`). Gradients are for backgrounds, fills, borders, and the horizon ribbon only. For emphasis inside a heading use a solid token: `text-lilac` on dark, `text-msblue`/`text-msaccent` on light. The `.text-gradient-*` utilities have been removed. |
 | **Aurora (dark zones)** | Dark sections open with 1–2 huge radial gradients bleeding from the top edge: msaccent at ~0.16–0.2 and warning at ~0.11–0.14, both fading to transparent by 60%. Makes navy luminous instead of flat. |
 | **Light backgrounds** | Ice family only: `#f4f5ff` base, `#e9eaff` (lilac) deep end. **Fades on light sections are vertical (180°) only — never lateral or radial tints on a light section background** (radial glows are for behind glass cards and on dark zones, not as light-zone washes). |
 | **Shadows** | Two-layer: rest `0_1px_2px_rgba(0,3,76,0.06), 0_8px_24px_rgba(0,3,76,0.08)`; hover deepens + `-translate-y-1`. Dark cards: `0_2px_4px_rgba(0,3,76,0.15), 0_16px_40px_rgba(0,3,76,0.25)`. |
-| **Gradient budget** | Gradient appears as jewelry, not paint: numeral kickers (`text-gradient-200`), the horizon ribbon, gradient text for ONE phrase max per section (`from-[#e9eaff] to-[#6368da]` on dark). |
+| **Gradient budget** | Gradient appears as jewelry, not paint: the horizon ribbon and `gradient-200` accent fills (e.g. active taxonomy chips). Never on text (see rule above), never as a card fill. |
 | **Motion** | 200–300ms ease-out, transform/opacity only. Card hover lift, image `scale-[1.03]`, arrow `translate-x-1`, underline width slide. No parallax, no scroll-jacking. |
 | **Tailwind note** | Use canonical v4 classes: `bg-linear-to-b` (not `bg-gradient-to-b`), spacing-scale sizes (`h-130` not `h-[520px]`). |
 

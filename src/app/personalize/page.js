@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function PersonalizePage() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#f4f5ff]">
+    <main className="flex min-h-screen flex-col bg-offwhite">
       <div className="px-5 py-5 sm:px-6 lg:px-8">
         <Link
           href="/"

@@ -27,7 +27,7 @@ const AUDIENCES = [
 
 export default function Audience() {
   return (
-    <div className="bg-[#f4f5ff]">
+    <div className="bg-offwhite">
       <Section id="audience" spacing="compact">
         <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40">
           This challenge is for
@@ -46,8 +46,8 @@ export default function Audience() {
 
         <div className="relative mt-12">
           {/* ambient color for the glass to refract */}
-          <div className="pointer-events-none absolute -top-24 left-1/4 h-95 w-145 bg-[radial-gradient(ellipse_at_center,rgba(99,104,218,0.22),transparent_60%)]" />
-          <div className="pointer-events-none absolute -bottom-20 right-[5%] h-80 w-120 bg-[radial-gradient(ellipse_at_center,rgba(135,5,113,0.12),transparent_60%)]" />
+          <div className="pointer-events-none absolute -top-24 left-1/4 h-95 w-145 bg-[radial-gradient(ellipse_at_center,rgba(99,104,218,0.22),transparent_30%)]" />
+          <div className="pointer-events-none absolute -bottom-20 right-[5%] h-80 w-120 bg-[radial-gradient(ellipse_at_center,rgba(135,5,113,0.12),transparent_30%)]" />
 
           <div className="relative grid gap-6 lg:grid-cols-3">
           {AUDIENCES.map((a) => (
@@ -57,7 +57,7 @@ export default function Audience() {
                 a.dark
                   ? "bg-dark-blue shadow-[0_2px_4px_rgba(0,3,76,0.15),0_16px_40px_rgba(0,3,76,0.25)]"
                   : a.accent
-                    ? "border border-white/60 bg-lilac/20 shadow-[0_1px_2px_rgba(0,3,76,0.06),0_8px_24px_rgba(0,3,76,0.08)] backdrop-blur-xl"
+                    ? "border border-white/60 bg-lilac/40 shadow-[0_1px_2px_rgba(0,3,76,0.06),0_8px_24px_rgba(0,3,76,0.08)] backdrop-blur-xl"
                     : "border border-white/60 bg-white/55 shadow-[0_1px_2px_rgba(0,3,76,0.06),0_8px_24px_rgba(0,3,76,0.08)] backdrop-blur-xl"
               }`}
             >

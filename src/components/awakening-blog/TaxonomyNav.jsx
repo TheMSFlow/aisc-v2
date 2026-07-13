@@ -12,10 +12,10 @@ function Chip({ href, active, children }) {
     <Link
       href={href}
       aria-current={active ? "page" : undefined}
-      className={`border px-3 py-1.5 text-xs transition-colors ${
+      className={`rounded-full border px-3.5 py-1.5 text-xs transition-all ${
         active
-          ? "border-msaccent bg-msaccent text-white"
-          : "border-dark-blue/15 text-dark-blue/70 hover:border-dark-blue/40 hover:text-dark-blue"
+          ? "gradient-200 border-transparent text-white shadow-sm"
+          : "border-dark-blue/15 bg-white/50 text-dark-blue/70 hover:border-dark-blue/40 hover:bg-white hover:text-dark-blue"
       }`}
     >
       {children}

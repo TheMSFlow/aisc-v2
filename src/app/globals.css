@@ -16,6 +16,7 @@ html {
   --msblue: rgb(1, 5, 121);
   --msaccent: rgb(99, 104, 218);
   --white: rgb(255, 255, 255);
+  --offwhite: rgb(244, 245, 255);
   --lilac: rgb(233, 234, 255);
   --lilac-hover: rgb(211, 213, 255);
   --dark-blue: rgb(0, 3, 76);
@@ -35,6 +36,10 @@ html {
   --color-lilac-hover: var(--lilac-hover);
   --color-dark-blue: var(--dark-blue);
   --color-warning: var(--warning);
+
+  /* Official off-white: the cool near-white used for canvas/surfaces and the
+     footer fades. `white` stays pure #fff. Use `bg-offwhite`, `from-offwhite`. */
+  --color-offwhite: var(--offwhite);
 
   --font-inter: var(--font-inter), sans-serif;
   --font-ptsans: var(--font-ptsans), serif;
@@ -169,28 +174,6 @@ h3 {
   }
   .gradient-200:hover {
     filter: brightness(1.12);
-  }
-
-  .text-gradient-100 {
-    background-image: linear-gradient(90deg, #860471, #6368da);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    transition: filter 0.2s ease;
-  }
-  .text-gradient-100:hover {
-    filter: brightness(1.15);
-  }
-
-  .text-gradient-200 {
-    background-image: linear-gradient(90deg, #041986, #6368da);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    transition: filter 0.2s ease;
-  }
-  .text-gradient-200:hover {
-    filter: brightness(1.15);
   }
 }
 

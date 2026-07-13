@@ -309,7 +309,7 @@ export default function Pricing() {
         </div>
       </div>
 
-      <div className="mt-8 rounded-3xl bg-dark-blue/4 p-8 lg:p-10">
+      <div className="mt-8 rounded-3xl bg-msaccent/10 p-8 lg:p-10">
         <div className="flex flex-col gap-8">
           <div>
             <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40">
