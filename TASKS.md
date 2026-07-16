@@ -4,7 +4,7 @@
 > Maintained by the `tasks` agent. Tasks are in **exact execution order** — do the first unchecked one.
 > Owner key: **[You]** = only Michael can do it · **[Claude]** = ask Claude to do it · **[You→Claude]** = you provide something, then Claude builds.
 >
-> Last updated: 2026-07-13
+> Last updated: 2026-07-15
 
 ## Phase 0 — This week (time-sensitive or blocking everything else)
 
@@ -28,7 +28,7 @@
 ## Phase 2 — Production run (ongoing from now)
 
 - [ ] 10. **[Claude] Publish the banked pipeline at 3/week (Mon/Wed/Fri).**
-  Drafting DONE 2026-07-12: all 25 briefings banked as `draft: true`. First drip SHIPPED Mon 2026-07-13 (`what-ai-actually-is-for-the-seat-where-decisions-stop`) → now **8 published + 24 banked = 32 in ledger**. Remaining work is the publish routine per post: Michael reviews → flip `draft: false` → set `date` to actual publish day → ledger row to Published → clean `npm run blog:links --write` → distribute per #9. Next drip: Wed 2026-07-15. Bank lasts ~8 weeks; refill comes from cohort exhaust (#14) and Search Console (#12), never invented topics.
+  Drafting DONE 2026-07-12: all 25 briefings banked as `draft: true`. Drip in progress (Mon/Wed/Fri): Mon 2026-07-13 `what-ai-actually-is-for-the-seat-where-decisions-stop`, Wed 2026-07-15 `why-your-ai-pilot-went-nowhere` → now **9 published + 23 banked = 32 in ledger**. Remaining work is the publish routine per post: Michael reviews → flip `draft: false` → set `date` to actual publish day → ledger row to Published → clean `npm run blog:links --write` → distribute per #9. Next drip: Fri 2026-07-17. Bank lasts ~8 weeks; refill comes from cohort exhaust (#14) and Search Console (#12), never invented topics.
 
 - [ ] 11. **[You] Log the Jul 30 – Aug 5 cohort into the capture doc.** *(uses #1)*
   Every live session. Repeat for every future cohort — this becomes standing practice, not a one-off.
