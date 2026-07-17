@@ -48,13 +48,6 @@ export const metadata = {
       "A 7-day community based engagement for leaders who want to move from passive AI awareness to active, deliberate AI leadership.",
     url: process.env.NEXT_PUBLIC_SITE_URL,
     siteName: "AI Stakeholder Challenge",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-      },
-    ],
     type: "website",
     locale: "en_US",
   },
@@ -64,7 +57,6 @@ export const metadata = {
     title: "AISC | From AI Consumer to AI Leader",
     description:
       "A 7-day community based engagement for leaders who want to move from passive AI awareness to active, deliberate AI leadership",
-    images: ["/og-image.png"],
   },
 };
 
