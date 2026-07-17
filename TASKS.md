@@ -28,7 +28,7 @@
 ## Phase 2 — Production run (ongoing from now)
 
 - [ ] 10. **[Claude] Publish the banked pipeline at 3/week (Mon/Wed/Fri).**
-  Drafting DONE 2026-07-12: all 25 briefings banked as `draft: true`. Drip in progress (Mon/Wed/Fri): Mon 2026-07-13 `what-ai-actually-is-for-the-seat-where-decisions-stop`, Wed 2026-07-15 `why-your-ai-pilot-went-nowhere` → now **9 published + 23 banked = 32 in ledger**. Remaining work is the publish routine per post: Michael reviews → flip `draft: false` → set `date` to actual publish day → ledger row to Published → clean `npm run blog:links --write` → distribute per #9. Next drip: Fri 2026-07-17. Bank lasts ~8 weeks; refill comes from cohort exhaust (#14) and Search Console (#12), never invented topics.
+  Drafting DONE 2026-07-12: all 25 briefings banked as `draft: true`. Drip in progress (Mon/Wed/Fri): Mon 2026-07-13 `what-ai-actually-is-for-the-seat-where-decisions-stop`, Wed 2026-07-15 `why-your-ai-pilot-went-nowhere`, Fri 2026-07-17 `the-hours-you-lose-every-week-to-work-ai-could-handle` → now **10 published + 22 banked = 32 in ledger**. Remaining work is the publish routine per post: Michael reviews → flip `draft: false` → set `date` to actual publish day → ledger row to Published → clean `npm run blog:links --write` → distribute per #9. Next drip: Mon 2026-07-20. Bank lasts ~7 weeks; refill comes from cohort exhaust (#14) and Search Console (#12), never invented topics.
 
 - [ ] 11. **[You] Log the Jul 30 – Aug 5 cohort into the capture doc.** *(uses #1)*
   Every live session. Repeat for every future cohort — this becomes standing practice, not a one-off.
