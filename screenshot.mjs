@@ -46,12 +46,8 @@ const filename = label
   : `screenshot-${n}.png`;
 const outPath = path.join(screenshotsDir, filename);
 
-const HEADLESS_SHELL =
-  "C:\\Users\\PC\\.cache\\puppeteer\\chrome-headless-shell\\win64-150.0.7871.24\\chrome-headless-shell-win64\\chrome-headless-shell.exe";
-
 const browser = await puppeteer.launch({
   headless: true,
-  executablePath: HEADLESS_SHELL,
   args: ["--no-sandbox", "--disable-setuid-sandbox"],
 });
 
@@ -59,8 +55,10 @@ const page = await browser.newPage();
 await page.setViewport({ width: viewportWidth, height: viewportHeight, deviceScaleFactor: 1 });
 
 try {
-  await page.goto(url, { waitUntil: "networkidle2", timeout: 30000 });
-  await new Promise((r) => setTimeout(r, 800));
+  // "load" not "networkidle2": the dev server's HMR websocket keeps the
+  // network busy forever, so idle-based waits time out.
+  await page.goto(url, { waitUntil: "load", timeout: 30000 });
+  await new Promise((r) => setTimeout(r, 1500));
   if (scrollY) await page.evaluate((y) => window.scrollTo(0, y), scrollY);
   await page.screenshot({ path: outPath, fullPage });
   console.log(`Saved: screenshots/${filename}`);

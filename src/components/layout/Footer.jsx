@@ -109,6 +109,17 @@ export default function Footer() {
                 engagement for leaders who want to move from passive AI
                 awareness to active, deliberate AI leadership.
               </p>
+              <p className="mt-5 text-sm font-light text-lilac/60">
+                For inquiries,{" "}
+                <a
+                  href="https://intelligence.michaelsteve.com/form/inquiry?src=AISC"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative inline-block text-lilac/70 transition-colors hover:text-white after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-msaccent after:transition-[width] after:duration-200 hover:after:w-full"
+                >
+                  contact us
+                </a>
+              </p>
             </div>
             <div>
               <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.35em] text-white/40">
@@ -129,11 +140,8 @@ export default function Footer() {
                 <FooterLink href="/awakening">The Awakening</FooterLink>
                 <FooterLink href="/personalize">Find your path</FooterLink>
                 <FooterLink href="/awakening/feed.xml">RSS feed</FooterLink>
-                <FooterLink
-                  href="https://intelligence.michaelsteve.com/form/inquiry?src=AISC"
-                  external
-                >
-                  Contact
+                <FooterLink href="https://aiclarityforchiefs.com" external>
+                  AI Clarity for Chiefs
                 </FooterLink>
               </ul>
             </div>
@@ -141,8 +149,14 @@ export default function Footer() {
 
           {/* Legal */}
           <p className="mt-14 border-t border-white/10 pt-6 text-xs text-lilac/50">
-            © {new Date().getFullYear()} Michael Steve Clarity Studio. All
-            rights reserved.
+            <a
+              href="https://michaelsteve.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              © {new Date().getFullYear()} Michael Steve Clarity Studio. All
+              rights reserved.
+            </a>
           </p>
         </div>
       </div>

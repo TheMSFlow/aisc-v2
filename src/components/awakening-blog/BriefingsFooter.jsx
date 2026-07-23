@@ -2,15 +2,25 @@ import Link from "next/link";
 import ArticleCta from "./ArticleCta";
 import { AUDIENCES } from "@/lib/blog/taxonomy";
 
-function FooterLink({ href, children }) {
+function FooterLink({ href, children, external = false }) {
+  const className =
+    "relative inline-block text-sm text-lilac/70 transition-colors hover:text-white after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-msaccent after:transition-[width] after:duration-200 hover:after:w-full";
   return (
     <li>
-      <Link
-        href={href}
-        className="relative inline-block text-sm text-lilac/70 transition-colors hover:text-white after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-msaccent after:transition-[width] after:duration-200 hover:after:w-full"
-      >
-        {children}
-      </Link>
+      {external ? (
+        <a
+          href={href}
+          className={className}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {children}
+        </a>
+      ) : (
+        <Link href={href} className={className}>
+          {children}
+        </Link>
+      )}
     </li>
   );
 }
@@ -61,25 +71,34 @@ export default function BriefingsFooter() {
                 The challenge
               </p>
               <ul className="flex flex-col gap-2">
-                <FooterLink href="/">AI Stakeholder Challenge</FooterLink>
+                <FooterLink href="/">AISC</FooterLink>
                 <FooterLink href="/#pricing">Pricing</FooterLink>
                 <FooterLink href="/personalize">Find your path</FooterLink>
               </ul>
             </div>
             <div>
               <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.35em] text-white/40">
-                Follow
+                Explore
               </p>
               <ul className="flex flex-col gap-2">
                 <FooterLink href="/awakening/feed.xml">RSS feed</FooterLink>
                 <FooterLink href="/awakening">All briefings</FooterLink>
+                <FooterLink href="https://aiclarityforchiefs.com" external>
+                  AI Clarity for Chiefs
+                </FooterLink>
               </ul>
             </div>
           </div>
 
           <p className="mt-12 text-xs text-lilac/50">
-            © {new Date().getFullYear()} Michael Steve Clarity Studio. All rights
-            reserved.
+            <a
+              href="https://michaelsteve.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              © {new Date().getFullYear()} Michael Steve Clarity Studio. All rights
+              reserved.
+            </a>
           </p>
         </div>
       </div>
